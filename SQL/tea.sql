@@ -1,0 +1,140 @@
+CREATE DATABASE tea01
+
+use tea01
+
+CREATE TABLE DrinkTypes
+(
+  DrinkTypeId VARCHAR(10) NOT NULL,
+  DrinkTypeName VARCHAR(100) DEFAULT NULL,
+  PRIMARY KEY (DrinkTypeId)
+);
+
+CREATE TABLE Toppings
+(
+  ToppingId VARCHAR(10) NOT NULL,
+  ToppingName VARCHAR(10) DEFAULT NULL,
+  Price INT DEFAULT NULL,
+  PRIMARY KEY (ToppingId)
+);
+
+CREATE TABLE Resources
+(
+  ResourceId VARCHAR(10) NOT NULL,
+  ResourceName VARCHAR(100) DEFAULT NULL,
+  Amount INT DEFAULT NULL,
+  PRIMARY KEY (ResourceId)
+);
+
+CREATE TABLE ToppingResource
+(
+  ResourceId VARCHAR(10) NOT NULL,
+  ToppingId VARCHAR(10) NOT NULL,
+  FOREIGN KEY (ResourceId) REFERENCES Resources(ResourceId),
+  FOREIGN KEY (ToppingId) REFERENCES Toppings(ToppingId)
+);
+
+CREATE TABLE Staff
+(
+  UserName VARCHAR(50) NOT NULL,
+  Password VARCHAR(100) DEFAULT NULL,
+  FullName VARCHAR(100) DEFAULT NULL,
+  Age INT DEFAULT NULL,
+  PhoneNumber VARCHAR(10) DEFAULT NULL,
+  Address VARCHAR(100) DEFAULT NULL,
+  Avatar VARCHAR(100) DEFAULT NULL,
+  PRIMARY KEY (UserName)
+);
+
+CREATE TABLE Permision
+(
+  PermisionID VARCHAR(10) NOT NULL,
+  PermisionName VARCHAR(100) DEFAULT NULL,
+  PRIMARY KEY (PermisionID)
+);
+
+CREATE TABLE UserPermision
+(
+  UserName VARCHAR(50) NOT NULL,
+  PermisionID VARCHAR(10) NOT NULL,
+  FOREIGN KEY (UserName) REFERENCES Staff(UserName),
+  FOREIGN KEY (PermisionID) REFERENCES Permision(PermisionID)
+);
+
+CREATE TABLE PermisionDetail
+(
+  PermisionDetailId VARCHAR(10) NOT NULL,
+  ActionName VARCHAR DEFAULT NULL,
+  PermisionID VARCHAR(10) NOT NULL,
+  PRIMARY KEY (PermisionDetailId),
+  FOREIGN KEY (PermisionID) REFERENCES Permision(PermisionID)
+);
+
+CREATE TABLE Customer
+(
+  PhoneNumber VARCHAR(10) NOT NULL,
+  FullName VARCHAR(100) DEFAULT NULL,
+  Address VARCHAR(100) DEFAULT NULL,
+  Level INT DEFAULT NULL,
+  PRIMARY KEY (PhoneNumber)
+);
+
+CREATE TABLE TableSpace
+(
+  TableId VARCHAR(10) NOT NULL,
+  TableName VARCHAR(100) DEFAULT NULL,
+  Status INT DEFAULT NULL,
+  PRIMARY KEY (TableId)
+);
+
+CREATE TABLE Bills
+(
+  BillId VARCHAR(10) NOT NULL,
+  OrderTimeStart DATE DEFAULT NULL,
+  Payments VARCHAR(10) DEFAULT NULL,
+  TableId VARCHAR(10) DEFAULT NULL,
+  Total INT DEFAULT NULL,
+  OrderTimeEnd DATE DEFAULT NULL,
+  UserName VARCHAR(50) DEFAULT NULL,
+  PhoneNumber VARCHAR(10) DEFAULT NULL,
+  PRIMARY KEY (BillId),
+  FOREIGN KEY (UserName) REFERENCES Staff(UserName),
+  FOREIGN KEY (PhoneNumber) REFERENCES Customer(PhoneNumber),
+  FOREIGN KEY (TableId) REFERENCES TableSpace(TableId)
+);
+
+CREATE TABLE Drinks
+(
+  DrinkId VARCHAR(10) NOT NULL,
+  DrinkName VARCHAR(100) DEFAULT NULL,
+  Price INT DEFAULT NULL,
+  Image VARCHAR(100) DEFAULT NULL,
+  Icon VARCHAR(100) DEFAULT NULL,
+  DrinkTypeId VARCHAR(10) DEFAULT NULL,
+  PRIMARY KEY (DrinkId),
+  FOREIGN KEY (DrinkTypeId) REFERENCES DrinkTypes(DrinkTypeId)
+);
+
+CREATE TABLE DrinkTopping
+(
+  DrinkId VARCHAR(10) NOT NULL,
+  ToppingId VARCHAR(10) NOT NULL,
+  FOREIGN KEY (DrinkId) REFERENCES Drinks(DrinkId),
+  FOREIGN KEY (ToppingId) REFERENCES Toppings(ToppingId)
+);
+
+CREATE TABLE DrinkResource
+(
+  ResourceId VARCHAR(10) NOT NULL,
+  DrinkId VARCHAR(10) NOT NULL,
+  FOREIGN KEY (ResourceId) REFERENCES Resources(ResourceId),
+  FOREIGN KEY (DrinkId) REFERENCES Drinks(DrinkId)
+);
+
+CREATE TABLE Items
+(
+  Amount INT DEFAULT NULL,
+  BillId VARCHAR(10) NOT NULL,
+  DrinkId VARCHAR(10) NOT NULL,
+  FOREIGN KEY (BillId) REFERENCES Bills(BillId),
+  FOREIGN KEY (DrinkId) REFERENCES Drinks(DrinkId)
+);
