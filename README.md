@@ -30,7 +30,7 @@
 			- ActionName là EditPrice và PermisionName của nó là Edit
 			- ActionName là EditPrice và PermisionName của nó là Admin
 
-#Tea Management Project
+#Tea Management Project OK OK
 
 Framework: Entity & Devexpress Winform
 Navigation bar: responsive style and navigation 
