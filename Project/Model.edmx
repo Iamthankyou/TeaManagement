@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tea01Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bills">
+          <Key>
+            <PropertyRef Name="BillId" />
+          </Key>
+          <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="OrderTimeStart" Type="date" />
+          <Property Name="Payments" Type="varchar" MaxLength="10" />
+          <Property Name="TableId" Type="varchar" MaxLength="10" />
+          <Property Name="Total" Type="int" />
+          <Property Name="OrderTimeEnd" Type="date" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="PhoneNumber" />
+          </Key>
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="Level" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.DrinkResource' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DrinkResource">
+          <Key>
+            <PropertyRef Name="ResourceId" />
+            <PropertyRef Name="DrinkId" />
+          </Key>
+          <Property Name="ResourceId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Drinks">
+          <Key>
+            <PropertyRef Name="DrinkId" />
+          </Key>
+          <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DrinkName" Type="varchar" MaxLength="100" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Image" Type="varchar" MaxLength="100" />
+          <Property Name="Icon" Type="varchar" MaxLength="100" />
+          <Property Name="DrinkTypeId" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.DrinkTopping' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DrinkTopping">
+          <Key>
+            <PropertyRef Name="DrinkId" />
+            <PropertyRef Name="ToppingId" />
+          </Key>
+          <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ToppingId" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DrinkTypes">
+          <Key>
+            <PropertyRef Name="DrinkTypeId" />
+          </Key>
+          <Property Name="DrinkTypeId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DrinkTypeName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.Items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="BillId" />
+            <PropertyRef Name="DrinkId" />
+          </Key>
+          <Property Name="Amount" Type="int" />
+          <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permision">
+          <Key>
+            <PropertyRef Name="PermisionID" />
+          </Key>
+          <Property Name="PermisionID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PermisionName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PermisionDetail">
+          <Key>
+            <PropertyRef Name="PermisionDetailId" />
+          </Key>
+          <Property Name="PermisionDetailId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ActionName" Type="varchar" MaxLength="1" />
+          <Property Name="PermisionID" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Resources">
+          <Key>
+            <PropertyRef Name="ResourceId" />
+          </Key>
+          <Property Name="ResourceId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ResourceName" Type="varchar" MaxLength="100" />
+          <Property Name="Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="FullName" Type="varchar" MaxLength="100" />
+          <Property Name="Age" Type="int" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="Avatar" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TableSpace">
+          <Key>
+            <PropertyRef Name="TableId" />
+          </Key>
+          <Property Name="TableId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TableName" Type="varchar" MaxLength="100" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.ToppingResource' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ToppingResource">
+          <Key>
+            <PropertyRef Name="ResourceId" />
+            <PropertyRef Name="ToppingId" />
+          </Key>
+          <Property Name="ResourceId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ToppingId" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Toppings">
+          <Key>
+            <PropertyRef Name="ToppingId" />
+          </Key>
+          <Property Name="ToppingId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ToppingName" Type="varchar" MaxLength="10" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.UserPermision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserPermision">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="PermisionID" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PermisionID" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Bills__PhoneNumb__3F466844">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="PhoneNumber" />
+            </Principal>
+            <Dependent Role="Bills">
+              <PropertyRef Name="PhoneNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bills__TableId__403A8C7D">
+          <End Role="TableSpace" Type="Self.TableSpace" Multiplicity="0..1" />
+          <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableSpace">
+              <PropertyRef Name="TableId" />
+            </Principal>
+            <Dependent Role="Bills">
+              <PropertyRef Name="TableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bills__UserName__3E52440B">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Bills">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DrinkReso__Drink__4D94879B">
+          <End Role="Drinks" Type="Self.Drinks" Multiplicity="1" />
+          <End Role="DrinkResource" Type="Self.DrinkResource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drinks">
+              <PropertyRef Name="DrinkId" />
+            </Principal>
+            <Dependent Role="DrinkResource">
+              <PropertyRef Name="DrinkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DrinkReso__Resou__4CA06362">
+          <End Role="Resources" Type="Self.Resources" Multiplicity="1" />
+          <End Role="DrinkResource" Type="Self.DrinkResource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resources">
+              <PropertyRef Name="ResourceId" />
+            </Principal>
+            <Dependent Role="DrinkResource">
+              <PropertyRef Name="ResourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Drinks__DrinkTyp__47DBAE45">
+          <End Role="DrinkTypes" Type="Self.DrinkTypes" Multiplicity="0..1" />
+          <End Role="Drinks" Type="Self.Drinks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DrinkTypes">
+              <PropertyRef Name="DrinkTypeId" />
+            </Principal>
+            <Dependent Role="Drinks">
+              <PropertyRef Name="DrinkTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DrinkTopp__Drink__49C3F6B7">
+          <End Role="Drinks" Type="Self.Drinks" Multiplicity="1" />
+          <End Role="DrinkTopping" Type="Self.DrinkTopping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drinks">
+              <PropertyRef Name="DrinkId" />
+            </Principal>
+            <Dependent Role="DrinkTopping">
+              <PropertyRef Name="DrinkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DrinkTopp__Toppi__4AB81AF0">
+          <End Role="Toppings" Type="Self.Toppings" Multiplicity="1" />
+          <End Role="DrinkTopping" Type="Self.DrinkTopping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toppings">
+              <PropertyRef Name="ToppingId" />
+            </Principal>
+            <Dependent Role="DrinkTopping">
+              <PropertyRef Name="ToppingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Items__BillId__5070F446">
+          <End Role="Bills" Type="Self.Bills" Multiplicity="1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bills">
+              <PropertyRef Name="BillId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="BillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Items__DrinkId__5165187F">
+          <End Role="Drinks" Type="Self.Drinks" Multiplicity="1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drinks">
+              <PropertyRef Name="DrinkId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="DrinkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Permision__Permi__2C3393D0">
+          <End Role="Permision" Type="Self.Permision" Multiplicity="1" />
+          <End Role="PermisionDetail" Type="Self.PermisionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permision">
+              <PropertyRef Name="PermisionID" />
+            </Principal>
+            <Dependent Role="PermisionDetail">
+              <PropertyRef Name="PermisionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ToppingRe__Resou__1A14E395">
+          <End Role="Resources" Type="Self.Resources" Multiplicity="1" />
+          <End Role="ToppingResource" Type="Self.ToppingResource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resources">
+              <PropertyRef Name="ResourceId" />
+            </Principal>
+            <Dependent Role="ToppingResource">
+              <PropertyRef Name="ResourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ToppingRe__Toppi__1B0907CE">
+          <End Role="Toppings" Type="Self.Toppings" Multiplicity="1" />
+          <End Role="ToppingResource" Type="Self.ToppingResource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Toppings">
+              <PropertyRef Name="ToppingId" />
+            </Principal>
+            <Dependent Role="ToppingResource">
+              <PropertyRef Name="ToppingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserPermi__Permi__286302EC">
+          <End Role="Permision" Type="Self.Permision" Multiplicity="1" />
+          <End Role="UserPermision" Type="Self.UserPermision" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permision">
+              <PropertyRef Name="PermisionID" />
+            </Principal>
+            <Dependent Role="UserPermision">
+              <PropertyRef Name="PermisionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserPermi__UserN__276EDEB3">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="UserPermision" Type="Self.UserPermision" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="UserPermision">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tea01ModelStoreContainer">
+          <EntitySet Name="Bills" EntityType="Self.Bills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drinks" EntityType="Self.Drinks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DrinkTypes" EntityType="Self.DrinkTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permision" EntityType="Self.Permision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PermisionDetail" EntityType="Self.PermisionDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableSpace" EntityType="Self.TableSpace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Toppings" EntityType="Self.Toppings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DrinkResource" EntityType="Self.DrinkResource" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DrinkResource].[ResourceId] AS [ResourceId], 
+    [DrinkResource].[DrinkId] AS [DrinkId]
+    FROM [dbo].[DrinkResource] AS [DrinkResource]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DrinkTopping" EntityType="Self.DrinkTopping" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DrinkTopping].[DrinkId] AS [DrinkId], 
+    [DrinkTopping].[ToppingId] AS [ToppingId]
+    FROM [dbo].[DrinkTopping] AS [DrinkTopping]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Items" EntityType="Self.Items" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Items].[Amount] AS [Amount], 
+    [Items].[BillId] AS [BillId], 
+    [Items].[DrinkId] AS [DrinkId]
+    FROM [dbo].[Items] AS [Items]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ToppingResource" EntityType="Self.ToppingResource" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ToppingResource].[ResourceId] AS [ResourceId], 
+    [ToppingResource].[ToppingId] AS [ToppingId]
+    FROM [dbo].[ToppingResource] AS [ToppingResource]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserPermision" EntityType="Self.UserPermision" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserPermision].[UserName] AS [UserName], 
+    [UserPermision].[PermisionID] AS [PermisionID]
+    FROM [dbo].[UserPermision] AS [UserPermision]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Bills__PhoneNumb__3F466844" Association="Self.FK__Bills__PhoneNumb__3F466844">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Bills" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bills__TableId__403A8C7D" Association="Self.FK__Bills__TableId__403A8C7D">
+            <End Role="TableSpace" EntitySet="TableSpace" />
+            <End Role="Bills" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bills__UserName__3E52440B" Association="Self.FK__Bills__UserName__3E52440B">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Bills" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DrinkReso__Drink__4D94879B" Association="Self.FK__DrinkReso__Drink__4D94879B">
+            <End Role="Drinks" EntitySet="Drinks" />
+            <End Role="DrinkResource" EntitySet="DrinkResource" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DrinkReso__Resou__4CA06362" Association="Self.FK__DrinkReso__Resou__4CA06362">
+            <End Role="Resources" EntitySet="Resources" />
+            <End Role="DrinkResource" EntitySet="DrinkResource" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Drinks__DrinkTyp__47DBAE45" Association="Self.FK__Drinks__DrinkTyp__47DBAE45">
+            <End Role="DrinkTypes" EntitySet="DrinkTypes" />
+            <End Role="Drinks" EntitySet="Drinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DrinkTopp__Drink__49C3F6B7" Association="Self.FK__DrinkTopp__Drink__49C3F6B7">
+            <End Role="Drinks" EntitySet="Drinks" />
+            <End Role="DrinkTopping" EntitySet="DrinkTopping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DrinkTopp__Toppi__4AB81AF0" Association="Self.FK__DrinkTopp__Toppi__4AB81AF0">
+            <End Role="Toppings" EntitySet="Toppings" />
+            <End Role="DrinkTopping" EntitySet="DrinkTopping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Items__BillId__5070F446" Association="Self.FK__Items__BillId__5070F446">
+            <End Role="Bills" EntitySet="Bills" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Items__DrinkId__5165187F" Association="Self.FK__Items__DrinkId__5165187F">
+            <End Role="Drinks" EntitySet="Drinks" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Permision__Permi__2C3393D0" Association="Self.FK__Permision__Permi__2C3393D0">
+            <End Role="Permision" EntitySet="Permision" />
+            <End Role="PermisionDetail" EntitySet="PermisionDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ToppingRe__Resou__1A14E395" Association="Self.FK__ToppingRe__Resou__1A14E395">
+            <End Role="Resources" EntitySet="Resources" />
+            <End Role="ToppingResource" EntitySet="ToppingResource" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ToppingRe__Toppi__1B0907CE" Association="Self.FK__ToppingRe__Toppi__1B0907CE">
+            <End Role="Toppings" EntitySet="Toppings" />
+            <End Role="ToppingResource" EntitySet="ToppingResource" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserPermi__Permi__286302EC" Association="Self.FK__UserPermi__Permi__286302EC">
+            <End Role="Permision" EntitySet="Permision" />
+            <End Role="UserPermision" EntitySet="UserPermision" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserPermi__UserN__276EDEB3" Association="Self.FK__UserPermi__UserN__276EDEB3">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="UserPermision" EntitySet="UserPermision" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tea01Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="BillId" />
+          </Key>
+          <Property Name="BillId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderTimeStart" Type="DateTime" Precision="0" />
+          <Property Name="Payments" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TableId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Total" Type="Int32" />
+          <Property Name="OrderTimeEnd" Type="DateTime" Precision="0" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Bills__PhoneNumb__3F466844" FromRole="Bills" ToRole="Customer" />
+          <NavigationProperty Name="TableSpace" Relationship="Self.FK__Bills__TableId__403A8C7D" FromRole="Bills" ToRole="TableSpace" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__Bills__UserName__3E52440B" FromRole="Bills" ToRole="Staff" />
+          <NavigationProperty Name="Items" Relationship="Self.FK__Items__BillId__5070F446" FromRole="Bills" ToRole="Items" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="PhoneNumber" />
+          </Key>
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Level" Type="Int32" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__PhoneNumb__3F466844" FromRole="Customer" ToRole="Bills" />
+        </EntityType>
+        <EntityType Name="Drink">
+          <Key>
+            <PropertyRef Name="DrinkId" />
+          </Key>
+          <Property Name="DrinkId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DrinkName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Icon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DrinkTypeId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DrinkType" Relationship="Self.FK__Drinks__DrinkTyp__47DBAE45" FromRole="Drinks" ToRole="DrinkTypes" />
+          <NavigationProperty Name="Items" Relationship="Self.FK__Items__DrinkId__5165187F" FromRole="Drinks" ToRole="Items" />
+          <NavigationProperty Name="Resources" Relationship="Self.DrinkResource" FromRole="Drinks" ToRole="Resources" />
+          <NavigationProperty Name="Toppings" Relationship="Self.DrinkTopping" FromRole="Drinks" ToRole="Toppings" />
+        </EntityType>
+        <EntityType Name="DrinkType">
+          <Key>
+            <PropertyRef Name="DrinkTypeId" />
+          </Key>
+          <Property Name="DrinkTypeId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DrinkTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Drinks" Relationship="Self.FK__Drinks__DrinkTyp__47DBAE45" FromRole="DrinkTypes" ToRole="Drinks" />
+        </EntityType>
+        <EntityType Name="Permision">
+          <Key>
+            <PropertyRef Name="PermisionID" />
+          </Key>
+          <Property Name="PermisionID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PermisionName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PermisionDetails" Relationship="Self.FK__Permision__Permi__2C3393D0" FromRole="Permision" ToRole="PermisionDetail" />
+          <NavigationProperty Name="Staffs" Relationship="Self.UserPermision" FromRole="Permision" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="PermisionDetail">
+          <Key>
+            <PropertyRef Name="PermisionDetailId" />
+          </Key>
+          <Property Name="PermisionDetailId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ActionName" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PermisionID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Permision" Relationship="Self.FK__Permision__Permi__2C3393D0" FromRole="PermisionDetail" ToRole="Permision" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="ResourceId" />
+          </Key>
+          <Property Name="ResourceId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ResourceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Int32" />
+          <NavigationProperty Name="Drinks" Relationship="Self.DrinkResource" FromRole="Resources" ToRole="Drinks" />
+          <NavigationProperty Name="Toppings" Relationship="Self.ToppingResource" FromRole="Resources" ToRole="Toppings" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__UserName__3E52440B" FromRole="Staff" ToRole="Bills" />
+          <NavigationProperty Name="Permisions" Relationship="Self.UserPermision" FromRole="Staff" ToRole="Permision" />
+        </EntityType>
+        <EntityType Name="TableSpace">
+          <Key>
+            <PropertyRef Name="TableId" />
+          </Key>
+          <Property Name="TableId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TableName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__TableId__403A8C7D" FromRole="TableSpace" ToRole="Bills" />
+        </EntityType>
+        <EntityType Name="Topping">
+          <Key>
+            <PropertyRef Name="ToppingId" />
+          </Key>
+          <Property Name="ToppingId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ToppingName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="Drinks" Relationship="Self.DrinkTopping" FromRole="Toppings" ToRole="Drinks" />
+          <NavigationProperty Name="Resources" Relationship="Self.ToppingResource" FromRole="Toppings" ToRole="Resources" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="BillId" />
+            <PropertyRef Name="DrinkId" />
+          </Key>
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="BillId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DrinkId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Bill" Relationship="Self.FK__Items__BillId__5070F446" FromRole="Items" ToRole="Bills" />
+          <NavigationProperty Name="Drink" Relationship="Self.FK__Items__DrinkId__5165187F" FromRole="Items" ToRole="Drinks" />
+        </EntityType>
+        <Association Name="FK__Bills__PhoneNumb__3F466844">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Bills" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="PhoneNumber" />
+            </Principal>
+            <Dependent Role="Bills">
+              <PropertyRef Name="PhoneNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bills__TableId__403A8C7D">
+          <End Role="TableSpace" Type="Self.TableSpace" Multiplicity="0..1" />
+          <End Role="Bills" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableSpace">
+              <PropertyRef Name="TableId" />
+            </Principal>
+            <Dependent Role="Bills">
+              <PropertyRef Name="TableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bills__UserName__3E52440B">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Bills" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Bills">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Items__BillId__5070F446">
+          <End Role="Bills" Type="Self.Bill" Multiplicity="1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bills">
+              <PropertyRef Name="BillId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="BillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Drinks__DrinkTyp__47DBAE45">
+          <End Role="DrinkTypes" Type="Self.DrinkType" Multiplicity="0..1" />
+          <End Role="Drinks" Type="Self.Drink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DrinkTypes">
+              <PropertyRef Name="DrinkTypeId" />
+            </Principal>
+            <Dependent Role="Drinks">
+              <PropertyRef Name="DrinkTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Items__DrinkId__5165187F">
+          <End Role="Drinks" Type="Self.Drink" Multiplicity="1" />
+          <End Role="Items" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drinks">
+              <PropertyRef Name="DrinkId" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="DrinkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Permision__Permi__2C3393D0">
+          <End Role="Permision" Type="Self.Permision" Multiplicity="1" />
+          <End Role="PermisionDetail" Type="Self.PermisionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permision">
+              <PropertyRef Name="PermisionID" />
+            </Principal>
+            <Dependent Role="PermisionDetail">
+              <PropertyRef Name="PermisionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DrinkResource">
+          <End Role="Drinks" Type="Self.Drink" Multiplicity="*" />
+          <End Role="Resources" Type="Self.Resource" Multiplicity="*" />
+        </Association>
+        <Association Name="DrinkTopping">
+          <End Role="Drinks" Type="Self.Drink" Multiplicity="*" />
+          <End Role="Toppings" Type="Self.Topping" Multiplicity="*" />
+        </Association>
+        <Association Name="ToppingResource">
+          <End Role="Resources" Type="Self.Resource" Multiplicity="*" />
+          <End Role="Toppings" Type="Self.Topping" Multiplicity="*" />
+        </Association>
+        <Association Name="UserPermision">
+          <End Role="Permision" Type="Self.Permision" Multiplicity="*" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="teaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bills" EntityType="Self.Bill" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Drinks" EntityType="Self.Drink" />
+          <EntitySet Name="DrinkTypes" EntityType="Self.DrinkType" />
+          <EntitySet Name="Permisions" EntityType="Self.Permision" />
+          <EntitySet Name="PermisionDetails" EntityType="Self.PermisionDetail" />
+          <EntitySet Name="Resources" EntityType="Self.Resource" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="TableSpaces" EntityType="Self.TableSpace" />
+          <EntitySet Name="Toppings" EntityType="Self.Topping" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <AssociationSet Name="FK__Bills__PhoneNumb__3F466844" Association="Self.FK__Bills__PhoneNumb__3F466844">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Bills" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bills__TableId__403A8C7D" Association="Self.FK__Bills__TableId__403A8C7D">
+            <End Role="TableSpace" EntitySet="TableSpaces" />
+            <End Role="Bills" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bills__UserName__3E52440B" Association="Self.FK__Bills__UserName__3E52440B">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Bills" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Items__BillId__5070F446" Association="Self.FK__Items__BillId__5070F446">
+            <End Role="Bills" EntitySet="Bills" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Drinks__DrinkTyp__47DBAE45" Association="Self.FK__Drinks__DrinkTyp__47DBAE45">
+            <End Role="DrinkTypes" EntitySet="DrinkTypes" />
+            <End Role="Drinks" EntitySet="Drinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Items__DrinkId__5165187F" Association="Self.FK__Items__DrinkId__5165187F">
+            <End Role="Drinks" EntitySet="Drinks" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Permision__Permi__2C3393D0" Association="Self.FK__Permision__Permi__2C3393D0">
+            <End Role="Permision" EntitySet="Permisions" />
+            <End Role="PermisionDetail" EntitySet="PermisionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="DrinkResource" Association="Self.DrinkResource">
+            <End Role="Drinks" EntitySet="Drinks" />
+            <End Role="Resources" EntitySet="Resources" />
+          </AssociationSet>
+          <AssociationSet Name="DrinkTopping" Association="Self.DrinkTopping">
+            <End Role="Drinks" EntitySet="Drinks" />
+            <End Role="Toppings" EntitySet="Toppings" />
+          </AssociationSet>
+          <AssociationSet Name="ToppingResource" Association="Self.ToppingResource">
+            <End Role="Resources" EntitySet="Resources" />
+            <End Role="Toppings" EntitySet="Toppings" />
+          </AssociationSet>
+          <AssociationSet Name="UserPermision" Association="Self.UserPermision">
+            <End Role="Permision" EntitySet="Permisions" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tea01ModelStoreContainer" CdmEntityContainer="teaEntities">
+          <EntitySetMapping Name="Bills">
+            <EntityTypeMapping TypeName="tea01Model.Bill">
+              <MappingFragment StoreEntitySet="Bills">
+                <ScalarProperty Name="BillId" ColumnName="BillId" />
+                <ScalarProperty Name="OrderTimeStart" ColumnName="OrderTimeStart" />
+                <ScalarProperty Name="Payments" ColumnName="Payments" />
+                <ScalarProperty Name="TableId" ColumnName="TableId" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="OrderTimeEnd" ColumnName="OrderTimeEnd" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="tea01Model.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drinks">
+            <EntityTypeMapping TypeName="tea01Model.Drink">
+              <MappingFragment StoreEntitySet="Drinks">
+                <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+                <ScalarProperty Name="DrinkName" ColumnName="DrinkName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="DrinkTypeId" ColumnName="DrinkTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DrinkTypes">
+            <EntityTypeMapping TypeName="tea01Model.DrinkType">
+              <MappingFragment StoreEntitySet="DrinkTypes">
+                <ScalarProperty Name="DrinkTypeId" ColumnName="DrinkTypeId" />
+                <ScalarProperty Name="DrinkTypeName" ColumnName="DrinkTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permisions">
+            <EntityTypeMapping TypeName="tea01Model.Permision">
+              <MappingFragment StoreEntitySet="Permision">
+                <ScalarProperty Name="PermisionID" ColumnName="PermisionID" />
+                <ScalarProperty Name="PermisionName" ColumnName="PermisionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisionDetails">
+            <EntityTypeMapping TypeName="tea01Model.PermisionDetail">
+              <MappingFragment StoreEntitySet="PermisionDetail">
+                <ScalarProperty Name="PermisionDetailId" ColumnName="PermisionDetailId" />
+                <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+                <ScalarProperty Name="PermisionID" ColumnName="PermisionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resources">
+            <EntityTypeMapping TypeName="tea01Model.Resource">
+              <MappingFragment StoreEntitySet="Resources">
+                <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+                <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="tea01Model.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableSpaces">
+            <EntityTypeMapping TypeName="tea01Model.TableSpace">
+              <MappingFragment StoreEntitySet="TableSpace">
+                <ScalarProperty Name="TableId" ColumnName="TableId" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Toppings">
+            <EntityTypeMapping TypeName="tea01Model.Topping">
+              <MappingFragment StoreEntitySet="Toppings">
+                <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+                <ScalarProperty Name="ToppingName" ColumnName="ToppingName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="tea01Model.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="BillId" ColumnName="BillId" />
+                <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="DrinkResource" TypeName="tea01Model.DrinkResource" StoreEntitySet="DrinkResource">
+            <EndProperty Name="Drinks">
+              <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+            </EndProperty>
+            <EndProperty Name="Resources">
+              <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="DrinkTopping" TypeName="tea01Model.DrinkTopping" StoreEntitySet="DrinkTopping">
+            <EndProperty Name="Drinks">
+              <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+            </EndProperty>
+            <EndProperty Name="Toppings">
+              <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ToppingResource" TypeName="tea01Model.ToppingResource" StoreEntitySet="ToppingResource">
+            <EndProperty Name="Resources">
+              <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+            </EndProperty>
+            <EndProperty Name="Toppings">
+              <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="UserPermision" TypeName="tea01Model.UserPermision" StoreEntitySet="UserPermision">
+            <EndProperty Name="Permision">
+              <ScalarProperty Name="PermisionID" ColumnName="PermisionID" />
+            </EndProperty>
+            <EndProperty Name="Staff">
+              <ScalarProperty Name="UserName" ColumnName="UserName" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

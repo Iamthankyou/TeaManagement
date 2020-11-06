@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="efd359f1cd0047f4b3bf3c68b3c352f9" Name="Diagram1">
+        <EntityTypeShape EntityType="tea01Model.Bill" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.Customer" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.Drink" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.DrinkType" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.Permision" Width="1.5" PointX="1.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.PermisionDetail" Width="1.5" PointX="3.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.Resource" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.Staff" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.TableSpace" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.Topping" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model.Item" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="tea01Model.FK__Bills__PhoneNumb__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.FK__Bills__TableId__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.FK__Bills__UserName__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.FK__Items__BillId__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.FK__Drinks__DrinkTyp__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.FK__Items__DrinkId__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.FK__Permision__Permi__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.DrinkResource" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.DrinkTopping" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.ToppingResource" ManuallyRouted="false" />
+        <AssociationConnector Association="tea01Model.UserPermision" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
