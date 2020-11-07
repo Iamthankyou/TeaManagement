@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tea01ModelStoreContainer" CdmEntityContainer="teaEntities">
+    <EntitySetMapping Name="Bills">
+      <EntityTypeMapping TypeName="tea01Model.Bill">
+        <MappingFragment StoreEntitySet="Bills">
+          <ScalarProperty Name="BillId" ColumnName="BillId" />
+          <ScalarProperty Name="OrderTimeStart" ColumnName="OrderTimeStart" />
+          <ScalarProperty Name="Payments" ColumnName="Payments" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="OrderTimeEnd" ColumnName="OrderTimeEnd" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="tea01Model.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drinks">
+      <EntityTypeMapping TypeName="tea01Model.Drink">
+        <MappingFragment StoreEntitySet="Drinks">
+          <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+          <ScalarProperty Name="DrinkName" ColumnName="DrinkName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="DrinkTypeId" ColumnName="DrinkTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrinkTypes">
+      <EntityTypeMapping TypeName="tea01Model.DrinkType">
+        <MappingFragment StoreEntitySet="DrinkTypes">
+          <ScalarProperty Name="DrinkTypeId" ColumnName="DrinkTypeId" />
+          <ScalarProperty Name="DrinkTypeName" ColumnName="DrinkTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisions">
+      <EntityTypeMapping TypeName="tea01Model.Permision">
+        <MappingFragment StoreEntitySet="Permision">
+          <ScalarProperty Name="PermisionID" ColumnName="PermisionID" />
+          <ScalarProperty Name="PermisionName" ColumnName="PermisionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermisionDetails">
+      <EntityTypeMapping TypeName="tea01Model.PermisionDetail">
+        <MappingFragment StoreEntitySet="PermisionDetail">
+          <ScalarProperty Name="PermisionDetailId" ColumnName="PermisionDetailId" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="PermisionID" ColumnName="PermisionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resources">
+      <EntityTypeMapping TypeName="tea01Model.Resource">
+        <MappingFragment StoreEntitySet="Resources">
+          <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="tea01Model.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableSpaces">
+      <EntityTypeMapping TypeName="tea01Model.TableSpace">
+        <MappingFragment StoreEntitySet="TableSpace">
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Toppings">
+      <EntityTypeMapping TypeName="tea01Model.Topping">
+        <MappingFragment StoreEntitySet="Toppings">
+          <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+          <ScalarProperty Name="ToppingName" ColumnName="ToppingName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="tea01Model.Item">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="BillId" ColumnName="BillId" />
+          <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DrinkResource" TypeName="tea01Model.DrinkResource" StoreEntitySet="DrinkResource">
+      <EndProperty Name="Drinks">
+        <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+      </EndProperty>
+      <EndProperty Name="Resources">
+        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DrinkTopping" TypeName="tea01Model.DrinkTopping" StoreEntitySet="DrinkTopping">
+      <EndProperty Name="Drinks">
+        <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+      </EndProperty>
+      <EndProperty Name="Toppings">
+        <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ToppingResource" TypeName="tea01Model.ToppingResource" StoreEntitySet="ToppingResource">
+      <EndProperty Name="Resources">
+        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+      </EndProperty>
+      <EndProperty Name="Toppings">
+        <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserPermision" TypeName="tea01Model.UserPermision" StoreEntitySet="UserPermision">
+      <EndProperty Name="Permision">
+        <ScalarProperty Name="PermisionID" ColumnName="PermisionID" />
+      </EndProperty>
+      <EndProperty Name="Staff">
+        <ScalarProperty Name="UserName" ColumnName="UserName" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
