@@ -16,5 +16,15 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(txBirthday.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            txBirthday.DateTime = DateTime.Now;
+        }
     }
 }
