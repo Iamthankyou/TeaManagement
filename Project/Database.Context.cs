@@ -13,10 +13,10 @@ namespace Project
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class tea01Entities1 : DbContext
+    public partial class tea01Entities : DbContext
     {
-        public tea01Entities1()
-            : base("name=tea01Entities1")
+        public tea01Entities()
+            : base("name=tea01Entities")
         {
         }
     
@@ -36,6 +36,5 @@ namespace Project
         public virtual DbSet<TableSpace> TableSpaces { get; set; }
         public virtual DbSet<Topping> Toppings { get; set; }
         public virtual DbSet<Item> Items { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

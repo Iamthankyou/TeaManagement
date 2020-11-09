@@ -232,6 +232,7 @@
             this.txUserName.TextPlaceholder = "Viết liền không dấu";
             this.txUserName.UseSystemPasswordChar = false;
             this.txUserName.WordWrap = true;
+            this.txUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txUserName_KeyPress);
             // 
             // bunifuLabel2
             // 
@@ -406,6 +407,7 @@
             this.txPhone.TextPlaceholder = "10 chữ số";
             this.txPhone.UseSystemPasswordChar = false;
             this.txPhone.WordWrap = true;
+            this.txPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPhone_KeyPress);
             // 
             // bunifuLabel4
             // 
@@ -531,6 +533,7 @@
             this.btnChooseImg.TabIndex = 11;
             this.btnChooseImg.Text = "Chọn ảnh";
             this.btnChooseImg.UseVisualStyleBackColor = true;
+            this.btnChooseImg.Click += new System.EventHandler(this.btnChooseImg_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -657,7 +660,7 @@
             this.Controls.Add(this.txFullName);
             this.Controls.Add(this.bunifuLabel1);
             this.Name = "Form1";
-            this.Text = "\\";
+            this.Text = "Đăng ký nhân viên";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txBirthday.Properties.CalendarTimeProperties)).EndInit();

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="tea01Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="tea01Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Bill">
     <Key>
       <PropertyRef Name="BillId" />
@@ -50,6 +50,17 @@
     <Property Name="DrinkTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Drinks" Relationship="Self.FK__Drinks__DrinkTyp__47DBAE45" FromRole="DrinkTypes" ToRole="Drinks" />
   </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="BillId" />
+      <PropertyRef Name="DrinkId" />
+    </Key>
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="BillId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DrinkId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Items__BillId__5070F446" FromRole="Items" ToRole="Bills" />
+    <NavigationProperty Name="Drink" Relationship="Self.FK__Items__DrinkId__5165187F" FromRole="Items" ToRole="Drinks" />
+  </EntityType>
   <EntityType Name="Permision">
     <Key>
       <PropertyRef Name="PermisionID" />
@@ -92,6 +103,16 @@
     <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__UserName__3E52440B" FromRole="Staff" ToRole="Bills" />
     <NavigationProperty Name="Permisions" Relationship="Self.UserPermision" FromRole="Staff" ToRole="Permision" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="TableSpace">
     <Key>
       <PropertyRef Name="TableId" />
@@ -110,17 +131,6 @@
     <Property Name="Price" Type="Int32" />
     <NavigationProperty Name="Drinks" Relationship="Self.DrinkTopping" FromRole="Toppings" ToRole="Drinks" />
     <NavigationProperty Name="Resources" Relationship="Self.ToppingResource" FromRole="Toppings" ToRole="Resources" />
-  </EntityType>
-  <EntityType Name="Item">
-    <Key>
-      <PropertyRef Name="BillId" />
-      <PropertyRef Name="DrinkId" />
-    </Key>
-    <Property Name="Amount" Type="Int32" />
-    <Property Name="BillId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="DrinkId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Bill" Relationship="Self.FK__Items__BillId__5070F446" FromRole="Items" ToRole="Bills" />
-    <NavigationProperty Name="Drink" Relationship="Self.FK__Items__DrinkId__5165187F" FromRole="Items" ToRole="Drinks" />
   </EntityType>
   <Association Name="FK__Bills__PhoneNumb__3F466844">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -222,18 +232,19 @@
     <End Role="Permision" Type="Self.Permision" Multiplicity="*" />
     <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="tea01Entities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="tea01Entities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Bills" EntityType="Self.Bill" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="Drinks" EntityType="Self.Drink" />
     <EntitySet Name="DrinkTypes" EntityType="Self.DrinkType" />
+    <EntitySet Name="Items" EntityType="Self.Item" />
     <EntitySet Name="Permisions" EntityType="Self.Permision" />
     <EntitySet Name="PermisionDetails" EntityType="Self.PermisionDetail" />
     <EntitySet Name="Resources" EntityType="Self.Resource" />
     <EntitySet Name="Staffs" EntityType="Self.Staff" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TableSpaces" EntityType="Self.TableSpace" />
     <EntitySet Name="Toppings" EntityType="Self.Topping" />
-    <EntitySet Name="Items" EntityType="Self.Item" />
     <AssociationSet Name="FK__Bills__PhoneNumb__3F466844" Association="Self.FK__Bills__PhoneNumb__3F466844">
       <End Role="Customer" EntitySet="Customers" />
       <End Role="Bills" EntitySet="Bills" />
@@ -278,16 +289,5 @@
       <End Role="Permision" EntitySet="Permisions" />
       <End Role="Staff" EntitySet="Staffs" />
     </AssociationSet>
-    <EntitySet Name="sysdiagrams" EntityType="tea01Model.sysdiagram" />
   </EntityContainer>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
 </Schema>
