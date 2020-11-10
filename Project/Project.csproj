@@ -114,6 +114,12 @@
     <Compile Include="Forms\SignUpStaff.Designer.cs">
       <DependentUpon>SignUpStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SignIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="g.cs" />
     <Compile Include="Item.cs">
       <DependentUpon>Model2.tt</DependentUpon>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignUpStaff.resx">
       <DependentUpon>SignUpStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
