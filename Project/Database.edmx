@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="tea01Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="tea01Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bills">
           <Key>
             <PropertyRef Name="BillId" />
@@ -27,6 +27,8 @@
           <Property Name="Address" Type="varchar" MaxLength="100" />
           <Property Name="Level" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.DrinkResource' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DrinkResource">
           <Key>
             <PropertyRef Name="ResourceId" />
@@ -46,6 +48,8 @@
           <Property Name="Icon" Type="varchar" MaxLength="100" />
           <Property Name="DrinkTypeId" Type="varchar" MaxLength="10" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.DrinkTopping' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DrinkTopping">
           <Key>
             <PropertyRef Name="DrinkId" />
@@ -61,6 +65,8 @@
           <Property Name="DrinkTypeId" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="DrinkTypeName" Type="varchar" MaxLength="100" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.Items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Items">
           <Key>
             <PropertyRef Name="BillId" />
@@ -105,16 +111,6 @@
           <Property Name="Address" Type="varchar" MaxLength="100" />
           <Property Name="Avatar" Type="varchar" MaxLength="100" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="TableSpace">
           <Key>
             <PropertyRef Name="TableId" />
@@ -123,6 +119,8 @@
           <Property Name="TableName" Type="varchar" MaxLength="100" />
           <Property Name="Status" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.ToppingResource' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ToppingResource">
           <Key>
             <PropertyRef Name="ResourceId" />
@@ -139,6 +137,8 @@
           <Property Name="ToppingName" Type="varchar" MaxLength="10" />
           <Property Name="Price" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.UserPermision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="UserPermision">
           <Key>
             <PropertyRef Name="UserName" />
@@ -330,20 +330,45 @@
         <EntityContainer Name="tea01ModelStoreContainer">
           <EntitySet Name="Bills" EntityType="Self.Bills" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DrinkResource" EntityType="Self.DrinkResource" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drinks" EntityType="Self.Drinks" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DrinkTopping" EntityType="Self.DrinkTopping" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DrinkTypes" EntityType="Self.DrinkTypes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Permision" EntityType="Self.Permision" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PermisionDetail" EntityType="Self.PermisionDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TableSpace" EntityType="Self.TableSpace" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ToppingResource" EntityType="Self.ToppingResource" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Toppings" EntityType="Self.Toppings" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UserPermision" EntityType="Self.UserPermision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DrinkResource" EntityType="Self.DrinkResource" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DrinkResource].[ResourceId] AS [ResourceId], 
+    [DrinkResource].[DrinkId] AS [DrinkId]
+    FROM [dbo].[DrinkResource] AS [DrinkResource]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DrinkTopping" EntityType="Self.DrinkTopping" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DrinkTopping].[DrinkId] AS [DrinkId], 
+    [DrinkTopping].[ToppingId] AS [ToppingId]
+    FROM [dbo].[DrinkTopping] AS [DrinkTopping]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Items" EntityType="Self.Items" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Items].[Amount] AS [Amount], 
+    [Items].[BillId] AS [BillId], 
+    [Items].[DrinkId] AS [DrinkId]
+    FROM [dbo].[Items] AS [Items]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ToppingResource" EntityType="Self.ToppingResource" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ToppingResource].[ResourceId] AS [ResourceId], 
+    [ToppingResource].[ToppingId] AS [ToppingId]
+    FROM [dbo].[ToppingResource] AS [ToppingResource]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserPermision" EntityType="Self.UserPermision" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserPermision].[UserName] AS [UserName], 
+    [UserPermision].[PermisionID] AS [PermisionID]
+    FROM [dbo].[UserPermision] AS [UserPermision]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__Bills__PhoneNumb__3F466844" Association="Self.FK__Bills__PhoneNumb__3F466844">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Bills" EntitySet="Bills" />
@@ -405,7 +430,8 @@
             <End Role="UserPermision" EntitySet="UserPermision" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="tea01Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -414,11 +440,11 @@
             <PropertyRef Name="BillId" />
           </Key>
           <Property Name="BillId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="OrderTimeStart" Type="DateTime" Precision="0" />
+          <Property Name="OrderTimeStart" Type="DateTime" />
           <Property Name="Payments" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="TableId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Total" Type="Int32" />
-          <Property Name="OrderTimeEnd" Type="DateTime" Precision="0" />
+          <Property Name="OrderTimeEnd" Type="DateTime" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Bills__PhoneNumb__3F466844" FromRole="Bills" ToRole="Customer" />
@@ -494,7 +520,7 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Age" Type="DateTime" Precision="3" />
+          <Property Name="Age" Type="DateTime" />
           <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -631,7 +657,7 @@
           <End Role="Permision" Type="Self.Permision" Multiplicity="*" />
           <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="tea01Entities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="tea01Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bills" EntityType="Self.Bill" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Drinks" EntityType="Self.Drink" />
@@ -687,24 +713,13 @@
             <End Role="Permision" EntitySet="Permisions" />
             <End Role="Staff" EntitySet="Staffs" />
           </AssociationSet>
-          <EntitySet Name="sysdiagrams" EntityType="tea01Model.sysdiagram" />
         </EntityContainer>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="tea01ModelStoreContainer" CdmEntityContainer="tea01Entities1">
+        <EntityContainerMapping StorageEntityContainer="tea01ModelStoreContainer" CdmEntityContainer="tea01Entities">
           <EntitySetMapping Name="Bills">
             <EntityTypeMapping TypeName="tea01Model.Bill">
               <MappingFragment StoreEntitySet="Bills">
@@ -847,17 +862,6 @@
               <ScalarProperty Name="UserName" ColumnName="UserName" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="tea01Model.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -875,7 +879,6 @@
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

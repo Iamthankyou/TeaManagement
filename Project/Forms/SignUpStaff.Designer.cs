@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    partial class Form1
+    partial class RegisterStaff
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterStaff));
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -232,6 +232,7 @@
             this.txUserName.TextPlaceholder = "Viết liền không dấu";
             this.txUserName.UseSystemPasswordChar = false;
             this.txUserName.WordWrap = true;
+            this.txUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txUserName_KeyPress);
             // 
             // bunifuLabel2
             // 
@@ -406,6 +407,7 @@
             this.txPhone.TextPlaceholder = "10 chữ số";
             this.txPhone.UseSystemPasswordChar = false;
             this.txPhone.WordWrap = true;
+            this.txPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txPhone_KeyPress);
             // 
             // bunifuLabel4
             // 
@@ -531,6 +533,7 @@
             this.btnChooseImg.TabIndex = 11;
             this.btnChooseImg.Text = "Chọn ảnh";
             this.btnChooseImg.UseVisualStyleBackColor = true;
+            this.btnChooseImg.Click += new System.EventHandler(this.btnChooseImg_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -634,7 +637,7 @@
             this.btnRegister.UseDefaultRadiusAndThickness = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // Form1
+            // RegisterStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -656,8 +659,8 @@
             this.Controls.Add(this.bunifuLabel2);
             this.Controls.Add(this.txFullName);
             this.Controls.Add(this.bunifuLabel1);
-            this.Name = "Form1";
-            this.Text = "\\";
+            this.Name = "RegisterStaff";
+            this.Text = "Đăng ký nhân viên";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txBirthday.Properties.CalendarTimeProperties)).EndInit();

@@ -1,5 +1,4 @@
 D:\TeaManagement\Project\obj\Debug\Project.csprojAssemblyReference.cache
-D:\TeaManagement\Project\obj\Debug\Project.Form1.resources
 D:\TeaManagement\Project\obj\Debug\Project.Properties.Resources.resources
 D:\TeaManagement\Project\obj\Debug\Project.csproj.GenerateResource.cache
 D:\TeaManagement\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
@@ -116,6 +115,7 @@ D:\TeaManagement\Project\obj\Debug\Project.exe.config
 D:\TeaManagement\Project\obj\Debug\Project.exe.licenses
 D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
 D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
+
 C:\Users\admin\Desktop\New folder (2)\TeaManagement\Project\bin\Debug\Project.exe.config
 C:\Users\admin\Desktop\New folder (2)\TeaManagement\Project\bin\Debug\Project.exe
 C:\Users\admin\Desktop\New folder (2)\TeaManagement\Project\bin\Debug\Project.pdb
@@ -230,3 +230,10 @@ C:\Users\admin\Desktop\New folder (2)\TeaManagement\Project\obj\Debug\Project.cs
 C:\Users\admin\Desktop\New folder (2)\TeaManagement\Project\obj\Debug\Project.exe
 C:\Users\admin\Desktop\New folder (2)\TeaManagement\Project\obj\Debug\Project.pdb
 C:\Users\admin\Desktop\New folder (2)\TeaManagement\Project\obj\Debug\Project.Forms.SignIn.resources
+
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
+D:\TeaManagement\Project\obj\Debug\Project.Forms.PermisionForm.resources
+D:\TeaManagement\Project\obj\Debug\Project.RegisterStaff.resources
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
