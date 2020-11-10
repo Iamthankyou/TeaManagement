@@ -134,6 +134,8 @@
             this.txUserName.TextPlaceholder = "Viết liền không dấu";
             this.txUserName.UseSystemPasswordChar = false;
             this.txUserName.WordWrap = true;
+            this.txUserName.TextChanged += new System.EventHandler(this.txUserName_TextChanged);
+            this.txUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txUserName_KeyPress);
             // 
             // txPass
             // 
@@ -270,6 +272,7 @@
             this.btnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRegister.TextMarginLeft = 0;
             this.btnRegister.UseDefaultRadiusAndThickness = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // bunifuLabel3
             // 
