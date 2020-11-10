@@ -37,6 +37,12 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
@@ -96,6 +102,12 @@
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Encryption.cs" />
+    <Compile Include="Forms\Permision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Permision.Designer.cs">
+      <DependentUpon>Permision.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SignUpStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +171,9 @@
     <Compile Include="Topping.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Permision.resx">
+      <DependentUpon>Permision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignUpStaff.resx">
       <DependentUpon>SignUpStaff.cs</DependentUpon>
     </EmbeddedResource>

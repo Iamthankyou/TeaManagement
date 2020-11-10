@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class Form1 : Form
+    public partial class RegisterStaff : Form
     {
         private string url = "";
 
-        public Form1()
+        public RegisterStaff()
         {
             InitializeComponent();
         }
