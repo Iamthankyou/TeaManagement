@@ -178,9 +178,7 @@
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
 
-    <EmbeddedResource Include="Forms\SignIn.resx">
-      <DependentUpon>SignIn.cs</DependentUpon>
-
+  
     <EmbeddedResource Include="Forms\Permision.resx">
       <DependentUpon>Permision.cs</DependentUpon>
 
