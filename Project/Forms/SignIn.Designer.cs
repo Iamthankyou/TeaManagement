@@ -20,23 +20,28 @@
             base.Dispose(disposing);
         }
 
+
         #region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
+
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignIn));
+
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -136,6 +141,7 @@
             this.txUserName.WordWrap = true;
             this.txUserName.TextChanged += new System.EventHandler(this.txUserName_TextChanged);
             this.txUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txUserName_KeyPress);
+
             // 
             // txPass
             // 
@@ -164,12 +170,15 @@
             this.txPass.IconRight = null;
             this.txPass.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txPass.Lines = new string[0];
+
             this.txPass.Location = new System.Drawing.Point(112, 212);
+
             this.txPass.MaxLength = 32767;
             this.txPass.MinimumSize = new System.Drawing.Size(100, 35);
             this.txPass.Modified = false;
             this.txPass.Multiline = false;
             this.txPass.Name = "txPass";
+
             stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
             stateProperties5.FillColor = System.Drawing.Color.Empty;
             stateProperties5.ForeColor = System.Drawing.Color.Empty;
@@ -190,6 +199,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txPass.OnIdleState = stateProperties8;
+
             this.txPass.PasswordChar = '\0';
             this.txPass.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txPass.PlaceholderText = "Trên 8 ký tự";
@@ -201,7 +211,9 @@
             this.txPass.ShortcutsEnabled = true;
             this.txPass.Size = new System.Drawing.Size(210, 35);
             this.txPass.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
+
             this.txPass.TabIndex = 19;
+
             this.txPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txPass.TextMarginBottom = 0;
             this.txPass.TextMarginLeft = 5;
@@ -210,6 +222,7 @@
             this.txPass.UseSystemPasswordChar = false;
             this.txPass.WordWrap = true;
             // 
+
             // btnRegister
             // 
             this.btnRegister.AllowToggling = false;
@@ -274,63 +287,30 @@
             this.btnRegister.UseDefaultRadiusAndThickness = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+
             // bunifuLabel3
             // 
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.bunifuLabel3.Location = new System.Drawing.Point(122, 191);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(51, 15);
             this.bunifuLabel3.TabIndex = 18;
+
             this.bunifuLabel3.Text = "Mật khẩu:";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel2
-            // 
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(122, 107);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(72, 15);
-            this.bunifuLabel2.TabIndex = 22;
-            this.bunifuLabel2.Text = "Tên tài khoản:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // checkEdit1
-            // 
-            this.checkEdit1.Location = new System.Drawing.Point(112, 254);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "Ghi Nhớ";
-            this.checkEdit1.Size = new System.Drawing.Size(75, 20);
-            this.checkEdit1.TabIndex = 23;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(140, 375);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(111, 13);
-            this.labelControl1.TabIndex = 24;
-            this.labelControl1.Text = "Bạn chưa có tài khoản?";
-            // 
-            // hyperlinkLabelControl1
-            // 
-            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(257, 375);
-            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
-            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(37, 13);
-            this.hyperlinkLabelControl1.TabIndex = 25;
-            this.hyperlinkLabelControl1.Text = "Đăng kí";
+
             // 
             // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 502);
+
             this.Controls.Add(this.hyperlinkLabelControl1);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.checkEdit1);
@@ -343,6 +323,7 @@
             this.Name = "SignIn";
             this.Text = "SignIn";
             this.Load += new System.EventHandler(this.SignIn_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -351,14 +332,15 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txUserName;
-        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txPass;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRegister;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+
         private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRegister;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txPass;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txUserName;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
     }
 }
