@@ -46,10 +46,10 @@
             this.btnRegister = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.tickRemember = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tickRemember.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCustomLabel1
@@ -302,13 +302,13 @@
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // checkEdit1
+            // tickRemember
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(112, 254);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "Ghi Nhớ";
-            this.checkEdit1.Size = new System.Drawing.Size(75, 20);
-            this.checkEdit1.TabIndex = 23;
+            this.tickRemember.Location = new System.Drawing.Point(112, 254);
+            this.tickRemember.Name = "tickRemember";
+            this.tickRemember.Properties.Caption = "Ghi Nhớ";
+            this.tickRemember.Size = new System.Drawing.Size(75, 20);
+            this.tickRemember.TabIndex = 23;
             // 
             // labelControl1
             // 
@@ -333,7 +333,7 @@
             this.ClientSize = new System.Drawing.Size(431, 502);
             this.Controls.Add(this.hyperlinkLabelControl1);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.checkEdit1);
+            this.Controls.Add(this.tickRemember);
             this.Controls.Add(this.bunifuLabel2);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txPass);
@@ -342,7 +342,8 @@
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Name = "SignIn";
             this.Text = "SignIn";
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.SignIn_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tickRemember.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,7 +357,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRegister;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.CheckEdit tickRemember;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
     }

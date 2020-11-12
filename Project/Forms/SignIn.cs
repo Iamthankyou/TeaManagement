@@ -58,6 +58,43 @@ namespace Project.Forms
             {
                 MessageBox.Show("Đăng nhập thành công");
             }
+
+            if (tickRemember.Checked)
+            {
+                MessageBox.Show("?");
+
+                if (tickRemember.Checked)
+                {
+                    Properties.Settings.Default.UserName = this.txUserName.Text;
+                    Properties.Settings.Default.PassWord = this.txPass.Text;
+                    Properties.Settings.Default.RememberMe = "true";
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.UserName = this.txUserName.Text;
+                    Properties.Settings.Default.PassWord = "";
+                    Properties.Settings.Default.RememberMe = "false";
+                    Properties.Settings.Default.Save();
+                }
+            }
+        }
+
+        private void SignIn_Load(object sender, EventArgs e)
+        {
+            //MessageBox.Show((string)Properties.Settings.Default.userName);
+            if (Properties.Settings.Default.RememberMe == "true")
+            {
+                txUserName.Text = Properties.Settings.Default.UserName;
+                txPass.Text = Properties.Settings.Default.PassWord;
+                tickRemember.Checked = true;
+            }
+            else
+            {
+                txUserName.Text = "";
+                txPass.Text = "";
+                tickRemember.Checked = false;
+            }
         }
     }
 }
