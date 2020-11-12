@@ -59,5 +59,10 @@ namespace Project.Forms
                 MessageBox.Show("Đăng nhập thành công");
             }
         }
+
+        private void SignIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

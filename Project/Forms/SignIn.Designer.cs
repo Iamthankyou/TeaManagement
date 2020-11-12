@@ -342,6 +342,7 @@
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Name = "SignIn";
             this.Text = "SignIn";
+            this.Load += new System.EventHandler(this.SignIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
