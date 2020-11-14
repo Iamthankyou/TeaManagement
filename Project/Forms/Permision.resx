@@ -147,7 +147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 1.2px; font-family: 'Microsoft Sans Serif'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: ; text-align: left; }</value>
@@ -181,7 +181,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuLabel1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
+  </data>
+  <data name="gridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>40</value>
   </data>
   <data name="gridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>29, 89</value>
@@ -202,7 +205,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gridView.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="lbMess.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 1.2px; font-family: 'Microsoft Sans Serif'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: ; text-align: left; }</value>
@@ -211,19 +214,19 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="lbMess.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 51</value>
+    <value>427, 51</value>
   </data>
   <data name="lbMess.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="lbMess.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 20</value>
+    <value>78, 20</value>
   </data>
   <data name="lbMess.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="lbMess.Text" xml:space="preserve">
-    <value>Danh sách quyền của:  </value>
+    <value>Quyền của:  </value>
   </data>
   <data name="&gt;&gt;lbMess.Name" xml:space="preserve">
     <value>lbMess</value>
@@ -235,37 +238,421 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbMess.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
-  <data name="checkedListBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  <data name="btnCustom.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="checkedListBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 33</value>
+  <data name="btnCustom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
   </data>
-  <data name="checkedListBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 213</value>
+  <data name="btnCustom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 233</value>
   </data>
-  <data name="checkedListBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="btnCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
   </data>
-  <data name="&gt;&gt;checkedListBox1.Name" xml:space="preserve">
-    <value>checkedListBox1</value>
+  <data name="btnCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="&gt;&gt;checkedListBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnCustom.Name" xml:space="preserve">
+    <value>btnCustom</value>
   </data>
-  <data name="&gt;&gt;checkedListBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnCustom.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;btnCustom.Parent" xml:space="preserve">
     <value>groupControl1</value>
   </data>
-  <data name="&gt;&gt;checkedListBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnCustom.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="checkCustom.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkCustom.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkCustom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 233</value>
+  </data>
+  <data name="checkCustom.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;checkCustom.Name" xml:space="preserve">
+    <value>checkCustom</value>
+  </data>
+  <data name="&gt;&gt;checkCustom.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkCustom.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;checkCustom.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnView.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 193</value>
+  </data>
+  <data name="btnView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="btnView.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;btnView.Name" xml:space="preserve">
+    <value>btnView</value>
+  </data>
+  <data name="&gt;&gt;btnView.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;btnView.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;btnView.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="checkView.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkView.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 193</value>
+  </data>
+  <data name="checkView.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkView.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;checkView.Name" xml:space="preserve">
+    <value>checkView</value>
+  </data>
+  <data name="&gt;&gt;checkView.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkView.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;checkView.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnEdit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 156</value>
+  </data>
+  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
+    <value>btnEdit</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkEdit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkEdit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 156</value>
+  </data>
+  <data name="checkEdit.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;checkEdit.Name" xml:space="preserve">
+    <value>checkEdit</value>
+  </data>
+  <data name="&gt;&gt;checkEdit.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkEdit.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;checkEdit.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnCreate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnCreate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 118</value>
+  </data>
+  <data name="btnCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="btnCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnCreate.Name" xml:space="preserve">
+    <value>btnCreate</value>
+  </data>
+  <data name="&gt;&gt;btnCreate.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;btnCreate.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;btnCreate.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="checkCreate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkCreate.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkCreate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 118</value>
+  </data>
+  <data name="checkCreate.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkCreate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkCreate.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;checkCreate.Name" xml:space="preserve">
+    <value>checkCreate</value>
+  </data>
+  <data name="&gt;&gt;checkCreate.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkCreate.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;checkCreate.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnAdmin.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnAdmin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnAdmin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 79</value>
+  </data>
+  <data name="btnAdmin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="btnAdmin.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnAdmin.Name" xml:space="preserve">
+    <value>btnAdmin</value>
+  </data>
+  <data name="&gt;&gt;btnAdmin.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;btnAdmin.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;btnAdmin.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="checkAdmin.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkAdmin.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkAdmin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 79</value>
+  </data>
+  <data name="checkAdmin.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkAdmin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkAdmin.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;checkAdmin.Name" xml:space="preserve">
+    <value>checkAdmin</value>
+  </data>
+  <data name="&gt;&gt;checkAdmin.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkAdmin.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;checkAdmin.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Full.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Full.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="Full.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 40</value>
+  </data>
+  <data name="Full.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="Full.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Full.Name" xml:space="preserve">
+    <value>Full</value>
+  </data>
+  <data name="&gt;&gt;Full.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;Full.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;Full.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="checkFull.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkFull.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkFull.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 40</value>
+  </data>
+  <data name="checkFull.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkFull.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkFull.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;checkFull.Name" xml:space="preserve">
+    <value>checkFull</value>
+  </data>
+  <data name="&gt;&gt;checkFull.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkFull.Parent" xml:space="preserve">
+    <value>groupControl1</value>
+  </data>
+  <data name="&gt;&gt;checkFull.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <data name="groupControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 89</value>
+    <value>427, 89</value>
   </data>
   <data name="groupControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 256</value>
+    <value>186, 276</value>
   </data>
   <data name="groupControl1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -280,7 +667,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupControl1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnSubmit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -297,7 +684,7 @@
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="btnSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 385</value>
+    <value>518, 385</value>
   </data>
   <data name="btnSubmit.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 45</value>
@@ -315,13 +702,339 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSubmit.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>645, 57</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 18</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Chi tiết:</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnXem.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnXem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnXem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 186</value>
+  </data>
+  <data name="btnXem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="btnXem.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;btnXem.Name" xml:space="preserve">
+    <value>btnXem</value>
+  </data>
+  <data name="&gt;&gt;btnXem.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;btnXem.Parent" xml:space="preserve">
+    <value>groupControl2</value>
+  </data>
+  <data name="&gt;&gt;btnXem.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkXem.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkXem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkXem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 186</value>
+  </data>
+  <data name="checkXem.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkXem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkXem.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;checkXem.Name" xml:space="preserve">
+    <value>checkXem</value>
+  </data>
+  <data name="&gt;&gt;checkXem.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkXem.Parent" xml:space="preserve">
+    <value>groupControl2</value>
+  </data>
+  <data name="&gt;&gt;checkXem.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnSua.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnSua.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnSua.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 148</value>
+  </data>
+  <data name="btnSua.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="btnSua.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnSua.Name" xml:space="preserve">
+    <value>btnSua</value>
+  </data>
+  <data name="&gt;&gt;btnSua.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;btnSua.Parent" xml:space="preserve">
+    <value>groupControl2</value>
+  </data>
+  <data name="&gt;&gt;btnSua.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkSua.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkSua.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkSua.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 148</value>
+  </data>
+  <data name="checkSua.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkSua.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkSua.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;checkSua.Name" xml:space="preserve">
+    <value>checkSua</value>
+  </data>
+  <data name="&gt;&gt;checkSua.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkSua.Parent" xml:space="preserve">
+    <value>groupControl2</value>
+  </data>
+  <data name="&gt;&gt;checkSua.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnXoa.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnXoa.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnXoa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 109</value>
+  </data>
+  <data name="btnXoa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="btnXoa.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;btnXoa.Name" xml:space="preserve">
+    <value>btnXoa</value>
+  </data>
+  <data name="&gt;&gt;btnXoa.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;btnXoa.Parent" xml:space="preserve">
+    <value>groupControl2</value>
+  </data>
+  <data name="&gt;&gt;btnXoa.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="checkXoa.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkXoa.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkXoa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 109</value>
+  </data>
+  <data name="checkXoa.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkXoa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkXoa.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;checkXoa.Name" xml:space="preserve">
+    <value>checkXoa</value>
+  </data>
+  <data name="&gt;&gt;checkXoa.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkXoa.Parent" xml:space="preserve">
+    <value>groupControl2</value>
+  </data>
+  <data name="&gt;&gt;checkXoa.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnThem.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF8AAAAVCAYAAAAgjzL/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVGhD7dmxDQIxEETRbcR3lEIFtGYjyiAmpRQaIKKB
+        NWc0oUOsSf5KPzlN9EJfcObbaz/tLe9b650Wd83H8BZ9xFbzOR3SkkrNl+gP/MmA1iZ68B2JHnxHogff
+        kejBdyR68B2JHnxHogffkejBdyR68B2JHnxHogffkejBdyR68B2JHnxHoo8Y78uzAa2ptPyI/vcn63x8
+        eM+G9N8GfLnlRfSc5yK+X6Ztt2unfM0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnThem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnThem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 70</value>
+  </data>
+  <data name="btnThem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 21</value>
+  </data>
+  <data name="btnThem.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;btnThem.Name" xml:space="preserve">
+    <value>btnThem</value>
+  </data>
+  <data name="&gt;&gt;btnThem.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;btnThem.Parent" xml:space="preserve">
+    <value>groupControl2</value>
+  </data>
+  <data name="&gt;&gt;btnThem.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkThem.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPY6ApiLefz5HkMisj2XV2Azk40WVWAdAMCahx
+        YAMFkl1nvQdK/qcMz/qe4jrLAGwo1IVYFJGOE11mV4ANBXJAXsCqiAzcMGroqKGjhqJJUIJHDaWVoaCC
+        FYskWTjJbWYA2FAQSHae7QEUBLmYbJzkOjOCgYGBAQDU9VeGxNK6hQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="checkThem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="checkThem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 70</value>
+  </data>
+  <data name="checkThem.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="checkThem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="checkThem.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;checkThem.Name" xml:space="preserve">
+    <value>checkThem</value>
+  </data>
+  <data name="&gt;&gt;checkThem.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuCheckBox, Bunifu.UI.WinForms.BunifuCheckBox, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;checkThem.Parent" xml:space="preserve">
+    <value>groupControl2</value>
+  </data>
+  <data name="&gt;&gt;checkThem.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>648, 89</value>
+  </data>
+  <data name="groupControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 276</value>
+  </data>
+  <data name="groupControl2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;groupControl2.Name" xml:space="preserve">
+    <value>groupControl2</value>
+  </data>
+  <data name="&gt;&gt;groupControl2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;groupControl2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupControl2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
