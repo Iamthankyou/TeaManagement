@@ -456,7 +456,7 @@
             <PropertyRef Name="DrinkTypeId" />
           </Key>
           <Property Name="DrinkTypeId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DrinkTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DrinkTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Drinks" Relationship="Self.FK__Drinks__DrinkTyp__47DBAE45" FromRole="DrinkTypes" ToRole="Drinks" />
         </EntityType>
         <EntityType Name="Permision">

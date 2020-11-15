@@ -1,4 +1,4 @@
-USE tea01
+﻿USE tea01
 
 SELECT * FROM Permision
 
@@ -19,6 +19,14 @@ INSERT INTO PermisionDetail(PermisionDetailId,ActionName,PermisionID) VALUES('15
 INSERT INTO PermisionDetail(PermisionDetailId,ActionName,PermisionID) VALUES('18','','01')
 INSERT INTO PermisionDetail(PermisionDetailId,ActionName,PermisionID) VALUES('19','','01')
 
+SELECT * FROM Drinks
 
+SELECT * FROM DrinkTypes
 
+DELETE DrinkTypes WHERE DrinkTypeId LIKE '2'
+DELETE DrinkTypes WHERE DrinkTypeId LIKE '3'
+
+INSERT INTO DrinkTypes(DrinkTypeId,DrinkTypeName) VALUES('01',N'Trà giảm béo')
+
+SELECT * FROM DrinkTypes
 
