@@ -85,7 +85,7 @@
       <PropertyRef Name="ResourceId" />
     </Key>
     <Property Name="ResourceId" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="ResourceName" Type="varchar" MaxLength="100" />
+    <Property Name="ResourceName" Type="nvarchar" MaxLength="100" />
     <Property Name="Amount" Type="int" />
   </EntityType>
   <EntityType Name="Staff">
@@ -94,10 +94,10 @@
     </Key>
     <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="100" />
-    <Property Name="FullName" Type="varchar" MaxLength="100" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" />
     <Property Name="Age" Type="datetime" />
     <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
-    <Property Name="Address" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
     <Property Name="Avatar" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="sysdiagrams">
@@ -115,7 +115,7 @@
       <PropertyRef Name="TableId" />
     </Key>
     <Property Name="TableId" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="TableName" Type="varchar" MaxLength="100" />
+    <Property Name="TableName" Type="nvarchar" MaxLength="100" />
     <Property Name="Status" Type="int" />
   </EntityType>
   <EntityType Name="ToppingResource">
@@ -131,7 +131,7 @@
       <PropertyRef Name="ToppingId" />
     </Key>
     <Property Name="ToppingId" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="ToppingName" Type="varchar" MaxLength="10" />
+    <Property Name="ToppingName" Type="nvarchar" MaxLength="100" />
     <Property Name="Price" Type="int" />
   </EntityType>
   <EntityType Name="UserPermision">

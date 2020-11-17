@@ -20,9 +20,10 @@ namespace Project
             //Application.Run(new RegisterStaff());
             //           Application.Run(new Forms.PermisionForm());
             //Application.Run(new SignIn());  
-            Application.Run(new ManageDrinkType());
+            //Application.Run(new ManageDrinkType());
             //Application.Run(new ShowAddDrink());
-
+            //Application.Run(new Home());
+            Application.Run(new AddTable());
         }
     }
 }

@@ -23,6 +23,8 @@ namespace Project.Forms
             tea01Entities2 db = new tea01Entities2();
             idListBox = new string[db.DrinkTypes.ToList().Count+5];
             count = 0;
+
+            txId.Text = (db.Drinks.ToList().Count + 1).ToString();
         }
 
         private void bunifuPictureBox1_Click(object sender, EventArgs e)
@@ -62,6 +64,11 @@ namespace Project.Forms
                 });
 
                 db.SaveChanges();
+
+
+                txId.Text = (db.Drinks.ToList().Count + 1).ToString();
+                txName.Text = "";
+                txPrice.Text = "";
 
                 updateGridView();
             }

@@ -84,7 +84,7 @@
       <PropertyRef Name="ResourceId" />
     </Key>
     <Property Name="ResourceId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ResourceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ResourceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Amount" Type="Int32" />
     <NavigationProperty Name="Drinks" Relationship="Self.DrinkResource" FromRole="Resources" ToRole="Drinks" />
     <NavigationProperty Name="Toppings" Relationship="Self.ToppingResource" FromRole="Resources" ToRole="Toppings" />
@@ -95,10 +95,10 @@
     </Key>
     <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Age" Type="DateTime" Precision="3" />
     <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__UserName__3E52440B" FromRole="Staff" ToRole="Bills" />
     <NavigationProperty Name="Permisions" Relationship="Self.UserPermision" FromRole="Staff" ToRole="Permision" />
@@ -118,7 +118,7 @@
       <PropertyRef Name="TableId" />
     </Key>
     <Property Name="TableId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TableName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TableName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="Int32" />
     <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__TableId__403A8C7D" FromRole="TableSpace" ToRole="Bills" />
   </EntityType>
@@ -127,7 +127,7 @@
       <PropertyRef Name="ToppingId" />
     </Key>
     <Property Name="ToppingId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ToppingName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ToppingName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Price" Type="Int32" />
     <NavigationProperty Name="Drinks" Relationship="Self.DrinkTopping" FromRole="Toppings" ToRole="Drinks" />
     <NavigationProperty Name="Resources" Relationship="Self.ToppingResource" FromRole="Toppings" ToRole="Resources" />

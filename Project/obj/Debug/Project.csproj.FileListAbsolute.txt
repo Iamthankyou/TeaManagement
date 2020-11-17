@@ -242,3 +242,7 @@ D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
 D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.xml
 D:\TeaManagement\Project\obj\Debug\Project.Forms.ManageDrinkType.resources
 D:\TeaManagement\Project\obj\Debug\Project.Forms.ShowAddDrink.resources
+D:\TeaManagement\Project\obj\Debug\Project.Forms.AddTable.resources
+D:\TeaManagement\Project\obj\Debug\Project.Forms.Home.resources
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForm.BunifuShadowPanel.dll
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForm.BunifuShadowPanel.xml

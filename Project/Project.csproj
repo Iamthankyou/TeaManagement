@@ -34,6 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
@@ -108,6 +111,18 @@
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Encryption.cs" />
+    <Compile Include="Forms\AddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddTable.Designer.cs">
+      <DependentUpon>AddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManageDrinkType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +210,12 @@
     <Compile Include="Topping.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AddTable.resx">
+      <DependentUpon>AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageDrinkType.resx">
       <DependentUpon>ManageDrinkType.cs</DependentUpon>
     </EmbeddedResource>
