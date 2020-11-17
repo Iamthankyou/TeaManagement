@@ -68,6 +68,8 @@
             this.txBirthday = new DevExpress.XtraEditors.DateEdit();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnRegister = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txBirthday.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txBirthday.Properties)).BeginInit();
@@ -610,7 +612,7 @@
             this.btnRegister.IdleIconLeftImage = null;
             this.btnRegister.IdleIconRightImage = null;
             this.btnRegister.IndicateFocus = false;
-            this.btnRegister.Location = new System.Drawing.Point(403, 304);
+            this.btnRegister.Location = new System.Drawing.Point(419, 248);
             this.btnRegister.Name = "btnRegister";
             stateProperties21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties21.BorderRadius = 3;
@@ -637,12 +639,30 @@
             this.btnRegister.UseDefaultRadiusAndThickness = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // hyperlinkLabelControl1
+            // 
+            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(560, 324);
+            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
+            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(53, 13);
+            this.hyperlinkLabelControl1.TabIndex = 27;
+            this.hyperlinkLabelControl1.Text = "Đăng nhập";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(443, 324);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(99, 13);
+            this.labelControl1.TabIndex = 26;
+            this.labelControl1.Text = "Bạn đã có tài khoản?";
+            // 
             // RegisterStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(641, 380);
+            this.Controls.Add(this.hyperlinkLabelControl1);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.bunifuLabel6);
             this.Controls.Add(this.txBirthday);
@@ -688,6 +708,8 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRegister;
         private DevExpress.XtraEditors.DateEdit txBirthday;
+        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
 

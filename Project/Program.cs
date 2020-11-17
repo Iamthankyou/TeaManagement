@@ -18,8 +18,12 @@ namespace Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new RegisterStaff());
-            //Application.Run(new Forms.PermisionForm());
-            Application.Run(new SignIn());  
+            //           Application.Run(new Forms.PermisionForm());
+            //Application.Run(new SignIn());  
+            //Application.Run(new ManageDrinkType());
+            //Application.Run(new ShowAddDrink());
+            //Application.Run(new Home());
+            Application.Run(new AddTable());
         }
     }
 }

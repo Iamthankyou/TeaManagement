@@ -236,3 +236,13 @@ D:\TeaManagement\Project\obj\Debug\Project.RegisterStaff.resources
 D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
 D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
 D:\TeaManagement\Project\obj\Debug\Project.Forms.SignIn.resources
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.xml
+D:\TeaManagement\Project\obj\Debug\Project.Forms.ManageDrinkType.resources
+D:\TeaManagement\Project\obj\Debug\Project.Forms.ShowAddDrink.resources
+D:\TeaManagement\Project\obj\Debug\Project.Forms.AddTable.resources
+D:\TeaManagement\Project\obj\Debug\Project.Forms.Home.resources
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForm.BunifuShadowPanel.dll
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForm.BunifuShadowPanel.xml

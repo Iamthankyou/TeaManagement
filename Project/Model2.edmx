@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="tea01Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="tea01Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bills">
           <Key>
             <PropertyRef Name="BillId" />
@@ -40,7 +40,7 @@
             <PropertyRef Name="DrinkId" />
           </Key>
           <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="DrinkName" Type="varchar" MaxLength="100" />
+          <Property Name="DrinkName" Type="nvarchar" MaxLength="100" />
           <Property Name="Price" Type="int" />
           <Property Name="Image" Type="varchar" MaxLength="100" />
           <Property Name="Icon" Type="varchar" MaxLength="100" />
@@ -59,7 +59,7 @@
             <PropertyRef Name="DrinkTypeId" />
           </Key>
           <Property Name="DrinkTypeId" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="DrinkTypeName" Type="varchar" MaxLength="100" />
+          <Property Name="DrinkTypeName" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Items">
           <Key>
@@ -90,7 +90,7 @@
             <PropertyRef Name="ResourceId" />
           </Key>
           <Property Name="ResourceId" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="ResourceName" Type="varchar" MaxLength="100" />
+          <Property Name="ResourceName" Type="nvarchar" MaxLength="100" />
           <Property Name="Amount" Type="int" />
         </EntityType>
         <EntityType Name="Staff">
@@ -99,10 +99,10 @@
           </Key>
           <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="100" />
-          <Property Name="FullName" Type="varchar" MaxLength="100" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
           <Property Name="Age" Type="datetime" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
-          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
           <Property Name="Avatar" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -120,7 +120,7 @@
             <PropertyRef Name="TableId" />
           </Key>
           <Property Name="TableId" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TableName" Type="varchar" MaxLength="100" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="100" />
           <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="ToppingResource">
@@ -136,7 +136,7 @@
             <PropertyRef Name="ToppingId" />
           </Key>
           <Property Name="ToppingId" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="ToppingName" Type="varchar" MaxLength="10" />
+          <Property Name="ToppingName" Type="nvarchar" MaxLength="100" />
           <Property Name="Price" Type="int" />
         </EntityType>
         <EntityType Name="UserPermision">
@@ -405,8 +405,7 @@
             <End Role="UserPermision" EntitySet="UserPermision" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="tea01Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -442,7 +441,7 @@
             <PropertyRef Name="DrinkId" />
           </Key>
           <Property Name="DrinkId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DrinkName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DrinkName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Int32" />
           <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Icon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -457,7 +456,7 @@
             <PropertyRef Name="DrinkTypeId" />
           </Key>
           <Property Name="DrinkTypeId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DrinkTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DrinkTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Drinks" Relationship="Self.FK__Drinks__DrinkTyp__47DBAE45" FromRole="DrinkTypes" ToRole="Drinks" />
         </EntityType>
         <EntityType Name="Item">
@@ -494,7 +493,7 @@
             <PropertyRef Name="ResourceId" />
           </Key>
           <Property Name="ResourceId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ResourceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ResourceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Amount" Type="Int32" />
           <NavigationProperty Name="Drinks" Relationship="Self.DrinkResource" FromRole="Resources" ToRole="Drinks" />
           <NavigationProperty Name="Toppings" Relationship="Self.ToppingResource" FromRole="Resources" ToRole="Toppings" />
@@ -505,10 +504,10 @@
           </Key>
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="DateTime" Precision="3" />
           <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__UserName__3E52440B" FromRole="Staff" ToRole="Bills" />
           <NavigationProperty Name="Permisions" Relationship="Self.UserPermision" FromRole="Staff" ToRole="Permision" />
@@ -528,7 +527,7 @@
             <PropertyRef Name="TableId" />
           </Key>
           <Property Name="TableId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TableName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TableName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Int32" />
           <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__TableId__403A8C7D" FromRole="TableSpace" ToRole="Bills" />
         </EntityType>
@@ -537,7 +536,7 @@
             <PropertyRef Name="ToppingId" />
           </Key>
           <Property Name="ToppingId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ToppingName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ToppingName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Int32" />
           <NavigationProperty Name="Drinks" Relationship="Self.DrinkTopping" FromRole="Toppings" ToRole="Drinks" />
           <NavigationProperty Name="Resources" Relationship="Self.ToppingResource" FromRole="Toppings" ToRole="Resources" />
