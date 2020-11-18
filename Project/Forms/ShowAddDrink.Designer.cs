@@ -225,7 +225,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridView.ColumnHeadersHeight = 40;
             this.gridView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.gridView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gridView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -747,6 +747,7 @@
             // imgBox
             // 
             this.imgBox.AllowFocused = false;
+            this.imgBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgBox.BorderRadius = 50;
             this.imgBox.Image = ((System.Drawing.Image)(resources.GetObject("imgBox.Image")));
             this.imgBox.IsCircle = true;
@@ -763,7 +764,7 @@
             // 
             this.btnChoose.Active = false;
             this.btnChoose.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnChoose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnChoose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnChoose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnChoose.BorderRadius = 0;
             this.btnChoose.ButtonText = "Chọn ảnh miêu tả";
@@ -851,6 +852,7 @@
             this.Controls.Add(this.bunifuButton2);
             this.Controls.Add(this.bunifuButton1);
             this.Name = "ShowAddDrink";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShowAddDrink";
             this.Load += new System.EventHandler(this.ShowAddDrink_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

@@ -23,7 +23,7 @@ namespace Project
             //Application.Run(new ManageDrinkType());
             //Application.Run(new ShowAddDrink());
             //Application.Run(new Home());
-            Application.Run(new AddTable());
+            Application.Run(new BillDetail());
         }
     }
 }
