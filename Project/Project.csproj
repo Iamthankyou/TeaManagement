@@ -59,7 +59,7 @@
       <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
-      <HintPath>..\..\..\New folder (3)\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+      <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
@@ -166,6 +166,12 @@
     <Compile Include="Forms\ShowAddDrink.Designer.cs">
       <DependentUpon>ShowAddDrink.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ShowAddTopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowAddTopping.Designer.cs">
+      <DependentUpon>ShowAddTopping.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShowAddDrink.resx">
       <DependentUpon>ShowAddDrink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowAddTopping.resx">
+      <DependentUpon>ShowAddTopping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
