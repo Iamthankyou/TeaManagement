@@ -24,7 +24,8 @@ namespace Project
             //Application.Run(new ShowAddDrink());
             //Application.Run(new Home());
             //Application.Run(new BillDetail());
-            Application.Run(new ShowAddTopping());
+            ///           Application.Run(new ShowAddTopping());
+            Application.Run(new Home());
         }
     }
 }

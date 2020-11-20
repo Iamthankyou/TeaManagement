@@ -6,6 +6,7 @@ SELECT * FROM UserPermision
 
 SELECT * FROM PermisionDetail
 
+
 DELETE Permision WHERE PermisionID LIKE '7'
 
 INSERT INTO Permision(PermisionID,PermisionName) VALUES('8','?')
@@ -30,3 +31,14 @@ INSERT INTO DrinkTypes(DrinkTypeId,DrinkTypeName) VALUES('01',N'Trà giảm béo
 
 SELECT * FROM DrinkTypes
 
+SELECT * FROM Toppings
+
+SELECT * FROM UserPermision
+
+SELECT * FROM Customer
+
+SELECT * FROM Drinks
+DELETE Toppings WHERE ToppingId LIKE '10'
+INSERT INTO Toppings(ToppingId,ToppingName,Price) VALUES('9',N'Chân châu cao sang',10000)
+INSERT INTO Toppings(ToppingId,ToppingName,Price) VALUES('10',N'Nếp thơm',10000)
+INSERT INTO Toppings(ToppingId,ToppingName,Price) VALUES('11',N'Gạo tẻ',7000)
