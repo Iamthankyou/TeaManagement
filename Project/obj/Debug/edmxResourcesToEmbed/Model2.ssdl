@@ -142,6 +142,15 @@
     <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="PermisionID" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <EntityType Name="Voucher">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="dateStart" Type="datetime" />
+    <Property Name="dateEnd" Type="datetime" />
+    <Property Name="ratio" Type="int" />
+  </EntityType>
   <Association Name="FK__Bills__PhoneNumb__3F466844">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
     <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
@@ -370,6 +379,7 @@
     <EntitySet Name="ToppingResource" EntityType="Self.ToppingResource" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Toppings" EntityType="Self.Toppings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserPermision" EntityType="Self.UserPermision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Bills__PhoneNumb__3F466844" Association="Self.FK__Bills__PhoneNumb__3F466844">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Bills" EntitySet="Bills" />

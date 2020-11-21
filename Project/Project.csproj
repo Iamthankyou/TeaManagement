@@ -166,6 +166,12 @@
     <Compile Include="Forms\ManageDrinkType.Designer.cs">
       <DependentUpon>ManageDrinkType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageVoucher.Designer.cs">
+      <DependentUpon>ManageVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Permision.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,12 @@
     <Compile Include="Resource.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Staff.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -256,6 +268,13 @@
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Topping.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\buttonCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\labelCustom.cs" />
+    <Compile Include="Voucher.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AddTable.resx">
@@ -269,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageDrinkType.resx">
       <DependentUpon>ManageDrinkType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageVoucher.resx">
+      <DependentUpon>ManageVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Permision.resx">
       <DependentUpon>Permision.cs</DependentUpon>

@@ -147,6 +147,15 @@
           <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PermisionID" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
+        <EntityType Name="Voucher">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="dateStart" Type="datetime" />
+          <Property Name="dateEnd" Type="datetime" />
+          <Property Name="ratio" Type="int" />
+        </EntityType>
         <Association Name="FK__Bills__PhoneNumb__3F466844">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
@@ -375,6 +384,7 @@
           <EntitySet Name="ToppingResource" EntityType="Self.ToppingResource" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Toppings" EntityType="Self.Toppings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserPermision" EntityType="Self.UserPermision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Bills__PhoneNumb__3F466844" Association="Self.FK__Bills__PhoneNumb__3F466844">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Bills" EntitySet="Bills" />
@@ -759,6 +769,7 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Vouchers" EntityType="tea01Model1.Voucher" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -771,6 +782,15 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="Voucher">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="dateStart" Type="DateTime" Precision="3" />
+          <Property Name="dateEnd" Type="DateTime" Precision="3" />
+          <Property Name="ratio" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -954,6 +974,16 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="tea01Model1.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="tea01Model1.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Vouchers">
+            <EntityTypeMapping TypeName="tea01Model1.Voucher">
+              <MappingFragment StoreEntitySet="Voucher">
+                <ScalarProperty Name="ratio" ColumnName="ratio" />
+                <ScalarProperty Name="dateEnd" ColumnName="dateEnd" />
+                <ScalarProperty Name="dateStart" ColumnName="dateStart" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

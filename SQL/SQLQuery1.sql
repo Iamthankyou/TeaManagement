@@ -42,3 +42,17 @@ DELETE Toppings WHERE ToppingId LIKE '10'
 INSERT INTO Toppings(ToppingId,ToppingName,Price) VALUES('9',N'Chân châu cao sang',10000)
 INSERT INTO Toppings(ToppingId,ToppingName,Price) VALUES('10',N'Nếp thơm',10000)
 INSERT INTO Toppings(ToppingId,ToppingName,Price) VALUES('11',N'Gạo tẻ',7000)
+
+SELECT * FROM Customer
+
+INSERT INTO Customer(PhoneNumber,FullName,Address,Level) VALUES('0392301017',N'Phạm Thị Thu Hiền',N'Yên Nhân, Yên Mô, Ninh Bình',0)
+
+CREATE TABLE Voucher(
+	Code nvarchar(10) PRIMARY KEY,
+	dateStart datetime,
+	dateEnd datetime,
+	ratio int
+)
+
+SELECT * FROM Voucher
+

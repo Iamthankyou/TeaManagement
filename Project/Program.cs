@@ -25,7 +25,8 @@ namespace Project
             //Application.Run(new Home());
             //Application.Run(new BillDetail());
             ///           Application.Run(new ShowAddTopping());
-            Application.Run(new Home());
+           Application.Run(new Home());
+            //Application.Run(new ManageVoucher());
         }
     }
 }
