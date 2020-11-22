@@ -96,9 +96,9 @@
             this.bunifuButton8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.gradientLabel5 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
-            this.gradientLabel6 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
-            this.gradientLabel7 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
+            this.lbBestDrink = new Syncfusion.Windows.Forms.Tools.GradientLabel();
+            this.lbRecentBill = new Syncfusion.Windows.Forms.Tools.GradientLabel();
+            this.lbLevelPoint = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.bunifuButton11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -917,47 +917,47 @@
             this.bunifuButton10.TextMarginLeft = 0;
             this.bunifuButton10.UseDefaultRadiusAndThickness = true;
             // 
-            // gradientLabel5
+            // lbBestDrink
             // 
-            this.gradientLabel5.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
-            this.gradientLabel5.BeforeTouchSize = new System.Drawing.Size(183, 32);
-            this.gradientLabel5.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            this.lbBestDrink.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
+            this.lbBestDrink.BeforeTouchSize = new System.Drawing.Size(183, 32);
+            this.lbBestDrink.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
             | System.Windows.Forms.Border3DSide.Right) 
             | System.Windows.Forms.Border3DSide.Bottom)));
-            this.gradientLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientLabel5.Location = new System.Drawing.Point(878, 304);
-            this.gradientLabel5.Name = "gradientLabel5";
-            this.gradientLabel5.Size = new System.Drawing.Size(183, 32);
-            this.gradientLabel5.TabIndex = 22;
-            this.gradientLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbBestDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBestDrink.Location = new System.Drawing.Point(878, 304);
+            this.lbBestDrink.Name = "lbBestDrink";
+            this.lbBestDrink.Size = new System.Drawing.Size(183, 32);
+            this.lbBestDrink.TabIndex = 22;
+            this.lbBestDrink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gradientLabel6
+            // lbRecentBill
             // 
-            this.gradientLabel6.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
-            this.gradientLabel6.BeforeTouchSize = new System.Drawing.Size(183, 32);
-            this.gradientLabel6.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            this.lbRecentBill.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
+            this.lbRecentBill.BeforeTouchSize = new System.Drawing.Size(183, 32);
+            this.lbRecentBill.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
             | System.Windows.Forms.Border3DSide.Right) 
             | System.Windows.Forms.Border3DSide.Bottom)));
-            this.gradientLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientLabel6.Location = new System.Drawing.Point(878, 340);
-            this.gradientLabel6.Name = "gradientLabel6";
-            this.gradientLabel6.Size = new System.Drawing.Size(183, 32);
-            this.gradientLabel6.TabIndex = 23;
-            this.gradientLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbRecentBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRecentBill.Location = new System.Drawing.Point(878, 340);
+            this.lbRecentBill.Name = "lbRecentBill";
+            this.lbRecentBill.Size = new System.Drawing.Size(183, 32);
+            this.lbRecentBill.TabIndex = 23;
+            this.lbRecentBill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gradientLabel7
+            // lbLevelPoint
             // 
-            this.gradientLabel7.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
-            this.gradientLabel7.BeforeTouchSize = new System.Drawing.Size(183, 32);
-            this.gradientLabel7.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
+            this.lbLevelPoint.BackgroundColor = new Syncfusion.Drawing.BrushInfo(Syncfusion.Drawing.GradientStyle.Vertical, System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(247))))), System.Drawing.Color.LightCyan);
+            this.lbLevelPoint.BeforeTouchSize = new System.Drawing.Size(183, 32);
+            this.lbLevelPoint.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
             | System.Windows.Forms.Border3DSide.Right) 
             | System.Windows.Forms.Border3DSide.Bottom)));
-            this.gradientLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradientLabel7.Location = new System.Drawing.Point(878, 376);
-            this.gradientLabel7.Name = "gradientLabel7";
-            this.gradientLabel7.Size = new System.Drawing.Size(183, 32);
-            this.gradientLabel7.TabIndex = 24;
-            this.gradientLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbLevelPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLevelPoint.Location = new System.Drawing.Point(878, 376);
+            this.lbLevelPoint.Name = "lbLevelPoint";
+            this.lbLevelPoint.Size = new System.Drawing.Size(183, 32);
+            this.lbLevelPoint.TabIndex = 24;
+            this.lbLevelPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuButton11
             // 
@@ -1314,9 +1314,9 @@
             this.Controls.Add(this.bunifuButton13);
             this.Controls.Add(this.bunifuButton12);
             this.Controls.Add(this.bunifuButton11);
-            this.Controls.Add(this.gradientLabel7);
-            this.Controls.Add(this.gradientLabel6);
-            this.Controls.Add(this.gradientLabel5);
+            this.Controls.Add(this.lbLevelPoint);
+            this.Controls.Add(this.lbRecentBill);
+            this.Controls.Add(this.lbBestDrink);
             this.Controls.Add(this.bunifuButton10);
             this.Controls.Add(this.bunifuButton9);
             this.Controls.Add(this.bunifuButton8);
@@ -1370,9 +1370,9 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton8;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton9;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton10;
-        private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel5;
-        private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel6;
-        private Syncfusion.Windows.Forms.Tools.GradientLabel gradientLabel7;
+        private Syncfusion.Windows.Forms.Tools.GradientLabel lbBestDrink;
+        private Syncfusion.Windows.Forms.Tools.GradientLabel lbRecentBill;
+        private Syncfusion.Windows.Forms.Tools.GradientLabel lbLevelPoint;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton11;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton12;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton13;

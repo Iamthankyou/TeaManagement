@@ -21,7 +21,7 @@ namespace Project
         }
     
         public string BillId { get; set; }
-        public Nullable<System.DateTime> OrderTimeStart { get; set; }
+        public System.DateTime OrderTimeStart { get; set; }
         public string Payments { get; set; }
         public string TableId { get; set; }
         public Nullable<int> Total { get; set; }

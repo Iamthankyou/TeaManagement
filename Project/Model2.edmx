@@ -10,11 +10,11 @@
             <PropertyRef Name="BillId" />
           </Key>
           <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="OrderTimeStart" Type="date" />
+          <Property Name="OrderTimeStart" Type="datetime" Nullable="false" />
           <Property Name="Payments" Type="varchar" MaxLength="10" />
           <Property Name="TableId" Type="varchar" MaxLength="10" />
           <Property Name="Total" Type="int" />
-          <Property Name="OrderTimeEnd" Type="date" />
+          <Property Name="OrderTimeEnd" Type="datetime" />
           <Property Name="UserName" Type="varchar" MaxLength="50" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
           <Property Name="CodeVoucher" Type="nvarchar" MaxLength="10" />
@@ -517,11 +517,11 @@
             <PropertyRef Name="BillId" />
           </Key>
           <Property Name="BillId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="OrderTimeStart" Type="DateTime" Precision="0" />
+          <Property Name="OrderTimeStart" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="Payments" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="TableId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Total" Type="Int32" />
-          <Property Name="OrderTimeEnd" Type="DateTime" Precision="0" />
+          <Property Name="OrderTimeEnd" Type="DateTime" Precision="3" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Bills__PhoneNumb__3F466844" FromRole="Bills" ToRole="Customer" />

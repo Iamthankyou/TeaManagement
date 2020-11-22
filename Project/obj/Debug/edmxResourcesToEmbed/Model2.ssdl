@@ -5,11 +5,11 @@
       <PropertyRef Name="BillId" />
     </Key>
     <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="OrderTimeStart" Type="date" />
+    <Property Name="OrderTimeStart" Type="datetime" Nullable="false" />
     <Property Name="Payments" Type="varchar" MaxLength="10" />
     <Property Name="TableId" Type="varchar" MaxLength="10" />
     <Property Name="Total" Type="int" />
-    <Property Name="OrderTimeEnd" Type="date" />
+    <Property Name="OrderTimeEnd" Type="datetime" />
     <Property Name="UserName" Type="varchar" MaxLength="50" />
     <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
     <Property Name="CodeVoucher" Type="nvarchar" MaxLength="10" />

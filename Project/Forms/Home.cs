@@ -322,6 +322,8 @@ namespace Project.Forms
                 {
                     name.Text = customer.FullName;
                     address.Text = customer.Address;
+
+                    recentBill();
                 }
             }
             else
@@ -370,12 +372,36 @@ namespace Project.Forms
         private void bunifuButton12_Click(object sender, EventArgs e)
         {
             //     MessageBox.Show(SignIn.username);
+            recentBill();
             bestDrink();
+        }
+
+        private void recentBill()
+        {
+            tea01Entities2 db = new tea01Entities2();
+            var customer = db.Customers.Find(phone.Text);
+            var bill = customer.Bills.OrderByDescending(u => u.OrderTimeStart).FirstOrDefault();
+
+            if (bill != null)
+            {
+                /*
+                String res = "";
+
+                foreach (var i in bill)
+                {
+                    res += i.BillId + "\n";
+                }
+
+                MessageBox.Show(res);
+                */
+
+                lbRecentBill.Text = bill.BillId;
+            }
         }
 
         private void bestDrink()
         {
-            
+            tea01Entities2 db = new tea01Entities2();
         }
     }
 }
