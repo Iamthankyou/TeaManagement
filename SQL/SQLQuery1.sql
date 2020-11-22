@@ -56,3 +56,49 @@ CREATE TABLE Voucher(
 
 SELECT * FROM Voucher
 
+SELECT * FROM Bills
+
+ALTER TABLE Bills ADD CodeVoucher nvarchar(10)
+
+ALTER TABLE Bills
+ADD CONSTRAINT fk_codeVoucher
+FOREIGN KEY (CodeVoucher) REFERENCES Voucher(Code);
+
+SELECT * FROM Customer
+
+SELECT * FROM Staff
+
+SELECT * FROM Bills
+
+SELECT * FROM Items
+
+SELECT * FROM DrinkTopping
+
+SELECT * FROM Bills INNER JOIN Items ON Items.BillId = Bills.BillId INNER JOIN Drinks ON Drinks.DrinkId= Items.DrinkId INNER JOIN DrinkTopping ON DrinkTopping.DrinkId = Drinks.DrinkId INNER JOIN Toppings ON Toppings.ToppingId = DrinkTopping.ToppingId
+
+SELECT * FROM Bills INNER JOIN Items ON Items.BillId = Bills.BillId
+
+
+CREATE TABLE ItemTopping
+(
+  DrinkId VARCHAR(10) NOT NULL,
+  ToppingId VARCHAR(10) NOT NULL,
+  Billid VARCHAR(10) NOT NULL,
+  FOREIGN KEY (Billid,DrinkId) REFERENCES Items(BillId,DrinkId),
+  FOREIGN KEY (ToppingId) REFERENCES Toppings(ToppingId),
+  CONSTRAINT PK_Person PRIMARY KEY (DrinkId,ToppingId,Billid)
+);
+
+SELECT * FROM ItemTopping
+
+DROP TABLE ItemTopping
+
+SELECT * FROM Bills INNER JOIN Items ON Items.BillId = Bills.BillId INNER JOIN ItemTopping ON ItemTopping.Billid = Bills.BillId INNER JOIN Drinks ON Drinks.DrinkId = Items.DrinkId INNER JOIN Toppings ON Toppings.ToppingId = ItemTopping.ToppingId
+
+SELECT * FROM Bills INNER JOIN Items ON Items.BillId = Bills.BillId
+
+SELECT * FROM Bills
+
+
+SELECT * FROM Items
+

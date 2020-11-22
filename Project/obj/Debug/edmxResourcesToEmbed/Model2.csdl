@@ -16,6 +16,8 @@
     <NavigationProperty Name="TableSpace" Relationship="Self.FK__Bills__TableId__403A8C7D" FromRole="Bills" ToRole="TableSpace" />
     <NavigationProperty Name="Staff" Relationship="Self.FK__Bills__UserName__3E52440B" FromRole="Bills" ToRole="Staff" />
     <NavigationProperty Name="Items" Relationship="Self.FK__Items__BillId__5070F446" FromRole="Bills" ToRole="Items" />
+    <Property Name="CodeVoucher" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Voucher" Relationship="tea01Model1.fk_codeVoucher" FromRole="Bill" ToRole="Voucher" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -60,6 +62,7 @@
     <Property Name="DrinkId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Bill" Relationship="Self.FK__Items__BillId__5070F446" FromRole="Items" ToRole="Bills" />
     <NavigationProperty Name="Drink" Relationship="Self.FK__Items__DrinkId__5165187F" FromRole="Items" ToRole="Drinks" />
+    <NavigationProperty Name="Toppings" Relationship="tea01Model1.ItemTopping" FromRole="Item" ToRole="Topping" />
   </EntityType>
   <EntityType Name="Permision">
     <Key>
@@ -131,6 +134,7 @@
     <Property Name="Price" Type="Int32" />
     <NavigationProperty Name="Drinks" Relationship="Self.DrinkTopping" FromRole="Toppings" ToRole="Drinks" />
     <NavigationProperty Name="Resources" Relationship="Self.ToppingResource" FromRole="Toppings" ToRole="Resources" />
+    <NavigationProperty Name="Items" Relationship="tea01Model1.ItemTopping" FromRole="Topping" ToRole="Item" />
   </EntityType>
   <Association Name="FK__Bills__PhoneNumb__3F466844">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -320,6 +324,14 @@
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
     <EntitySet Name="Vouchers" EntityType="tea01Model1.Voucher" />
+    <AssociationSet Name="fk_codeVoucher" Association="tea01Model1.fk_codeVoucher">
+      <End Role="Voucher" EntitySet="Vouchers" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="ItemTopping" Association="tea01Model1.ItemTopping">
+      <End Role="Topping" EntitySet="Toppings" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -340,5 +352,22 @@
     <Property Name="dateStart" Type="DateTime" Precision="3" />
     <Property Name="dateEnd" Type="DateTime" Precision="3" />
     <Property Name="ratio" Type="Int32" />
+    <NavigationProperty Name="Bills" Relationship="tea01Model1.fk_codeVoucher" FromRole="Voucher" ToRole="Bill" />
   </EntityType>
+  <Association Name="fk_codeVoucher">
+    <End Type="tea01Model1.Voucher" Role="Voucher" Multiplicity="0..1" />
+    <End Type="tea01Model1.Bill" Role="Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voucher">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="CodeVoucher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemTopping">
+    <End Type="tea01Model1.Topping" Role="Topping" Multiplicity="*" />
+    <End Type="tea01Model1.Item" Role="Item" Multiplicity="*" />
+  </Association>
 </Schema>

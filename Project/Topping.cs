@@ -19,6 +19,7 @@ namespace Project
         {
             this.Drinks = new HashSet<Drink>();
             this.Resources = new HashSet<Resource>();
+            this.Items = new HashSet<Item>();
         }
     
         public string ToppingId { get; set; }
@@ -29,5 +30,7 @@ namespace Project
         public virtual ICollection<Drink> Drinks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Resource> Resources { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

@@ -79,6 +79,7 @@
             this.panelTea = new System.Windows.Forms.FlowLayoutPanel();
             this.gradientLabel1 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.gradientLabel2 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.panelTopping = new System.Windows.Forms.FlowLayoutPanel();
@@ -103,7 +104,6 @@
             this.bunifuButton13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.gradientLabel8 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.bunifuButton14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.comboBox = new System.Windows.Forms.ComboBox();
             this.listBox = new System.Windows.Forms.ListBox();
             this.lbPrice = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -271,6 +271,15 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(652, 260);
             this.groupControl1.TabIndex = 6;
+            // 
+            // comboBox
+            // 
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Location = new System.Drawing.Point(0, 0);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(186, 21);
+            this.comboBox.TabIndex = 31;
+            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // gradientLabel2
             // 
@@ -1075,6 +1084,7 @@
             this.bunifuButton12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton12.TextMarginLeft = 0;
             this.bunifuButton12.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton12.Click += new System.EventHandler(this.bunifuButton12_Click);
             // 
             // bunifuButton13
             // 
@@ -1216,15 +1226,7 @@
             this.bunifuButton14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton14.TextMarginLeft = 0;
             this.bunifuButton14.UseDefaultRadiusAndThickness = true;
-            // 
-            // comboBox
-            // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(0, 0);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(186, 21);
-            this.comboBox.TabIndex = 31;
-            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
+            this.bunifuButton14.Click += new System.EventHandler(this.bunifuButton14_Click);
             // 
             // listBox
             // 

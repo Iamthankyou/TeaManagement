@@ -148,6 +148,12 @@
     <Compile Include="Forms\AddTable.Designer.cs">
       <DependentUpon>AddTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BillEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BillEnter.Designer.cs">
+      <DependentUpon>BillEnter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BillDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\AddTable.resx">
       <DependentUpon>AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BillEnter.resx">
+      <DependentUpon>BillEnter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BillDetail.resx">
       <DependentUpon>BillDetail.cs</DependentUpon>

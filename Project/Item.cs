@@ -14,11 +14,19 @@ namespace Project
     
     public partial class Item
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Item()
+        {
+            this.Toppings = new HashSet<Topping>();
+        }
+    
         public Nullable<int> Amount { get; set; }
         public string BillId { get; set; }
         public string DrinkId { get; set; }
     
         public virtual Bill Bill { get; set; }
         public virtual Drink Drink { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Topping> Toppings { get; set; }
     }
 }

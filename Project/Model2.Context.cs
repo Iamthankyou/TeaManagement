@@ -61,12 +61,7 @@ namespace Project
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
         }
-        /*
-        internal void addOrUpdate(Voucher voucher)
-        {
-            throw new NotImplementedException();
-        }
-        */
+    
         public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
             var diagramnameParameter = diagramname != null ?

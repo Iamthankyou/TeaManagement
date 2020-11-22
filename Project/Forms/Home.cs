@@ -25,7 +25,8 @@ namespace Project.Forms
         private Label currentLabelTopping;
 
 
-        private List<List<String>> listView = new List<List<String>>();
+        public static List<List<String>> listView = new List<List<String>>();
+        public static String phoneCustomer;
 
         public Home()
         {
@@ -129,7 +130,6 @@ namespace Project.Forms
             listBox.Items.Clear();
 
             int price = 0;
-
 
             foreach (var i in listView)
             {
@@ -348,6 +348,34 @@ namespace Project.Forms
 
                 MessageBox.Show("Đã cập nhật vào cơ sở dữ liệu");
             }
+        }
+
+        private void bunifuButton14_Click(object sender, EventArgs e)
+        {
+            tea01Entities2 db = new tea01Entities2();
+            var customer = db.Customers.Find(phone.Text);
+
+            if (phone.Text != "" && customer!=null)
+            {
+                phoneCustomer = phone.Text;
+                BillEnter bill = new BillEnter();
+                bill.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập thông tin khách hàng");
+            }
+        }
+
+        private void bunifuButton12_Click(object sender, EventArgs e)
+        {
+            //     MessageBox.Show(SignIn.username);
+            bestDrink();
+        }
+
+        private void bestDrink()
+        {
+            
         }
     }
 }

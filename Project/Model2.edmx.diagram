@@ -28,7 +28,9 @@
         <AssociationConnector Association="tea01Model1.DrinkTopping" ManuallyRouted="false" />
         <AssociationConnector Association="tea01Model1.ToppingResource" ManuallyRouted="false" />
         <AssociationConnector Association="tea01Model1.UserPermision" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="tea01Model1.Voucher" Width="1.5" PointX="8.375" PointY="6.75" />
+        <EntityTypeShape EntityType="tea01Model1.Voucher" Width="1.5" PointX="8.5" PointY="8.625" />
+        <AssociationConnector Association="tea01Model1.fk_codeVoucher" />
+        <AssociationConnector Association="tea01Model1.ItemTopping" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

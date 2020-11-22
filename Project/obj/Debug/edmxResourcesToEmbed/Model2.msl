@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Bills">
       <EntityTypeMapping TypeName="tea01Model1.Bill">
         <MappingFragment StoreEntitySet="Bills">
+          <ScalarProperty Name="CodeVoucher" ColumnName="CodeVoucher" />
           <ScalarProperty Name="BillId" ColumnName="BillId" />
           <ScalarProperty Name="OrderTimeStart" ColumnName="OrderTimeStart" />
           <ScalarProperty Name="Payments" ColumnName="Payments" />
@@ -188,5 +189,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="ItemTopping" TypeName="tea01Model1.ItemTopping" StoreEntitySet="ItemTopping">
+      <EndProperty Name="Item">
+        <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+        <ScalarProperty Name="BillId" ColumnName="Billid" />
+      </EndProperty>
+      <EndProperty Name="Topping">
+        <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

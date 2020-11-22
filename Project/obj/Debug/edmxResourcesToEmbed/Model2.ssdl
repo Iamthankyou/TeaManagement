@@ -12,6 +12,7 @@
     <Property Name="OrderTimeEnd" Type="date" />
     <Property Name="UserName" Type="varchar" MaxLength="50" />
     <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+    <Property Name="CodeVoucher" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -64,6 +65,16 @@
     <Property Name="Amount" Type="int" />
     <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemTopping">
+    <Key>
+      <PropertyRef Name="DrinkId" />
+      <PropertyRef Name="ToppingId" />
+      <PropertyRef Name="Billid" />
+    </Key>
+    <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ToppingId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Billid" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="Permision">
     <Key>
@@ -271,6 +282,32 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__ItemToppi__Toppi__57DD0BE4">
+    <End Role="Toppings" Type="Self.Toppings" Multiplicity="1" />
+    <End Role="ItemTopping" Type="Self.ItemTopping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toppings">
+        <PropertyRef Name="ToppingId" />
+      </Principal>
+      <Dependent Role="ItemTopping">
+        <PropertyRef Name="ToppingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ItemTopping__56E8E7AB">
+    <End Role="Items" Type="Self.Items" Multiplicity="1" />
+    <End Role="ItemTopping" Type="Self.ItemTopping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="BillId" />
+        <PropertyRef Name="DrinkId" />
+      </Principal>
+      <Dependent Role="ItemTopping">
+        <PropertyRef Name="Billid" />
+        <PropertyRef Name="DrinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Permision__Permi__2C3393D0">
     <End Role="Permision" Type="Self.Permision" Multiplicity="1" />
     <End Role="PermisionDetail" Type="Self.PermisionDetail" Multiplicity="*" />
@@ -331,6 +368,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_codeVoucher">
+    <End Role="Voucher" Type="Self.Voucher" Multiplicity="0..1" />
+    <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voucher">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Bills">
+        <PropertyRef Name="CodeVoucher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -370,6 +419,7 @@
     <EntitySet Name="DrinkTopping" EntityType="Self.DrinkTopping" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DrinkTypes" EntityType="Self.DrinkTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemTopping" EntityType="Self.ItemTopping" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Permision" EntityType="Self.Permision" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PermisionDetail" EntityType="Self.PermisionDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
@@ -420,6 +470,14 @@
       <End Role="Drinks" EntitySet="Drinks" />
       <End Role="Items" EntitySet="Items" />
     </AssociationSet>
+    <AssociationSet Name="FK__ItemToppi__Toppi__57DD0BE4" Association="Self.FK__ItemToppi__Toppi__57DD0BE4">
+      <End Role="Toppings" EntitySet="Toppings" />
+      <End Role="ItemTopping" EntitySet="ItemTopping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ItemTopping__56E8E7AB" Association="Self.FK__ItemTopping__56E8E7AB">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="ItemTopping" EntitySet="ItemTopping" />
+    </AssociationSet>
     <AssociationSet Name="FK__Permision__Permi__2C3393D0" Association="Self.FK__Permision__Permi__2C3393D0">
       <End Role="Permision" EntitySet="Permision" />
       <End Role="PermisionDetail" EntitySet="PermisionDetail" />
@@ -439,6 +497,10 @@
     <AssociationSet Name="FK__UserPermi__UserN__276EDEB3" Association="Self.FK__UserPermi__UserN__276EDEB3">
       <End Role="Staff" EntitySet="Staff" />
       <End Role="UserPermision" EntitySet="UserPermision" />
+    </AssociationSet>
+    <AssociationSet Name="fk_codeVoucher" Association="Self.fk_codeVoucher">
+      <End Role="Voucher" EntitySet="Voucher" />
+      <End Role="Bills" EntitySet="Bills" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
