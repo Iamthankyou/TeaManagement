@@ -301,7 +301,7 @@ namespace Project.Forms
 
         private void bunifuMaterialTextbox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != 8;
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar!=13;
 
             if (phone.Text.Length > 10)
             {
@@ -311,6 +311,7 @@ namespace Project.Forms
             if (e.Handled)
             {
                 MessageBox.Show("Chỉ nhập số điện thoại có 10 chữ số");
+                phone.Text = "";
             }
 
             if (phone.Text.Length == 10)
@@ -323,7 +324,9 @@ namespace Project.Forms
                     name.Text = customer.FullName;
                     address.Text = customer.Address;
 
+                    bestDrink();
                     recentBill();
+                    lbLevelPoint.Text = "Level " + customer.Level.ToString(); 
                 }
             }
             else
@@ -372,8 +375,8 @@ namespace Project.Forms
         private void bunifuButton12_Click(object sender, EventArgs e)
         {
             //     MessageBox.Show(SignIn.username);
-            recentBill();
-            bestDrink();
+            //recentBill();
+            //bestDrink();
         }
 
         private void recentBill()
@@ -402,6 +405,55 @@ namespace Project.Forms
         private void bestDrink()
         {
             tea01Entities2 db = new tea01Entities2();
+            var customer = db.Customers.Find(phone.Text);
+            var bill = customer.Bills;
+
+            String drinkId = "";
+            var map = new Dictionary<string,int>();
+
+            foreach (var i in bill)
+            {
+                foreach(var item in i.Items)
+                {
+                    int count = 0;
+                    if (map.ContainsKey(item.DrinkId))
+                    {
+                        map[item.DrinkId] = map[item.DrinkId]++;
+                    }
+                    else
+                    {
+                        map.Add(item.DrinkId, count);
+                    }
+                }
+            }
+
+            if (map.Count > 0)
+            {
+                var id = map.Max(u => u.Value);
+                foreach (var i in map.Keys.ToList())
+                {
+                    if (map[i] == id)
+                    {
+                        drinkId = i;
+                    }
+                }
+
+                if (db.Drinks.Find(drinkId) != null)
+                {
+                    lbBestDrink.Text = db.Drinks.Find(drinkId).DrinkName;
+                }
+            }
+
+            
+
+            //MessageBox.Show(db.Drinks.Find(drinkId).DrinkName);
+        }
+
+        private void listBox_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(listBox.SelectedIndex.ToString());
+            listView.RemoveAt(listBox.SelectedIndex);
+            updateGridBox();
         }
     }
 }

@@ -49,6 +49,7 @@
     <EntitySetMapping Name="Items">
       <EntityTypeMapping TypeName="tea01Model1.Item">
         <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="BillId" ColumnName="BillId" />
           <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
@@ -192,7 +193,8 @@
     <AssociationSetMapping Name="ItemTopping" TypeName="tea01Model1.ItemTopping" StoreEntitySet="ItemTopping">
       <EndProperty Name="Item">
         <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
-        <ScalarProperty Name="BillId" ColumnName="Billid" />
+        <ScalarProperty Name="BillId" ColumnName="BillId" />
+        <ScalarProperty Name="ItemId" ColumnName="ItemId" />
       </EndProperty>
       <EndProperty Name="Topping">
         <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />

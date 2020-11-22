@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="tea01Model1.Customer" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.Drink" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.DrinkType" Width="1.5" PointX="0.5" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="tea01Model1.Item" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model1.Item" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.Permision" Width="1.5" PointX="1.375" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.PermisionDetail" Width="1.5" PointX="3.75" PointY="14.5" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.Resource" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />

@@ -23,6 +23,7 @@ namespace Project
         public Nullable<int> Amount { get; set; }
         public string BillId { get; set; }
         public string DrinkId { get; set; }
+        public int ItemId { get; set; }
     
         public virtual Bill Bill { get; set; }
         public virtual Drink Drink { get; set; }

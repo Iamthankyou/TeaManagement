@@ -1238,6 +1238,7 @@
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(374, 164);
             this.listBox.TabIndex = 31;
+            this.listBox.DoubleClick += new System.EventHandler(this.listBox_DoubleClick);
             // 
             // lbPrice
             // 

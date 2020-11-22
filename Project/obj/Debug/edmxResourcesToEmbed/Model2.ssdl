@@ -59,22 +59,26 @@
   </EntityType>
   <EntityType Name="Items">
     <Key>
+      <PropertyRef Name="ItemId" />
       <PropertyRef Name="BillId" />
       <PropertyRef Name="DrinkId" />
     </Key>
     <Property Name="Amount" Type="int" />
+    <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="ItemTopping">
     <Key>
-      <PropertyRef Name="DrinkId" />
+      <PropertyRef Name="ItemId" />
       <PropertyRef Name="ToppingId" />
-      <PropertyRef Name="Billid" />
+      <PropertyRef Name="BillId" />
+      <PropertyRef Name="DrinkId" />
     </Key>
-    <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
     <Property Name="ToppingId" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="Billid" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="Permision">
     <Key>
@@ -258,7 +262,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Items__BillId__5070F446">
+  <Association Name="FK__Items__BillId__04AFB25B">
     <End Role="Bills" Type="Self.Bills" Multiplicity="1" />
     <End Role="Items" Type="Self.Items" Multiplicity="*" />
     <ReferentialConstraint>
@@ -270,7 +274,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Items__DrinkId__5165187F">
+  <Association Name="FK__Items__DrinkId__05A3D694">
     <End Role="Drinks" Type="Self.Drinks" Multiplicity="1" />
     <End Role="Items" Type="Self.Items" Multiplicity="*" />
     <ReferentialConstraint>
@@ -282,7 +286,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ItemToppi__Toppi__57DD0BE4">
+  <Association Name="FK__ItemToppi__Toppi__0C50D423">
     <End Role="Toppings" Type="Self.Toppings" Multiplicity="1" />
     <End Role="ItemTopping" Type="Self.ItemTopping" Multiplicity="*" />
     <ReferentialConstraint>
@@ -294,16 +298,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ItemTopping__56E8E7AB">
+  <Association Name="FK__ItemTopping__0B5CAFEA">
     <End Role="Items" Type="Self.Items" Multiplicity="1" />
     <End Role="ItemTopping" Type="Self.ItemTopping" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Items">
+        <PropertyRef Name="ItemId" />
         <PropertyRef Name="BillId" />
         <PropertyRef Name="DrinkId" />
       </Principal>
       <Dependent Role="ItemTopping">
-        <PropertyRef Name="Billid" />
+        <PropertyRef Name="ItemId" />
+        <PropertyRef Name="BillId" />
         <PropertyRef Name="DrinkId" />
       </Dependent>
     </ReferentialConstraint>
@@ -462,19 +468,19 @@
       <End Role="Toppings" EntitySet="Toppings" />
       <End Role="DrinkTopping" EntitySet="DrinkTopping" />
     </AssociationSet>
-    <AssociationSet Name="FK__Items__BillId__5070F446" Association="Self.FK__Items__BillId__5070F446">
+    <AssociationSet Name="FK__Items__BillId__04AFB25B" Association="Self.FK__Items__BillId__04AFB25B">
       <End Role="Bills" EntitySet="Bills" />
       <End Role="Items" EntitySet="Items" />
     </AssociationSet>
-    <AssociationSet Name="FK__Items__DrinkId__5165187F" Association="Self.FK__Items__DrinkId__5165187F">
+    <AssociationSet Name="FK__Items__DrinkId__05A3D694" Association="Self.FK__Items__DrinkId__05A3D694">
       <End Role="Drinks" EntitySet="Drinks" />
       <End Role="Items" EntitySet="Items" />
     </AssociationSet>
-    <AssociationSet Name="FK__ItemToppi__Toppi__57DD0BE4" Association="Self.FK__ItemToppi__Toppi__57DD0BE4">
+    <AssociationSet Name="FK__ItemToppi__Toppi__0C50D423" Association="Self.FK__ItemToppi__Toppi__0C50D423">
       <End Role="Toppings" EntitySet="Toppings" />
       <End Role="ItemTopping" EntitySet="ItemTopping" />
     </AssociationSet>
-    <AssociationSet Name="FK__ItemTopping__56E8E7AB" Association="Self.FK__ItemTopping__56E8E7AB">
+    <AssociationSet Name="FK__ItemTopping__0B5CAFEA" Association="Self.FK__ItemTopping__0B5CAFEA">
       <End Role="Items" EntitySet="Items" />
       <End Role="ItemTopping" EntitySet="ItemTopping" />
     </AssociationSet>
