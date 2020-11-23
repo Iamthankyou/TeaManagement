@@ -15,7 +15,7 @@
         <EntityTypeShape EntityType="tea01Model1.Resource" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.Staff" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="tea01Model1.TableSpace" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model1.TableSpace" Width="1.5" PointX="8" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.Topping" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
         <AssociationConnector Association="tea01Model1.FK__Bills__PhoneNumb__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="tea01Model1.FK__Bills__TableId__403A8C7D" ManuallyRouted="false" />

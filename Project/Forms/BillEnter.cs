@@ -121,29 +121,62 @@ namespace Project.Forms
 
             if (txVoucher.Text != "")
             {
-                db.Bills.Add(new Bill()
+                if (AddTable.idTableChoose != "")
                 {
-                    BillId = codeBill,
-                    OrderTimeStart = DateTime.Now,
-                    Payments = payment,
-                    Total = Convert.ToInt32(sumRaw.Text.Split(' ')[0]),
-                    UserName = SignIn.username,
-                    PhoneNumber = Home.phoneCustomer,
-                    CodeVoucher = txVoucher.Text,
-                });
+                    db.Bills.Add(new Bill()
+                    {
+                        BillId = codeBill,
+                        OrderTimeStart = DateTime.Now,
+                        Payments = payment,
+                        Total = Convert.ToInt32(sumRaw.Text.Split(' ')[0]),
+                        UserName = SignIn.username,
+                        PhoneNumber = Home.phoneCustomer,
+                        CodeVoucher = txVoucher.Text,
+                        TableId = AddTable.idTableChoose
+                    });
+                }
+                else
+                {
+                    db.Bills.Add(new Bill()
+                    {
+                        BillId = codeBill,
+                        OrderTimeStart = DateTime.Now,
+                        Payments = payment,
+                        Total = Convert.ToInt32(sumRaw.Text.Split(' ')[0]),
+                        UserName = SignIn.username,
+                        PhoneNumber = Home.phoneCustomer,
+                        CodeVoucher = txVoucher.Text,
+                    });
+                }
+
             }
             else
             {
-                db.Bills.Add(new Bill()
+                if (AddTable.idTableChoose != "")
                 {
-                    BillId = codeBill,
-                    OrderTimeStart = DateTime.Now,
-                    Payments = payment,
-                    Total = Convert.ToInt32(sumRaw.Text.Split(' ')[0]),
-                    UserName = SignIn.username,
-                    PhoneNumber = Home.phoneCustomer
-                });
-
+                    db.Bills.Add(new Bill()
+                    {
+                        BillId = codeBill,
+                        OrderTimeStart = DateTime.Now,
+                        Payments = payment,
+                        Total = Convert.ToInt32(sumRaw.Text.Split(' ')[0]),
+                        UserName = SignIn.username,
+                        PhoneNumber = Home.phoneCustomer,
+                        TableId = AddTable.idTableChoose
+                    });
+                }
+                else
+                {
+                    db.Bills.Add(new Bill()
+                    {
+                        BillId = codeBill,
+                        OrderTimeStart = DateTime.Now,
+                        Payments = payment,
+                        Total = Convert.ToInt32(sumRaw.Text.Split(' ')[0]),
+                        UserName = SignIn.username,
+                        PhoneNumber = Home.phoneCustomer
+                    });
+                }
             }
 
 
@@ -197,6 +230,12 @@ namespace Project.Forms
         private void checkInternetMoney_Click(object sender, EventArgs e)
         {
             checkRawMoney.Checked = !checkInternetMoney.Checked;
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            AddTable addTable = new AddTable();
+            addTable.ShowDialog();
         }
     }
 }  

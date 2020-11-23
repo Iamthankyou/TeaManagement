@@ -646,6 +646,7 @@
             this.hyperlinkLabelControl1.Size = new System.Drawing.Size(53, 13);
             this.hyperlinkLabelControl1.TabIndex = 27;
             this.hyperlinkLabelControl1.Text = "Đăng nhập";
+            this.hyperlinkLabelControl1.Click += new System.EventHandler(this.hyperlinkLabelControl1_Click);
             // 
             // labelControl1
             // 

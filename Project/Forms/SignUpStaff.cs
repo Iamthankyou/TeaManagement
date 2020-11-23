@@ -129,5 +129,14 @@ namespace Project
                 MessageBox.Show("Chỉ được nhập số");
             }
         }
+
+        private void hyperlinkLabelControl1_Click(object sender, EventArgs e)
+        {
+
+            SignIn signIn = new SignIn();
+            this.Hide();
+            signIn.ShowDialog();
+            this.Close();
+        }
     }
 }

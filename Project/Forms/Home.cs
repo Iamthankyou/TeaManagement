@@ -301,38 +301,43 @@ namespace Project.Forms
 
         private void bunifuMaterialTextbox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar!=13;
-
-            if (phone.Text.Length > 10)
+            if (e.KeyChar == 13)
             {
-                e.Handled = true;
-            }
+                e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 13;
 
-            if (e.Handled)
-            {
-                MessageBox.Show("Chỉ nhập số điện thoại có 10 chữ số");
-                phone.Text = "";
-            }
-
-            if (phone.Text.Length == 10)
-            {
-                tea01Entities2 db = new tea01Entities2();
-                var customer = db.Customers.Find(phone.Text);
-
-                if (customer != null)
+                if (phone.Text.Length > 10)
                 {
-                    name.Text = customer.FullName;
-                    address.Text = customer.Address;
-
-                    bestDrink();
-                    recentBill();
-                    lbLevelPoint.Text = "Level " + customer.Level.ToString(); 
+                    e.Handled = true;
                 }
-            }
-            else
-            {
-                name.Text = "";
-                address.Text = "";
+
+                if (e.Handled)
+                {
+                    MessageBox.Show("Chỉ nhập số điện thoại có 10 chữ số");
+                    phone.Text = "";
+                }
+
+                if (phone.Text.Length == 10)
+                {
+                    tea01Entities2 db = new tea01Entities2();
+                    var customer = db.Customers.Find(phone.Text);
+
+                    if (customer != null)
+                    {
+                        name.Text = customer.FullName;
+                        address.Text = customer.Address;
+
+                        bestDrink();
+                        recentBill();
+                        lbLevelPoint.Text = "Level " + customer.Level.ToString();
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("Chỉ nhập số điện thoại có 10 chữ số");
+                    name.Text = "";
+                    address.Text = "";
+                }
             }
         }
 
@@ -377,6 +382,9 @@ namespace Project.Forms
             //     MessageBox.Show(SignIn.username);
             //recentBill();
             //bestDrink();
+            phoneCustomer = phone.Text;
+            CustomerBill customerBill = new CustomerBill();
+            customerBill.ShowDialog();
         }
 
         private void recentBill()

@@ -177,5 +177,32 @@ BEGIN
 	SELECT @sum = SUM(Total) FROM Bills GROUP BY PhoneNumber HAVING PhoneNumber = (SELECT PhoneNumber FROM inserted)
 
 	UPDATE Customer SET Level = @sum/500000 WHERE PhoneNumber = (SELECT PhoneNumber FROM inserted)
+-- Auto update status tablespace
+	DECLARE @count int
+--	SELECT @count = ISNULL(COUNT(Bills.TableId),0) FROM Bills INNER JOIN TableSpace ON Bills.TableId = TableSpace.TableId  GROUP BY TableSpace.TableId HAVING TableSpace.TableId = (SELECT TableId FROM INSERTED)
+	SELECT @count = ISNULL(COUNT(Bills.TableId),0) FROM Bills INNER JOIN TableSpace ON Bills.TableId = TableSpace.TableId WHERE Bills.OrderTimeEnd IS NULL GROUP BY TableSpace.TableId HAVING TableSpace.TableId = '1' 
+
+	IF @count>=4
+		UPDATE TableSpace SET Status=0 WHERE TableId = (SELECT TableId FROM INSERTED)
+	ELSE
+		UPDATE TableSpace SET Status=1 WHERE TableId = (SELECT TableId FROM INSERTED)
 END
+
+
+SELECT * FROM Bills WHERE PhoneNumber = '0123401234'
+SELECT * FROM Bills
+
+SELECT * FROM Bills WHERE BillId = '24113224'
+SELECT * FROM Bills WHERE BillId = '24113458'
+
+SELECT * FROM TableSpace
+
+UPDATE TableSpace SET Status = 1
+
+SELECT * FROM Bills INNER JOIN TableSpace ON Bills.TableId = TableSpace.TableId
+
+DECLARE @count int
+SELECT @count = ISNULL(COUNT(Bills.TableId),0) FROM Bills INNER JOIN TableSpace ON Bills.TableId = TableSpace.TableId WHERE Bills.OrderTimeEnd IS NULL GROUP BY TableSpace.TableId HAVING TableSpace.TableId = '1' 
+print @count
+
 
