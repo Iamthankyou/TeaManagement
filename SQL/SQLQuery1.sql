@@ -271,3 +271,26 @@ CREATE TABLE Topping_Resource
 SELECT * FROM Drinks
 
 SELECT * FROM Toppings
+
+SELECT * FROM Drink_Resource
+
+SELECT * FROM Topping_Resource
+
+SELECT * FROM Items INNER JOIN ItemTopping ON ItemTopping.ItemId = Items.ItemId INNER JOIN Toppings ON Toppings.ToppingId = ItemTopping.ToppingId WHERE Items.BillId = '241143317'
+
+SELECT * FROM Resources
+
+SELECT * FROM Bills
+
+CREATE FUNCTION 
+
+
+
+
+
+
+
+
+
+
+
