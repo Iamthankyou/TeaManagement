@@ -41,8 +41,7 @@
     <Property Name="DrinkTypeId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="DrinkType" Relationship="Self.FK__Drinks__DrinkTyp__47DBAE45" FromRole="Drinks" ToRole="DrinkTypes" />
     <NavigationProperty Name="Items" Relationship="Self.FK__Items__DrinkId__5165187F" FromRole="Drinks" ToRole="Items" />
-    <NavigationProperty Name="Resources" Relationship="Self.DrinkResource" FromRole="Drinks" ToRole="Resources" />
-    <NavigationProperty Name="Toppings" Relationship="Self.DrinkTopping" FromRole="Drinks" ToRole="Toppings" />
+    <NavigationProperty Name="Drink_Resource" Relationship="tea01Model1.FK__Drink_Res__Drink__11158940" FromRole="Drink" ToRole="Drink_Resource" />
   </EntityType>
   <EntityType Name="DrinkType">
     <Key>
@@ -91,8 +90,8 @@
     <Property Name="ResourceId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ResourceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Amount" Type="Int32" />
-    <NavigationProperty Name="Drinks" Relationship="Self.DrinkResource" FromRole="Resources" ToRole="Drinks" />
-    <NavigationProperty Name="Toppings" Relationship="Self.ToppingResource" FromRole="Resources" ToRole="Toppings" />
+    <NavigationProperty Name="Drink_Resource" Relationship="tea01Model1.FK__Drink_Res__Resou__10216507" FromRole="Resource" ToRole="Drink_Resource" />
+    <NavigationProperty Name="Topping_Resource" Relationship="tea01Model1.FK__Topping_R__Resou__17C286CF" FromRole="Resource" ToRole="Topping_Resource" />
   </EntityType>
   <EntityType Name="Staff">
     <Key>
@@ -134,9 +133,8 @@
     <Property Name="ToppingId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ToppingName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Price" Type="Int32" />
-    <NavigationProperty Name="Drinks" Relationship="Self.DrinkTopping" FromRole="Toppings" ToRole="Drinks" />
-    <NavigationProperty Name="Resources" Relationship="Self.ToppingResource" FromRole="Toppings" ToRole="Resources" />
     <NavigationProperty Name="Items" Relationship="tea01Model1.ItemTopping" FromRole="Topping" ToRole="Item" />
+    <NavigationProperty Name="Topping_Resource" Relationship="tea01Model1.FK__Topping_R__Toppi__18B6AB08" FromRole="Topping" ToRole="Topping_Resource" />
   </EntityType>
   <Association Name="FK__Bills__PhoneNumb__3F466844">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -222,18 +220,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="DrinkResource">
-    <End Role="Drinks" Type="Self.Drink" Multiplicity="*" />
-    <End Role="Resources" Type="Self.Resource" Multiplicity="*" />
-  </Association>
-  <Association Name="DrinkTopping">
-    <End Role="Drinks" Type="Self.Drink" Multiplicity="*" />
-    <End Role="Toppings" Type="Self.Topping" Multiplicity="*" />
-  </Association>
-  <Association Name="ToppingResource">
-    <End Role="Resources" Type="Self.Resource" Multiplicity="*" />
-    <End Role="Toppings" Type="Self.Topping" Multiplicity="*" />
-  </Association>
   <Association Name="UserPermision">
     <End Role="Permision" Type="Self.Permision" Multiplicity="*" />
     <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
@@ -279,18 +265,6 @@
       <End Role="Permision" EntitySet="Permisions" />
       <End Role="PermisionDetail" EntitySet="PermisionDetails" />
     </AssociationSet>
-    <AssociationSet Name="DrinkResource" Association="Self.DrinkResource">
-      <End Role="Drinks" EntitySet="Drinks" />
-      <End Role="Resources" EntitySet="Resources" />
-    </AssociationSet>
-    <AssociationSet Name="DrinkTopping" Association="Self.DrinkTopping">
-      <End Role="Drinks" EntitySet="Drinks" />
-      <End Role="Toppings" EntitySet="Toppings" />
-    </AssociationSet>
-    <AssociationSet Name="ToppingResource" Association="Self.ToppingResource">
-      <End Role="Resources" EntitySet="Resources" />
-      <End Role="Toppings" EntitySet="Toppings" />
-    </AssociationSet>
     <AssociationSet Name="UserPermision" Association="Self.UserPermision">
       <End Role="Permision" EntitySet="Permisions" />
       <End Role="Staff" EntitySet="Staffs" />
@@ -334,6 +308,24 @@
       <End Role="Topping" EntitySet="Toppings" />
       <End Role="Item" EntitySet="Items" />
     </AssociationSet>
+    <EntitySet Name="Drink_Resource" EntityType="tea01Model1.Drink_Resource" />
+    <AssociationSet Name="FK__Drink_Res__Drink__11158940" Association="tea01Model1.FK__Drink_Res__Drink__11158940">
+      <End Role="Drink" EntitySet="Drinks" />
+      <End Role="Drink_Resource" EntitySet="Drink_Resource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Drink_Res__Resou__10216507" Association="tea01Model1.FK__Drink_Res__Resou__10216507">
+      <End Role="Resource" EntitySet="Resources" />
+      <End Role="Drink_Resource" EntitySet="Drink_Resource" />
+    </AssociationSet>
+    <EntitySet Name="Topping_Resource" EntityType="tea01Model1.Topping_Resource" />
+    <AssociationSet Name="FK__Topping_R__Resou__17C286CF" Association="tea01Model1.FK__Topping_R__Resou__17C286CF">
+      <End Role="Resource" EntitySet="Resources" />
+      <End Role="Topping_Resource" EntitySet="Topping_Resource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Topping_R__Toppi__18B6AB08" Association="tea01Model1.FK__Topping_R__Toppi__18B6AB08">
+      <End Role="Topping" EntitySet="Toppings" />
+      <End Role="Topping_Resource" EntitySet="Topping_Resource" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -371,5 +363,75 @@
   <Association Name="ItemTopping">
     <End Type="tea01Model1.Topping" Role="Topping" Multiplicity="*" />
     <End Type="tea01Model1.Item" Role="Item" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Drink_Resource">
+    <Key>
+      <PropertyRef Name="ResourceId" />
+      <PropertyRef Name="DrinkId" />
+    </Key>
+    <Property Name="ResourceId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DrinkId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Int32" />
+    <NavigationProperty Name="Drink" Relationship="tea01Model1.FK__Drink_Res__Drink__11158940" FromRole="Drink_Resource" ToRole="Drink" />
+    <NavigationProperty Name="Resource" Relationship="tea01Model1.FK__Drink_Res__Resou__10216507" FromRole="Drink_Resource" ToRole="Resource" />
+  </EntityType>
+  <Association Name="FK__Drink_Res__Drink__11158940">
+    <End Type="tea01Model1.Drink" Role="Drink" Multiplicity="1" />
+    <End Type="tea01Model1.Drink_Resource" Role="Drink_Resource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drink">
+        <PropertyRef Name="DrinkId" />
+      </Principal>
+      <Dependent Role="Drink_Resource">
+        <PropertyRef Name="DrinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Drink_Res__Resou__10216507">
+    <End Type="tea01Model1.Resource" Role="Resource" Multiplicity="1" />
+    <End Type="tea01Model1.Drink_Resource" Role="Drink_Resource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Drink_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Topping_Resource">
+    <Key>
+      <PropertyRef Name="ResourceId" />
+      <PropertyRef Name="ToppingId" />
+    </Key>
+    <Property Name="ResourceId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ToppingId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Int32" />
+    <NavigationProperty Name="Resource" Relationship="tea01Model1.FK__Topping_R__Resou__17C286CF" FromRole="Topping_Resource" ToRole="Resource" />
+    <NavigationProperty Name="Topping" Relationship="tea01Model1.FK__Topping_R__Toppi__18B6AB08" FromRole="Topping_Resource" ToRole="Topping" />
+  </EntityType>
+  <Association Name="FK__Topping_R__Resou__17C286CF">
+    <End Type="tea01Model1.Resource" Role="Resource" Multiplicity="1" />
+    <End Type="tea01Model1.Topping_Resource" Role="Topping_Resource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resource">
+        <PropertyRef Name="ResourceId" />
+      </Principal>
+      <Dependent Role="Topping_Resource">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Topping_R__Toppi__18B6AB08">
+    <End Type="tea01Model1.Topping" Role="Topping" Multiplicity="1" />
+    <End Type="tea01Model1.Topping_Resource" Role="Topping_Resource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topping">
+        <PropertyRef Name="ToppingId" />
+      </Principal>
+      <Dependent Role="Topping_Resource">
+        <PropertyRef Name="ToppingId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
 </Schema>

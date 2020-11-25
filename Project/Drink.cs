@@ -18,8 +18,7 @@ namespace Project
         public Drink()
         {
             this.Items = new HashSet<Item>();
-            this.Resources = new HashSet<Resource>();
-            this.Toppings = new HashSet<Topping>();
+            this.Drink_Resource = new HashSet<Drink_Resource>();
         }
     
         public string DrinkId { get; set; }
@@ -33,8 +32,6 @@ namespace Project
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Item> Items { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Resource> Resources { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Topping> Toppings { get; set; }
+        public virtual ICollection<Drink_Resource> Drink_Resource { get; set; }
     }
 }

@@ -40,6 +40,8 @@ namespace Project
         public virtual DbSet<TableSpace> TableSpaces { get; set; }
         public virtual DbSet<Topping> Toppings { get; set; }
         public virtual DbSet<Voucher> Vouchers { get; set; }
+        public virtual DbSet<Drink_Resource> Drink_Resource { get; set; }
+        public virtual DbSet<Topping_Resource> Topping_Resource { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

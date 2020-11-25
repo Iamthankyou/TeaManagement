@@ -124,30 +124,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="DrinkResource" TypeName="tea01Model1.DrinkResource" StoreEntitySet="DrinkResource">
-      <EndProperty Name="Drinks">
-        <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
-      </EndProperty>
-      <EndProperty Name="Resources">
-        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="DrinkTopping" TypeName="tea01Model1.DrinkTopping" StoreEntitySet="DrinkTopping">
-      <EndProperty Name="Drinks">
-        <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
-      </EndProperty>
-      <EndProperty Name="Toppings">
-        <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ToppingResource" TypeName="tea01Model1.ToppingResource" StoreEntitySet="ToppingResource">
-      <EndProperty Name="Resources">
-        <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
-      </EndProperty>
-      <EndProperty Name="Toppings">
-        <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="UserPermision" TypeName="tea01Model1.UserPermision" StoreEntitySet="UserPermision">
       <EndProperty Name="Permision">
         <ScalarProperty Name="PermisionID" ColumnName="PermisionID" />
@@ -200,5 +176,23 @@
         <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Drink_Resource">
+      <EntityTypeMapping TypeName="tea01Model1.Drink_Resource">
+        <MappingFragment StoreEntitySet="Drink_Resource">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+          <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topping_Resource">
+      <EntityTypeMapping TypeName="tea01Model1.Topping_Resource">
+        <MappingFragment StoreEntitySet="Topping_Resource">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+          <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

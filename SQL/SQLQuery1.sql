@@ -190,12 +190,20 @@ END
 
 
 SELECT * FROM Bills WHERE PhoneNumber = '0123401234'
+
 SELECT * FROM Bills
 
 SELECT * FROM Bills WHERE BillId = '24113224'
 SELECT * FROM Bills WHERE BillId = '24113458'
 
 SELECT * FROM TableSpace
+
+SELECT * FROM Resources
+
+SELECT * FROM DrinkResource
+
+SELECT * FROM ToppingResource
+
 
 UPDATE TableSpace SET Status = 1
 
@@ -205,4 +213,61 @@ DECLARE @count int
 SELECT @count = ISNULL(COUNT(Bills.TableId),0) FROM Bills INNER JOIN TableSpace ON Bills.TableId = TableSpace.TableId WHERE Bills.OrderTimeEnd IS NULL GROUP BY TableSpace.TableId HAVING TableSpace.TableId = '1' 
 print @count
 
+SELECT * FROM Permision
 
+SELECT * FROM PermisionDetail
+
+SELECT * FROM Resources
+
+SELECT * FROM ToppingResource
+
+SELECT * FROM DrinkResource
+
+ALTER TABLE ToppingResource ADD Amount int
+
+ALTER TABLE DrinkResource ADD Amount int
+
+
+CREATE TABLE Drink_Resource
+(
+  ResourceId VARCHAR(10) NOT NULL,
+  DrinkId VARCHAR(10) NOT NULL,
+  Amount int,
+  FOREIGN KEY (ResourceId) REFERENCES Resources(ResourceId),
+  FOREIGN KEY (DrinkId) REFERENCES Drinks(DrinkId),
+  PRIMARY KEY(ResourceId,DrinkId)
+);
+
+DROP TABLE DrinkResource
+
+
+CREATE TABLE Drink_Topping
+(
+  DrinkId VARCHAR(10) NOT NULL,
+  ToppingId VARCHAR(10) NOT NULL,
+  Amount int,
+  FOREIGN KEY (DrinkId) REFERENCES Drinks(DrinkId),
+  FOREIGN KEY (ToppingId) REFERENCES Toppings(ToppingId),
+  PRIMARY KEY (DrinkId,ToppingId)
+);
+
+DROP TABLE DrinkTopping
+
+DROP TABLE Drink_Topping
+
+DROP TABLE ToppingResource
+
+CREATE TABLE Topping_Resource
+(
+  ResourceId VARCHAR(10) NOT NULL,
+  ToppingId VARCHAR(10) NOT NULL,
+  Amount int,
+  FOREIGN KEY (ResourceId) REFERENCES Resources(ResourceId),
+  FOREIGN KEY (ToppingId) REFERENCES Toppings(ToppingId),
+  PRIMARY KEY(ResourceId,ToppingId)
+);
+
+
+SELECT * FROM Drinks
+
+SELECT * FROM Toppings

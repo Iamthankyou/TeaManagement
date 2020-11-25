@@ -141,6 +141,9 @@
     <Compile Include="DrinkType.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Drink_Resource.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Encryption.cs" />
     <Compile Include="Forms\AddTable.cs">
       <SubType>Form</SubType>
@@ -177,6 +180,12 @@
     </Compile>
     <Compile Include="Forms\ManageDrinkType.Designer.cs">
       <DependentUpon>ManageDrinkType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageResource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageResource.Designer.cs">
+      <DependentUpon>ManageResource.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ManageVoucher.cs">
       <SubType>Form</SubType>
@@ -282,9 +291,19 @@
     <Compile Include="Topping.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Topping_Resource.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\buttonBunifuCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Utils\buttonCustom.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utils\checkBoxBunifuCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\DialogCustom.cs" />
     <Compile Include="Utils\labelCustom.cs" />
     <Compile Include="Voucher.cs">
       <DependentUpon>Model2.tt</DependentUpon>
@@ -306,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageDrinkType.resx">
       <DependentUpon>ManageDrinkType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageResource.resx">
+      <DependentUpon>ManageResource.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageVoucher.resx">
       <DependentUpon>ManageVoucher.cs</DependentUpon>
