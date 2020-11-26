@@ -19,7 +19,7 @@ namespace Project
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new RegisterStaff());
             //           Application.Run(new Forms.PermisionForm());
-            //Application.Run(new SignIn());  
+            Application.Run(new SignIn());  
             //Application.Run(new ManageDrinkType());
             //Application.Run(new ShowAddDrink());
             //Application.Run(new Home());
@@ -32,7 +32,8 @@ namespace Project
 
             //Application.Run(new PrevHome());
             //Application.Run(new Analysis());
-            Application.Run(new ManageStaff());
+            //Application.Run(new ManageStaff());
+            //Application.Run(new ManageBill());
         }
     }
 }

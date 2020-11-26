@@ -598,3 +598,5 @@ D:\TeaManagement\Project\obj\Debug\Project.Forms.Analysis.resources
 D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
 D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
 D:\TeaManagement\Project\obj\Debug\Project.Forms.ManageStaff.resources
+D:\TeaManagement\Project\obj\Debug\Project.Forms.ManageBill.resources
+D:\TeaManagement\Project\obj\Debug\Project.Forms.ManageCustomer.resources

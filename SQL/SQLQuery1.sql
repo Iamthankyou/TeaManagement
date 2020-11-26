@@ -137,12 +137,16 @@ INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (
 
 DROP TABLE ItemTopping
 
+USE tea01
 
 SELECT * FROM Resources
 
 SELECT * FROM Items
 
+SELECT * FROM Bills INNER JOIN Items ON Bills.BillId = Items.BillId
+
 SELECT * FROM Bills
+
 
 SELECT * FROM Staff
 
@@ -410,3 +414,25 @@ UPDATE Bills SET Bills.UserName = 'nobita' WHERE UserName IS NULL
 SELECT * FROM UserPermision
 
 SELECT * FROM ItemTopping
+
+SELECT * FROM Bills WHERE BillId = '261119114'
+
+SELECT * FROM Bills INNER JOIN Items ON Bills.BillId = Items.BillId WHERE Bills.BillId = '2611185350'
+
+SELECT * FROM ItemTopping WHERE ItemTopping.BillId = '261119114'
+
+SELECT * FROM Items WHERE BillId = '261119114' --'
+
+DELETE Bills WHERE BillId = '261119114'
+
+-- TRIGGER 3
+
+CREATE TRIGGER autoDeleteBill ON Bills INSTEAD OF Delete AS
+BEGIN
+	DECLARE @billId varchar(10)
+	SELECT @billId=BillId FROM DELETED
+
+	DELETE ItemTopping WHERE ItemTopping.BillId = @billId
+	DELETE Items WHERE Items.BillId = @billId
+	DELETE Bills WHERE BillId = @billId
+END

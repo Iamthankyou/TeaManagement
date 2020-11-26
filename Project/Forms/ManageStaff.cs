@@ -107,5 +107,15 @@ namespace Project.Forms
                 updateGridViewStaff();
             }
         }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+
+            PrevHome prevHome = new PrevHome();
+            this.Hide();
+            prevHome.ShowDialog();
+            this.Close();
+
+        }
     }
 }

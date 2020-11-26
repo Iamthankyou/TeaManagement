@@ -29,10 +29,8 @@ namespace Project.Forms
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
-            this.Hide();
-            home.ShowDialog();
-            this.Close();
+           
+
         }
 
         private void bunifuButton14_Click(object sender, EventArgs e)
@@ -45,7 +43,10 @@ namespace Project.Forms
 
         private void bunifuButton13_Click(object sender, EventArgs e)
         {
-
+            ManageBill manageBill = new ManageBill();
+            this.Hide();
+            manageBill.ShowDialog();
+            this.Close();
         }
 
         private void bunifuButton12_Click(object sender, EventArgs e)
@@ -98,10 +99,26 @@ namespace Project.Forms
 
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
-            this.Hide();
-            home.ShowDialog();
-            this.Close();
+            tea01Entities2 db = new tea01Entities2();
+            Staff staff = db.Staffs.Find(SignIn.username);
+
+            foreach (var i in staff.Permisions)
+            {
+                foreach (var j in i.PermisionDetails)
+                {
+                    if (j.ActionName == "C")
+                    {
+                        //MessageBox.Show(j.ActionName);
+
+                        Home home = new Home();
+                        this.Hide();
+                        home.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+
+            MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
         }
 
         private void bunifuButton6_Click(object sender, EventArgs e)
@@ -109,6 +126,14 @@ namespace Project.Forms
             SignIn signIn = new SignIn();
             this.Hide();
             signIn.ShowDialog();
+            this.Close();
+        }
+
+        private void bunifuButton5_Click(object sender, EventArgs e)
+        {
+            ManageCustomer manageCustomer = new ManageCustomer();
+            this.Hide();
+            manageCustomer.ShowDialog();
             this.Close();
         }
     }

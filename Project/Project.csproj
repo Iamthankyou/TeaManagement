@@ -184,6 +184,18 @@
     <Compile Include="Forms\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageBill.Designer.cs">
+      <DependentUpon>ManageBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageCustomer.Designer.cs">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManageDrinkType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +361,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageBill.resx">
+      <DependentUpon>ManageBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageCustomer.resx">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageDrinkType.resx">
       <DependentUpon>ManageDrinkType.cs</DependentUpon>
