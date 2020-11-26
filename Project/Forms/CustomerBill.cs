@@ -34,8 +34,12 @@ namespace Project.Forms
             tea01Entities2 db = new tea01Entities2();
             int voucher = 1;
 
-            gridView.DataSource = db.Bills.Where(u => u.Customer.PhoneNumber == Home.phoneCustomer).ToList().Select(u=>new {u.BillId, v = u.Total * (u.Voucher == null ? 1: (double)(100-u.Voucher.ratio)/100), u.OrderTimeStart, u.Staff.FullName}).OrderByDescending(u=>u.OrderTimeStart).ToList();
             //MessageBox.Show(Home.phoneCustomer);
+
+//            gridView.DataSource = db.Bills.Where(u => u.Customer.PhoneNumber == Home.phoneCustomer).ToList().Select(u=>new {u.BillId, v = u.Total * (u.Voucher == null ? 1: (double)(100-u.Voucher.ratio)/100), u.OrderTimeStart, u.Staff.FullName}).OrderByDescending(u=>u.OrderTimeStart).ToList();
+            //MessageBox.Show(Home.phoneCustomer);
+            gridView.DataSource = db.Bills.Where(u => u.Customer.PhoneNumber == Home.phoneCustomer).Select(u=>new {u.BillId, v = u.Total * (u.Voucher == null ? 1: (double)(100-u.Voucher.ratio)/100), u.OrderTimeStart, u.Staff.FullName}).OrderByDescending(u=>u.OrderTimeStart).ToList();
+
             gridView.Columns[0].HeaderText = "Mã hóa đơn";
             gridView.Columns[1].HeaderText = "Tiền thanh toán";
             gridView.Columns[2].Visible = false;

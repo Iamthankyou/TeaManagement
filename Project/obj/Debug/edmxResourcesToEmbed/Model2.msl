@@ -166,16 +166,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="ItemTopping" TypeName="tea01Model1.ItemTopping" StoreEntitySet="ItemTopping">
-      <EndProperty Name="Item">
-        <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
-        <ScalarProperty Name="BillId" ColumnName="BillId" />
-        <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-      </EndProperty>
-      <EndProperty Name="Topping">
-        <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
-      </EndProperty>
-    </AssociationSetMapping>
     <EntitySetMapping Name="Drink_Resource">
       <EntityTypeMapping TypeName="tea01Model1.Drink_Resource">
         <MappingFragment StoreEntitySet="Drink_Resource">
@@ -191,6 +181,17 @@
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
           <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemToppings">
+      <EntityTypeMapping TypeName="tea01Model1.ItemTopping">
+        <MappingFragment StoreEntitySet="ItemTopping">
+          <ScalarProperty Name="DrinkId" ColumnName="DrinkId" />
+          <ScalarProperty Name="BillId" ColumnName="BillId" />
+          <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="IdItemTopping" ColumnName="IdItemTopping" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

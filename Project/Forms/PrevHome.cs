@@ -63,7 +63,10 @@ namespace Project.Forms
 
         private void bunifuButton9_Click(object sender, EventArgs e)
         {
-
+            Analysis analysis = new Analysis();
+            this.Hide();
+            analysis.ShowDialog();
+            this.Close();
         }
 
         private void bunifuButton10_Click(object sender, EventArgs e)

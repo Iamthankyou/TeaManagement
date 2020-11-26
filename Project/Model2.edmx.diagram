@@ -9,14 +9,14 @@
         <EntityTypeShape EntityType="tea01Model1.Customer" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.Drink" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.DrinkType" Width="1.5" PointX="0.5" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="tea01Model1.Item" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model1.Item" Width="1.5" PointX="5.5" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.Permision" Width="1.5" PointX="1.375" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.PermisionDetail" Width="1.5" PointX="3.75" PointY="14.5" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.Resource" Width="1.5" PointX="5.125" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.Staff" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="tea01Model1.TableSpace" Width="1.5" PointX="8" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="tea01Model1.Topping" Width="1.5" PointX="9.875" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tea01Model1.Topping" Width="1.5" PointX="11.25" PointY="3.125" IsExpanded="true" />
         <AssociationConnector Association="tea01Model1.FK__Bills__PhoneNumb__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="tea01Model1.FK__Bills__TableId__403A8C7D" ManuallyRouted="false" />
         <AssociationConnector Association="tea01Model1.FK__Bills__UserName__3E52440B" ManuallyRouted="false" />
@@ -27,13 +27,15 @@
         <AssociationConnector Association="tea01Model1.UserPermision" ManuallyRouted="false" />
         <EntityTypeShape EntityType="tea01Model1.Voucher" Width="1.5" PointX="8.5" PointY="8.625" />
         <AssociationConnector Association="tea01Model1.fk_codeVoucher" />
-        <AssociationConnector Association="tea01Model1.ItemTopping" />
         <EntityTypeShape EntityType="tea01Model1.Drink_Resource" Width="1.5" PointX="2.5" PointY="5.375" />
         <AssociationConnector Association="tea01Model1.FK__Drink_Res__Drink__11158940" />
         <AssociationConnector Association="tea01Model1.FK__Drink_Res__Resou__10216507" />
         <EntityTypeShape EntityType="tea01Model1.Topping_Resource" Width="1.875" PointX="7.5" PointY="6" />
         <AssociationConnector Association="tea01Model1.FK__Topping_R__Resou__17C286CF" />
         <AssociationConnector Association="tea01Model1.FK__Topping_R__Toppi__18B6AB08" />
+        <EntityTypeShape EntityType="tea01Model1.ItemTopping" Width="1.5" PointX="8.375" PointY="2.875" />
+        <AssociationConnector Association="tea01Model1.FK__ItemTopping__1E6F845E" />
+        <AssociationConnector Association="tea01Model1.FK__ItemToppi__Toppi__1F63A897" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

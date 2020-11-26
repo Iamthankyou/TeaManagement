@@ -81,14 +81,64 @@ SELECT * FROM Bills INNER JOIN Items ON Items.BillId = Bills.BillId
 
 CREATE TABLE ItemTopping
 (
+  IdItemTopping INT IDENTITY(1,1),
   ItemId INT NOT NULL,
   ToppingId VARCHAR(10) NOT NULL,
   BillId VARCHAR(10) NOT NULL,
   DrinkId VARCHAR(10) NOT NULL,
   FOREIGN KEY (ItemId,BillId,DrinkId) REFERENCES Items(ItemId,BillId,DrinkId),
   FOREIGN KEY (ToppingId) REFERENCES Toppings(ToppingId),
-  PRIMARY KEY(ItemId,ToppingId,BillId,DrinkId)
 );
+
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (8, N'11', N'231131458', N'01')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (9, N'10', N'231133324', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (9, N'11', N'231133324', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (9, N'4', N'231133324', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (9, N'5', N'231133324', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (9, N'6', N'231133324', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (11, N'11', N'231133324', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (11, N'2', N'231133324', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (11, N'5', N'231133324', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (12, N'10', N'231133324', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (12, N'11', N'231133324', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (12, N'2', N'231133324', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (13, N'1', N'231133324', N'05')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (13, N'10', N'231133324', N'05')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (13, N'4', N'231133324', N'05')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (14, N'10', N'231133324', N'6')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (14, N'11', N'231133324', N'6')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (14, N'4', N'231133324', N'6')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (15, N'10', N'231133324', N'6')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (18, N'11', N'23113487', N'6')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (18, N'5', N'23113487', N'6')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (19, N'2', N'231135316', N'01')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (21, N'11', N'24112165', N'01')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (22, N'6', N'24112165', N'6')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (23, N'4', N'24112165', N'6')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (24, N'6', N'241121725', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (25, N'2', N'24113224', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (26, N'1', N'24113458', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (26, N'2', N'24113458', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (27, N'9', N'241132821', N'6')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (28, N'5', N'241134047', N'01')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (29, N'5', N'241134150', N'01')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (30, N'2', N'241134339', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (31, N'5', N'24113480', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (32, N'3', N'241135040', N'05')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (33, N'10', N'241143248', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (34, N'10', N'241143317', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (35, N'11', N'241143317', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (36, N'10', N'241143426', N'02')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (37, N'11', N'241143426', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (38, N'5', N'25117221', N'03')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (39, N'10', N'261113951', N'04')
+INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (41, N'11', N'261113951', N'6')
+
+DROP TABLE ItemTopping
+
+
+SELECT * FROM Items
+
 
 SELECT * FROM ItemTopping
 
@@ -328,17 +378,24 @@ END
 
 SELECT * FROM Resources
 
+SELECT * FROM Bills
 
 
 
 
+SELECT * FROM ItemTopping
 
 
+SELECT * FROM Bills WHERE Bills.PhoneNumber = '0392301017'
+
+SELECT * FROM Bills
+
+Use tea01
 
 
+UPDATE Bills SET Bills.UserName = 'nobita' WHERE UserName IS NULL
 
 
+SELECT * FROM UserPermision
 
-
-
-
+SELECT * FROM ItemTopping

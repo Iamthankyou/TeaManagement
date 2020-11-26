@@ -126,9 +126,9 @@ namespace Project.Forms
             else
             {
                 username = txUserName.Text;
-                Home home = new Home();
+                PrevHome prevHome = new PrevHome();
                 this.Hide();
-                home.ShowDialog();
+                prevHome.ShowDialog();
                 this.Close();
             }
         }

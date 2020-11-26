@@ -17,8 +17,8 @@ namespace Project
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Topping()
         {
-            this.Items = new HashSet<Item>();
             this.Topping_Resource = new HashSet<Topping_Resource>();
+            this.ItemToppings = new HashSet<ItemTopping>();
         }
     
         public string ToppingId { get; set; }
@@ -26,8 +26,8 @@ namespace Project
         public Nullable<int> Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Item> Items { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Topping_Resource> Topping_Resource { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ItemTopping> ItemToppings { get; set; }
     }
 }

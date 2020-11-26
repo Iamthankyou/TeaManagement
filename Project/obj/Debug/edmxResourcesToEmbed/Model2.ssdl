@@ -61,13 +61,17 @@
     <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="DrinkId" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.ItemTopping' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ItemTopping">
     <Key>
+      <PropertyRef Name="IdItemTopping" />
       <PropertyRef Name="ItemId" />
       <PropertyRef Name="ToppingId" />
       <PropertyRef Name="BillId" />
       <PropertyRef Name="DrinkId" />
     </Key>
+    <Property Name="IdItemTopping" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ItemId" Type="int" Nullable="false" />
     <Property Name="ToppingId" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
@@ -256,7 +260,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ItemToppi__Toppi__0C50D423">
+  <Association Name="FK__ItemToppi__Toppi__1F63A897">
     <End Role="Toppings" Type="Self.Toppings" Multiplicity="1" />
     <End Role="ItemTopping" Type="Self.ItemTopping" Multiplicity="*" />
     <ReferentialConstraint>
@@ -268,7 +272,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ItemTopping__0B5CAFEA">
+  <Association Name="FK__ItemTopping__1E6F845E">
     <End Role="Items" Type="Self.Items" Multiplicity="1" />
     <End Role="ItemTopping" Type="Self.ItemTopping" Multiplicity="*" />
     <ReferentialConstraint>
@@ -402,7 +406,6 @@
     <EntitySet Name="Drinks" EntityType="Self.Drinks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DrinkTypes" EntityType="Self.DrinkTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ItemTopping" EntityType="Self.ItemTopping" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Permision" EntityType="Self.Permision" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PermisionDetail" EntityType="Self.PermisionDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
@@ -413,6 +416,15 @@
     <EntitySet Name="Toppings" EntityType="Self.Toppings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserPermision" EntityType="Self.UserPermision" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemTopping" EntityType="Self.ItemTopping" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ItemTopping].[IdItemTopping] AS [IdItemTopping], 
+    [ItemTopping].[ItemId] AS [ItemId], 
+    [ItemTopping].[ToppingId] AS [ToppingId], 
+    [ItemTopping].[BillId] AS [BillId], 
+    [ItemTopping].[DrinkId] AS [DrinkId]
+    FROM [dbo].[ItemTopping] AS [ItemTopping]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__Bills__PhoneNumb__3F466844" Association="Self.FK__Bills__PhoneNumb__3F466844">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Bills" EntitySet="Bills" />
@@ -445,11 +457,11 @@
       <End Role="Drinks" EntitySet="Drinks" />
       <End Role="Items" EntitySet="Items" />
     </AssociationSet>
-    <AssociationSet Name="FK__ItemToppi__Toppi__0C50D423" Association="Self.FK__ItemToppi__Toppi__0C50D423">
+    <AssociationSet Name="FK__ItemToppi__Toppi__1F63A897" Association="Self.FK__ItemToppi__Toppi__1F63A897">
       <End Role="Toppings" EntitySet="Toppings" />
       <End Role="ItemTopping" EntitySet="ItemTopping" />
     </AssociationSet>
-    <AssociationSet Name="FK__ItemTopping__0B5CAFEA" Association="Self.FK__ItemTopping__0B5CAFEA">
+    <AssociationSet Name="FK__ItemTopping__1E6F845E" Association="Self.FK__ItemTopping__1E6F845E">
       <End Role="Items" EntitySet="Items" />
       <End Role="ItemTopping" EntitySet="ItemTopping" />
     </AssociationSet>
