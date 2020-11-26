@@ -63,7 +63,7 @@
     <NavigationProperty Name="Bill" Relationship="Self.FK__Items__BillId__5070F446" FromRole="Items" ToRole="Bills" />
     <NavigationProperty Name="Drink" Relationship="Self.FK__Items__DrinkId__5165187F" FromRole="Items" ToRole="Drinks" />
     <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="ItemToppings" Relationship="tea01Model1.FK__ItemTopping__1E6F845E" FromRole="Item" ToRole="ItemTopping" />
+    <NavigationProperty Name="ItemToppings" Relationship="tea01Model1.FK__ItemTopping__2610A626" FromRole="Item" ToRole="ItemTopping" />
   </EntityType>
   <EntityType Name="Permision">
     <Key>
@@ -134,7 +134,7 @@
     <Property Name="ToppingName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Price" Type="Int32" />
     <NavigationProperty Name="Topping_Resource" Relationship="tea01Model1.FK__Topping_R__Toppi__18B6AB08" FromRole="Topping" ToRole="Topping_Resource" />
-    <NavigationProperty Name="ItemToppings" Relationship="tea01Model1.FK__ItemToppi__Toppi__1F63A897" FromRole="Topping" ToRole="ItemTopping" />
+    <NavigationProperty Name="ItemToppings" Relationship="tea01Model1.FK__ItemToppi__Toppi__2704CA5F" FromRole="Topping" ToRole="ItemTopping" />
   </EntityType>
   <Association Name="FK__Bills__PhoneNumb__3F466844">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -323,11 +323,11 @@
       <End Role="Topping_Resource" EntitySet="Topping_Resource" />
     </AssociationSet>
     <EntitySet Name="ItemToppings" EntityType="tea01Model1.ItemTopping" />
-    <AssociationSet Name="FK__ItemTopping__1E6F845E" Association="tea01Model1.FK__ItemTopping__1E6F845E">
+    <AssociationSet Name="FK__ItemTopping__2610A626" Association="tea01Model1.FK__ItemTopping__2610A626">
       <End Role="Item" EntitySet="Items" />
       <End Role="ItemTopping" EntitySet="ItemToppings" />
     </AssociationSet>
-    <AssociationSet Name="FK__ItemToppi__Toppi__1F63A897" Association="tea01Model1.FK__ItemToppi__Toppi__1F63A897">
+    <AssociationSet Name="FK__ItemToppi__Toppi__2704CA5F" Association="tea01Model1.FK__ItemToppi__Toppi__2704CA5F">
       <End Role="Topping" EntitySet="Toppings" />
       <End Role="ItemTopping" EntitySet="ItemToppings" />
     </AssociationSet>
@@ -438,20 +438,16 @@
   <EntityType Name="ItemTopping">
     <Key>
       <PropertyRef Name="IdItemTopping" />
-      <PropertyRef Name="ItemId" />
-      <PropertyRef Name="ToppingId" />
-      <PropertyRef Name="BillId" />
-      <PropertyRef Name="DrinkId" />
     </Key>
     <Property Name="IdItemTopping" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ItemId" Type="Int32" Nullable="false" />
     <Property Name="ToppingId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="BillId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="DrinkId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Item" Relationship="tea01Model1.FK__ItemTopping__1E6F845E" FromRole="ItemTopping" ToRole="Item" />
-    <NavigationProperty Name="Topping" Relationship="tea01Model1.FK__ItemToppi__Toppi__1F63A897" FromRole="ItemTopping" ToRole="Topping" />
+    <NavigationProperty Name="Item" Relationship="tea01Model1.FK__ItemTopping__2610A626" FromRole="ItemTopping" ToRole="Item" />
+    <NavigationProperty Name="Topping" Relationship="tea01Model1.FK__ItemToppi__Toppi__2704CA5F" FromRole="ItemTopping" ToRole="Topping" />
   </EntityType>
-  <Association Name="FK__ItemTopping__1E6F845E">
+  <Association Name="FK__ItemTopping__2610A626">
     <End Type="tea01Model1.Item" Role="Item" Multiplicity="1" />
     <End Type="tea01Model1.ItemTopping" Role="ItemTopping" Multiplicity="*" />
     <ReferentialConstraint>
@@ -467,7 +463,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ItemToppi__Toppi__1F63A897">
+  <Association Name="FK__ItemToppi__Toppi__2704CA5F">
     <End Type="tea01Model1.Topping" Role="Topping" Multiplicity="1" />
     <End Type="tea01Model1.ItemTopping" Role="ItemTopping" Multiplicity="*" />
     <ReferentialConstraint>

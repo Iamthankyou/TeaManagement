@@ -88,6 +88,7 @@ CREATE TABLE ItemTopping
   DrinkId VARCHAR(10) NOT NULL,
   FOREIGN KEY (ItemId,BillId,DrinkId) REFERENCES Items(ItemId,BillId,DrinkId),
   FOREIGN KEY (ToppingId) REFERENCES Toppings(ToppingId),
+  PRIMARY KEY(IdItemTopping,ItemId,ToppingId,BillId,DrinkId)
 );
 
 INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (8, N'11', N'231131458', N'01')

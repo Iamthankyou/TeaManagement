@@ -37,7 +37,7 @@ namespace Project.Forms
             {
                 for (int i=0; i<gridViewBill.ColumnCount; i++)
                 {
-                    if (i == 0)
+                    if (i == 0 || i == 4)
                     {
                         gridViewBill.Columns[i].Visible = true;
                         continue;
@@ -46,6 +46,7 @@ namespace Project.Forms
                 }
 
                 gridViewBill.Columns[0].HeaderText = "Mã hóa đơn";
+                gridViewBill.Columns[4].HeaderText = "Tổng tiền";
             }
         }
 
@@ -72,9 +73,21 @@ namespace Project.Forms
         {
             tea01Entities2 db = new tea01Entities2();
 
+            var query = from bill in db.Set<Bill>() join item in db.Set<Item>() on bill.BillId equals item.BillId join itemTopping in db.Set<ItemTopping>() on item.BillId equals itemTopping.BillId join topping in db.Set<Topping>() on itemTopping.ToppingId equals topping.ToppingId where DbFunctions.TruncateTime(bill.OrderTimeStart) == DbFunctions.TruncateTime(DateTime.Now) select new { topping.ToppingId,topping.ToppingName } into x group x by new { x.ToppingId, x.ToppingName } into y select new { Topping = y.Key.ToppingName, Count = y.Count()};
+
+            
+            gridViewTopping.DataSource = query.ToList();
+
+            if (gridViewTopping.ColumnCount > 0)
+            {
+                gridViewTopping.Columns[1].Width = 50;
+                gridViewTopping.Columns[0].HeaderText = "Tên topping";
+                gridViewTopping.Columns[1].HeaderText = "Tổng";
+            }
+
             //var tmp = from item in db.Set<Item>() join topping in db.Set<ItemTopping>() on select new { topping} ;
 
-          //  var tmp = db.Items.GroupJoin(db.Set<Topping>);
+            //  var tmp = db.Items.GroupJoin(db.Set<Topping>);
 
             /*
             var query = from topping in db.Set<Topping>() join itemTopping in db.Set<ItemTopping> join item in db.Set<Item>() on topping.ToppingId equals item.DrinkId join bill in db.Set<Bill>() on item.BillId equals bill.BillId where DbFunctions.TruncateTime(bill.OrderTimeStart) == DbFunctions.TruncateTime(DateTime.Now) select new { drink } into x group x by new { x.drink.DrinkId, x.drink.DrinkName } into y select new { Drink = y.Key.DrinkName, Count = y.Count() };

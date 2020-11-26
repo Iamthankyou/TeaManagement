@@ -33,10 +33,10 @@
         <EntityTypeShape EntityType="tea01Model1.Topping_Resource" Width="1.875" PointX="7.5" PointY="6" />
         <AssociationConnector Association="tea01Model1.FK__Topping_R__Resou__17C286CF" />
         <AssociationConnector Association="tea01Model1.FK__Topping_R__Toppi__18B6AB08" />
-        <EntityTypeShape EntityType="tea01Model1.ItemTopping" Width="1.5" PointX="8.375" PointY="2.875" />
-        <AssociationConnector Association="tea01Model1.FK__ItemTopping__1E6F845E" />
-        <AssociationConnector Association="tea01Model1.FK__ItemToppi__Toppi__1F63A897" />
-      </Diagram>
+        <EntityTypeShape EntityType="tea01Model1.ItemTopping" Width="1.5" PointX="8.5" PointY="3.25" />
+        <AssociationConnector Association="tea01Model1.FK__ItemTopping__2610A626" />
+        <AssociationConnector Association="tea01Model1.FK__ItemToppi__Toppi__2704CA5F" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

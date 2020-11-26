@@ -88,12 +88,12 @@ namespace Project.Forms
                     Random rand = new Random();
                     Color[] c = { Color.Red, Color.Blue, Color.Green, Color.Cyan, Color.Magenta };
 
-                    if (item.Toppings != null)
+                    if (item.ItemToppings != null)
                     {
-                        foreach (var i in item.Toppings)
+                        foreach (var i in item.ItemToppings)
                         {
                             Button btnTopping = new Button();
-                            btnTopping.Text = i.ToppingName;
+                            btnTopping.Text = i.Topping.ToppingName;
                             btnTopping.Size = new Size(120, 80);
 
                             btnTopping.BackColor = c[rand.Next(0, c.Length)];
@@ -127,7 +127,7 @@ namespace Project.Forms
             dateBill1.Value = (DateTime)db.Bills.Find(gridView.CurrentRow.Cells[0].Value).OrderTimeStart;
             dateBill2.Value = (DateTime)db.Bills.Find(gridView.CurrentRow.Cells[0].Value).OrderTimeStart;
             txCodeBill.Text = gridView.CurrentRow.Cells[0].Value.ToString();
-            lbStaff.Text = gridView.CurrentRow.Cells[0].Value.ToString();
+            lbStaff.Text = gridView.CurrentRow.Cells[3].Value.ToString();
 
 
             foreach (var item in items)
@@ -157,12 +157,12 @@ namespace Project.Forms
                 Random rand = new Random();
                 Color[] c = { Color.Red, Color.Blue, Color.Green, Color.Cyan, Color.Magenta };
 
-                if (item.Toppings != null)
+                if (item.ItemToppings != null)
                 {
-                    foreach (var i in item.Toppings)
+                    foreach (var i in item.ItemToppings)
                     {
                         Button btnTopping = new Button();
-                        btnTopping.Text = i.ToppingName;
+                        btnTopping.Text = i.Topping.ToppingName;
                         btnTopping.Size = new Size(120, 80);
 
 
@@ -225,12 +225,12 @@ namespace Project.Forms
                         Random rand = new Random();
                         Color[] c = { Color.Red, Color.Blue, Color.Green, Color.Cyan, Color.Magenta };
 
-                        if (item.Toppings != null)
+                        if (item.ItemToppings != null)
                         {
-                            foreach (var i in item.Toppings)
+                            foreach (var i in item.ItemToppings)
                             {
                                 Button btnTopping = new Button();
-                                btnTopping.Text = i.ToppingName;
+                                btnTopping.Text = i.Topping.ToppingName;
                                 btnTopping.Size = new Size(120, 80);
 
 
@@ -316,12 +316,12 @@ namespace Project.Forms
                     Random rand = new Random();
                     Color[] c = { Color.Red, Color.Blue, Color.Green, Color.Cyan, Color.Magenta };
 
-                    if (item.Toppings != null)
+                    if (item.ItemToppings != null)
                     {
-                        foreach (var i in item.Toppings)
+                        foreach (var i in item.ItemToppings)
                         {
                             Button btnTopping = new Button();
-                            btnTopping.Text = i.ToppingName;
+                            btnTopping.Text = i.Topping.ToppingName;
                             btnTopping.Size = new Size(120, 80);
 
                             btnTopping.BackColor = c[rand.Next(0, c.Length)];

@@ -211,8 +211,14 @@ namespace Project.Forms
                     //drink.Toppings.Add(topping);
 
                     //item.Toppings.Add();
-                    item.Toppings.Add(topping);
-
+                    //fix:item.Toppings.Add(topping);
+                    item.ItemToppings.Add(new ItemTopping()
+                    {
+                        BillId = item.BillId,
+                        DrinkId = item.DrinkId,
+                        ToppingId = topping.ToppingId,
+                        ItemId = item.ItemId
+                    });
                 }
 
             }
