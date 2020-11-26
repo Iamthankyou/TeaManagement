@@ -164,6 +164,15 @@ namespace Project.Forms
             }
 
         }
+
+        private void bunifuButton5_Click(object sender, EventArgs e)
+        {
+
+            PrevHome prevHome = new PrevHome();
+            this.Hide();
+            prevHome.ShowDialog();
+            this.Close();
+        }
     }
 }
 

@@ -593,3 +593,7 @@ D:\TeaManagement\Project\obj\Debug\Project.Forms.ManageVoucher.resources
 D:\TeaManagement\Project\obj\Debug\Project.Forms.BillEnter.resources
 D:\TeaManagement\Project\obj\Debug\Project.Forms.CustomerBill.resources
 D:\TeaManagement\Project\obj\Debug\Project.Forms.ManageResource.resources
+D:\TeaManagement\Project\obj\Debug\Project.Forms.PrevHome.resources
+D:\TeaManagement\Project\obj\Debug\Project.Forms.Analysis.resources
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml

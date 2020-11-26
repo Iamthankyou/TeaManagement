@@ -28,7 +28,10 @@ namespace Project
             //Application.Run(new Home());
             //Application.Run(new ManageVoucher());
             //Application.Run(new CustomerBill());
-            Application.Run(new ManageResource());
+            //Application.Run(new ManageResource());
+
+            //Application.Run(new PrevHome());
+            Application.Run(new Analysis());
         }
     }
 }

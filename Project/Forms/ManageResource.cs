@@ -394,5 +394,13 @@ namespace Project.Forms
 
             MessageBox.Show("Đã cập nhật thành phần cho topping này");
         }
+
+        private void bunifuButton9_Click(object sender, EventArgs e)
+        {
+            PrevHome prevHome = new PrevHome();
+            this.Hide();
+            prevHome.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -463,5 +463,13 @@ namespace Project.Forms
             listView.RemoveAt(listBox.SelectedIndex);
             updateGridBox();
         }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            PrevHome prevHome = new PrevHome();
+            this.Hide();
+            prevHome.ShowDialog();
+            this.Close();
+        }
     }
 }

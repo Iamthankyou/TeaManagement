@@ -46,6 +46,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>C:\Users\Admin\Desktop\pass is 123 azadeducation_Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
@@ -151,6 +154,12 @@
     <Compile Include="Forms\AddTable.Designer.cs">
       <DependentUpon>AddTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Analysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Analysis.Designer.cs">
+      <DependentUpon>Analysis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BillEnter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +207,12 @@
     </Compile>
     <Compile Include="Forms\Permision.Designer.cs">
       <DependentUpon>Permision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrevHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrevHome.Designer.cs">
+      <DependentUpon>PrevHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ShowAddDrink.cs">
       <SubType>Form</SubType>
@@ -311,6 +326,9 @@
     <EmbeddedResource Include="Forms\AddTable.resx">
       <DependentUpon>AddTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Analysis.resx">
+      <DependentUpon>Analysis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BillEnter.resx">
       <DependentUpon>BillEnter.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Permision.resx">
       <DependentUpon>Permision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrevHome.resx">
+      <DependentUpon>PrevHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShowAddDrink.resx">
       <DependentUpon>ShowAddDrink.cs</DependentUpon>

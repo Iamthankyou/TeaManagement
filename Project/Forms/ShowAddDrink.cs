@@ -128,5 +128,14 @@ namespace Project.Forms
                 c++;
             }
         }
+
+        private void bunifuButton7_Click(object sender, EventArgs e)
+        {
+
+            PrevHome prevHome = new PrevHome();
+            this.Hide();
+            prevHome.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -170,6 +170,7 @@ SELECT SUM(Total) FROM Bills GROUP BY PhoneNumber HAVING PhoneNumber = '01234012
 
 SELECT * FROM Customer
 
+-- TRIGGER 1
   
 ALTER TRIGGER updateLevel ON Bills FOR INSERT,UPDATE,DELETE AS
 BEGIN
@@ -276,13 +277,60 @@ SELECT * FROM Drink_Resource
 
 SELECT * FROM Topping_Resource
 
-SELECT * FROM Items INNER JOIN ItemTopping ON ItemTopping.ItemId = Items.ItemId INNER JOIN Toppings ON Toppings.ToppingId = ItemTopping.ToppingId WHERE Items.BillId = '241143317'
+SELECT Topping_Resource.Amount FROM Items INNER JOIN ItemTopping ON ItemTopping.ItemId = Items.ItemId INNER JOIN Toppings ON Toppings.ToppingId = ItemTopping.ToppingId INNER JOIN Topping_Resource ON Topping_Resource.ToppingId = Toppings.ToppingId INNER JOIN Resources ON Resources.ResourceId = Topping_Resource.ResourceId WHERE Items.BillId = '241143317' AND Resources.ResourceId = '000007'
+
+
+SELECT * FROM Items INNER JOIN ItemTopping ON ItemTopping.ItemId = Items.ItemId INNER JOIN Toppings ON Toppings.ToppingId = ItemTopping.ToppingId INNER JOIN Topping_Resource ON Topping_Resource.ToppingId = Toppings.ToppingId INNER JOIN Resources ON Resources.ResourceId = Topping_Resource.ResourceId WHERE Items.BillId = '241143317'
 
 SELECT * FROM Resources
 
 SELECT * FROM Bills
 
-CREATE FUNCTION 
+-- FUNCTION 1
+
+CREATE FUNCTION getAmountResourceTopping(@idResource varchar(10), @idBill varchar(10)) RETURNS INT AS 
+BEGIN
+	DECLARE @res int
+	SELECT @res = ISNULL(Topping_Resource.Amount,0) FROM Items INNER JOIN ItemTopping ON ItemTopping.ItemId = Items.ItemId INNER JOIN Toppings ON Toppings.ToppingId = ItemTopping.ToppingId INNER JOIN Topping_Resource ON Topping_Resource.ToppingId = Toppings.ToppingId INNER JOIN Resources ON Resources.ResourceId = Topping_Resource.ResourceId WHERE Items.BillId = @idBill AND Resources.ResourceId = @idResource
+	RETURN @res
+END
+
+CREATE FUNCTION getAmountResourceDrink(@idResource varchar(10), @idBill varchar(10)) RETURNS INT AS
+BEGIN
+	DECLARE @res int
+	SELECT @res = ISNULL(Drink_Resource.Amount,0) FROM Bills INNER JOIN Items ON Items.BillId = Bills.BillId INNER JOIN Drink_Resource On Drink_Resource.DrinkId = Items.DrinkId WHERE Items.BillId = @idBill AND Drink_Resource.ResourceId = @idResource
+	RETURN @res
+END
+
+SELECT * FROM Bills INNER JOIN Items ON Items.BillId = Bills.BillId INNER JOIN Drink_Resource On Drink_Resource.DrinkId = Items.DrinkId WHERE Items.BillId = '241143317'
+
+
+PRINT(dbo.getAmountResourceDrink('000001','241143317'))
+
+
+UPDATE Resources SET Amount = 100
+
+USE tea01
+
+
+UPDATE Resources SET Amount = Amount - ISNULL(dbo.getAmountResourceDrink(ResourceId,'241143317'),0)	
+UPDATE Resources SET Amount = Amount - ISNULL(dbo.getAmountResourceTopping(ResourceId,'241143317'),0)
+
+-- TRIGGER 2
+
+ALTER TRIGGER updateResource ON Items FOR INSERT,UPDATE AS
+BEGIN
+	DECLARE @idBill nvarchar(10) 
+	SELECT @idBill = BillId FROM INSERTED 
+	UPDATE Resources SET Amount = Amount - ISNULL(dbo.getAmountResourceDrink(ResourceId,@idBill),0)	
+	UPDATE Resources SET Amount = Amount - ISNULL(dbo.getAmountResourceTopping(ResourceId,@idBill),0)
+END
+
+SELECT * FROM Resources
+
+
+
+
 
 
 

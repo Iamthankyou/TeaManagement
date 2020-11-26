@@ -79,5 +79,15 @@ namespace Project.Forms
                 updateGridView();
             }
         }
+
+        private void bunifuButton9_Click(object sender, EventArgs e)
+        {
+
+            PrevHome prevHome = new PrevHome();
+            this.Hide();
+            prevHome.ShowDialog();
+            this.Close();
+
+        }
     }
 }
