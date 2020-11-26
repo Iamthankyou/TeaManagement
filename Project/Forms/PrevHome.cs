@@ -100,5 +100,13 @@ namespace Project.Forms
             home.ShowDialog();
             this.Close();
         }
+
+        private void bunifuButton6_Click(object sender, EventArgs e)
+        {
+            SignIn signIn = new SignIn();
+            this.Hide();
+            signIn.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -260,6 +260,7 @@
             this.btnSubmitFilterBill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSubmitFilterBill.TextMarginLeft = 0;
             this.btnSubmitFilterBill.UseDefaultRadiusAndThickness = true;
+            this.btnSubmitFilterBill.Click += new System.EventHandler(this.btnSubmitFilterBill_Click);
             // 
             // startBill
             // 
@@ -529,6 +530,7 @@
             this.btnSubmitFilterTea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSubmitFilterTea.TextMarginLeft = 0;
             this.btnSubmitFilterTea.UseDefaultRadiusAndThickness = true;
+            this.btnSubmitFilterTea.Click += new System.EventHandler(this.btnSubmitFilterTea_Click);
             // 
             // endTopping
             // 
@@ -579,7 +581,7 @@
             this.btnSubmitFilterTopping.BackColor1 = System.Drawing.Color.DodgerBlue;
             this.btnSubmitFilterTopping.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSubmitFilterTopping.BackgroundImage")));
             this.btnSubmitFilterTopping.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSubmitFilterTopping.ButtonText = "Topping đã bán";
+            this.btnSubmitFilterTopping.ButtonText = "Lọc topping đã bán";
             this.btnSubmitFilterTopping.ButtonTextMarginLeft = 0;
             this.btnSubmitFilterTopping.ColorContrastOnClick = 45;
             this.btnSubmitFilterTopping.ColorContrastOnHover = 45;
@@ -632,6 +634,7 @@
             this.btnSubmitFilterTopping.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSubmitFilterTopping.TextMarginLeft = 0;
             this.btnSubmitFilterTopping.UseDefaultRadiusAndThickness = true;
+            this.btnSubmitFilterTopping.Click += new System.EventHandler(this.btnSubmitFilterTopping_Click);
             // 
             // endStaff
             // 
@@ -682,7 +685,7 @@
             this.btnSubmitFilterStaff.BackColor1 = System.Drawing.Color.DodgerBlue;
             this.btnSubmitFilterStaff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSubmitFilterStaff.BackgroundImage")));
             this.btnSubmitFilterStaff.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSubmitFilterStaff.ButtonText = "TOP nhân viên";
+            this.btnSubmitFilterStaff.ButtonText = "Lọc TOP nhân viên";
             this.btnSubmitFilterStaff.ButtonTextMarginLeft = 0;
             this.btnSubmitFilterStaff.ColorContrastOnClick = 45;
             this.btnSubmitFilterStaff.ColorContrastOnHover = 45;
@@ -735,6 +738,7 @@
             this.btnSubmitFilterStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSubmitFilterStaff.TextMarginLeft = 0;
             this.btnSubmitFilterStaff.UseDefaultRadiusAndThickness = true;
+            this.btnSubmitFilterStaff.Click += new System.EventHandler(this.btnSubmitFilterStaff_Click);
             // 
             // groupControl1
             // 

@@ -446,6 +446,18 @@
         HoFvikGCv+cgV2rVuNe7bsg57sFhvGetrBAhQvxHiET+AJ2CcchSxv88AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="bunifuButton6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANIAAAA3CAYAAAB5EBRzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFSSURBVHhe7dOxTQNRFETR38h6KYUKaG0XUQYxKaW4ASIa
+        +IstTbiyLA3hGekkTy+9w8z+aet2vKz7/LzsxwE86X1+3dtJRmNctvl9+gg8tGzzmoxuIZ08AM9JRkKC
+        RjISEjSSkZCgkYyEBI1kJCRoJCMhQSMZCQkayUhI0EhGQoJGMhISNJKRkKCRjIQEjWQkJGgkIyFBIxkJ
+        CRrJSEjQSEZCgkYyEhI0kpGQoJGMhASNZCQkaCQjIUEjGQkJGslISNBIRkKCRjISEjSSkZCgkYyEBI1k
+        JCRoJCMhQSMZCQkayUhI0EhGQoJGMhISNJKRkKCRjIQEjWQkJGgkIyFBIxkJCRrJSEjQSEZCgkYyEhI0
+        kpGQoJGMhASNZCQkaCQjIUEjGQkJGslISNBIRmMs27yePQCPLfv8TUZjrNvxejv8nD0C5+4RLR/zLRmZ
+        Wbcx/gCu2xDyPsQ3/QAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
