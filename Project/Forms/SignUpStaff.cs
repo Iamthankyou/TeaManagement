@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -39,7 +40,30 @@ namespace Project
                 }
                 else if (db.Staffs.Find(txUserName.Text) != null)
                 {
-                    MessageBox.Show("Tài khoản đã tồn tại");
+                    MessageBox.Show("Tài khoản đã tiến hành cập nhật");
+
+                    MessageBox.Show(Encryption.Crypt(txPass.Text));
+
+                    String tmp = Encryption.Crypt(txPass.Text);
+
+                    if (tmp.Length > 100)
+                    {
+                        tmp = tmp.Substring(0, 99);
+                    }
+
+                    db.Staffs.AddOrUpdate(new Staff()
+                    {
+                        UserName = txUserName.Text,
+                        Password = tmp,
+                        FullName = txFullName.Text,
+                        Age = txBirthday.DateTime,
+                        PhoneNumber = txPhone.Text,
+                        Address = txAddress.Text,
+                        Avatar = url
+                    });
+                    db.SaveChanges();
+
+                    MessageBox.Show("Đã lưu");
                 }
                 else {
                     MessageBox.Show(Encryption.Crypt(txPass.Text));
@@ -51,7 +75,7 @@ namespace Project
                         tmp = tmp.Substring(0, 99);
                     }
 
-                    db.Staffs.Add(new Staff()
+                    db.Staffs.AddOrUpdate(new Staff()
                     {
                         UserName = txUserName.Text,
                         Password = tmp,
@@ -112,12 +136,32 @@ namespace Project
                 MessageBox.Show("Tên người dùng viết liền không dấu, không được bắt đầu bằng số");
             }
 
-            if (db.Staffs.Find(txUserName.Text) != null)
+            if (e.KeyChar == 13)
+            {
+                if (db.Staffs.Find(txUserName.Text) != null)
+                {
+                    var staff = db.Staffs.Find(txUserName.Text);
+                    txFullName.Text = staff.FullName;
+                    txPhone.Text = staff.PhoneNumber;
+                    txBirthday.DateTime = (DateTime)staff.Age;
+                    txAddress.Text = staff.Address;
+
+                    if (staff.Avatar != null)
+                    {
+                        url = staff.Avatar;
+
+                        imgAvatar.Image = Image.FromFile(url);
+                        imgAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    }
+                }
+            }
+            /*if (db.Staffs.Find(txUserName.Text) != null)
             {
                 MessageBox.Show("Tài khoản đã tồn tại");
                 e.Handled = true;
                 txUserName.Text = "";
-            }
+            }*/
         }
 
         private void txPhone_KeyPress(object sender, KeyPressEventArgs e)
@@ -137,6 +181,29 @@ namespace Project
             this.Hide();
             signIn.ShowDialog();
             this.Close();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            PrevHome prevHome = new PrevHome();
+            this.Hide();
+            prevHome.ShowDialog();
+            this.Close();
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            ManageStaff manageStaff = new ManageStaff();
+            this.Hide();
+            manageStaff.ShowDialog();
+            this.Close();
+        }
+
+        private void txFullName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            tea01Entities2 db = new tea01Entities2();
+
+          
         }
     }
 }

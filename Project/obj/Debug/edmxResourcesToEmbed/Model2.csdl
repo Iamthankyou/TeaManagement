@@ -106,6 +106,7 @@
     <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__UserName__3E52440B" FromRole="Staff" ToRole="Bills" />
     <NavigationProperty Name="Permisions" Relationship="Self.UserPermision" FromRole="Staff" ToRole="Permision" />
+    <Property Name="DayOf" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>

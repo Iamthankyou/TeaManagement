@@ -105,6 +105,7 @@
     <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
     <Property Name="Address" Type="nvarchar" MaxLength="100" />
     <Property Name="Avatar" Type="varchar" MaxLength="100" />
+    <Property Name="DayOf" Type="datetime" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

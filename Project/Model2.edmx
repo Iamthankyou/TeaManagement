@@ -110,6 +110,7 @@
           <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" />
           <Property Name="Avatar" Type="varchar" MaxLength="100" />
+          <Property Name="DayOf" Type="datetime" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -591,6 +592,7 @@
           <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Bills" Relationship="Self.FK__Bills__UserName__3E52440B" FromRole="Staff" ToRole="Bills" />
           <NavigationProperty Name="Permisions" Relationship="Self.UserPermision" FromRole="Staff" ToRole="Permision" />
+          <Property Name="DayOf" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1050,6 +1052,7 @@
           <EntitySetMapping Name="Staffs">
             <EntityTypeMapping TypeName="tea01Model1.Staff">
               <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="DayOf" ColumnName="DayOf" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />

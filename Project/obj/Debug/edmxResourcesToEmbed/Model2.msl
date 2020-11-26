@@ -85,6 +85,7 @@
     <EntitySetMapping Name="Staffs">
       <EntityTypeMapping TypeName="tea01Model1.Staff">
         <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="DayOf" ColumnName="DayOf" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />

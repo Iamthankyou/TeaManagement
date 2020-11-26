@@ -31,7 +31,8 @@ namespace Project
             //Application.Run(new ManageResource());
 
             //Application.Run(new PrevHome());
-            Application.Run(new Analysis());
+            //Application.Run(new Analysis());
+            Application.Run(new ManageStaff());
         }
     }
 }

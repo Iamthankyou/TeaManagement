@@ -353,6 +353,8 @@ namespace Project.Forms
             */
             db.SaveChanges();
 
+            MessageBox.Show("Đã cập nhật quyền cho nhân viên này");
+
         }
 
         private void reloadUncheck()
@@ -712,6 +714,14 @@ namespace Project.Forms
         private void checkXem_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
         {
             
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            PrevHome home = new PrevHome();
+            this.Hide();
+            home.ShowDialog();
+            this.Close();
         }
     }
 }

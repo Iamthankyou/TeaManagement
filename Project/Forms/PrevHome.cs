@@ -58,7 +58,10 @@ namespace Project.Forms
 
         private void bunifuButton8_Click(object sender, EventArgs e)
         {
-
+            ManageStaff manageStaff = new ManageStaff();
+            this.Hide();
+            manageStaff.ShowDialog();
+            this.Close();
         }
 
         private void bunifuButton9_Click(object sender, EventArgs e)

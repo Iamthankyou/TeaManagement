@@ -147,7 +147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 1.2px; font-family: 'Microsoft Sans Serif'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: ; text-align: left; }</value>
@@ -181,7 +181,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bunifuLabel1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="gridView.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>40</value>
@@ -205,7 +205,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gridView.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="lbMess.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 1.2px; font-family: 'Microsoft Sans Serif'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: ; text-align: left; }</value>
@@ -238,7 +238,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbMess.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnCustom.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -667,7 +667,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupControl1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnSubmit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -702,7 +702,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSubmit.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -735,7 +735,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnXem.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1028,6 +1028,78 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupControl2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAA1YAAAApCAYAAAA2wLjiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGUSURBVHhe7dexTQNRFETR38h6KYUKaG2NKIOYlFLcgCMa
+        +IstTcZaoBHhGekkT6+BO8zMzMzMzOwftm7703qe76fzvgMAAPAHr/Pj3lLJqjFO2/w8fAQAAOChZZuX
+        ZNUtrA4eAAAA+F2ySlgBAAC0klXCCgAAoJWsElYAAACtZJWwAgAAaCWrhBUAAEArWSWsAAAAWskqYQUA
+        ANBKVgkrAACAVrJKWAEAALSSVcIKAACglawSVgAAAK1klbACAABoJauEFQAAQCtZJawAAABaySphBQAA
+        0EpWCSsAAIBWskpYAQAAtJJVwgoAAKCVrBJWAAAArWSVsAIAAGglq4QVAABAK1klrAAAAFrJKmEFAADQ
+        SlYJKwAAgFaySlgBAAC0klXCCgAAoJWsElYAAACtZJWwAgAAaCWrhBUAAEArWSWsAAAAWskqYQUAANBK
+        VgkrAACAVrJKWAEAALSSVcIKAACglawaY9nm5egBAACAx5bz/EpWjbFu+/PtcD16BAAA4Kd7VC1v8yVZ
+        ZWZmZmZmZv3G+AZXi9zL/U9dggAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="bunifuButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 15pt, style=Bold</value>
+  </data>
+  <data name="bunifuButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-7, 4</value>
+  </data>
+  <data name="bunifuButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 41</value>
+  </data>
+  <data name="bunifuButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;bunifuButton1.Name" xml:space="preserve">
+    <value>bunifuButton1</value>
+  </data>
+  <data name="&gt;&gt;bunifuButton1.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuButton1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bunifuButton1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bunifuButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAI4AAAApCAYAAADj5BFeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEKSURBVHhe7dyxTQNBGITRbcQ2pVABrd0hyiAmpRQacEQD
+        e/jQkFjnYIjfSC9Z/eEX7zD79y7L9nRZ5/t53TZ46HV+7K0kmzHOy/w8PIQ7p2V+JZtbOAcH8EiyEQ6d
+        ZCMcOslGOHSSjXDoJBvh0Ek2wqGTbIRDJ9kIh06yEQ6dZCMcOslGOHSSjXDoJBvh0Ek2wqGTbIRDJ9kI
+        h06yEQ6dZCMcOslGOHSSjXDoJBvh0Ek2wqGTbIRDJ9kIh06yEQ6dZCMcOslGOHSSjXDoJBvh0Ek2wqGT
+        bIRDJ9kIh06yEQ6dZCMcOslmjP1ft6MDuHda53ey+f119Pn2cD06hD97NKe3+ZJszNqN8QOblvsteh4+
+        1gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="bunifuButton2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="bunifuButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 4</value>
+  </data>
+  <data name="bunifuButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 41</value>
+  </data>
+  <data name="bunifuButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;bunifuButton2.Name" xml:space="preserve">
+    <value>bunifuButton2</value>
+  </data>
+  <data name="&gt;&gt;bunifuButton2.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuButton.BunifuButton, Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;bunifuButton2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bunifuButton2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

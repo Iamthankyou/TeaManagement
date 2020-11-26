@@ -196,6 +196,12 @@
     <Compile Include="Forms\ManageResource.Designer.cs">
       <DependentUpon>ManageResource.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageStaff.Designer.cs">
+      <DependentUpon>ManageStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManageVoucher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageResource.resx">
       <DependentUpon>ManageResource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageStaff.resx">
+      <DependentUpon>ManageStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageVoucher.resx">
       <DependentUpon>ManageVoucher.cs</DependentUpon>

@@ -88,7 +88,7 @@ CREATE TABLE ItemTopping
   DrinkId VARCHAR(10) NOT NULL,
   FOREIGN KEY (ItemId,BillId,DrinkId) REFERENCES Items(ItemId,BillId,DrinkId),
   FOREIGN KEY (ToppingId) REFERENCES Toppings(ToppingId),
-  PRIMARY KEY(IdItemTopping,ItemId,ToppingId,BillId,DrinkId)
+  PRIMARY KEY(IdItemTopping)
 );
 
 INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (8, N'11', N'231131458', N'01')
@@ -138,7 +138,17 @@ INSERT [dbo].[ItemTopping] ([ItemId], [ToppingId], [BillId], [DrinkId]) VALUES (
 DROP TABLE ItemTopping
 
 
+SELECT * FROM Resources
+
 SELECT * FROM Items
+
+SELECT * FROM Bills
+
+SELECT * FROM Staff
+
+ALTER TABLE Staff ADD DayOf Datetime
+
+
 
 
 SELECT * FROM ItemTopping
