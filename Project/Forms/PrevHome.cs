@@ -101,6 +101,7 @@ namespace Project.Forms
         {
             tea01Entities2 db = new tea01Entities2();
             Staff staff = db.Staffs.Find(SignIn.username);
+            Boolean flag = false;
 
             foreach (var i in staff.Permisions)
             {
@@ -109,7 +110,7 @@ namespace Project.Forms
                     if (j.ActionName == "C")
                     {
                         //MessageBox.Show(j.ActionName);
-
+                        flag = true;
                         Home home = new Home();
                         this.Hide();
                         home.ShowDialog();
@@ -118,7 +119,10 @@ namespace Project.Forms
                 }
             }
 
-            MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
+            if (!flag)
+            {
+                MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
+            }
         }
 
         private void bunifuButton6_Click(object sender, EventArgs e)

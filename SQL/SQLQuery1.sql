@@ -254,6 +254,16 @@ BEGIN
 		UPDATE TableSpace SET Status=1 WHERE TableId = (SELECT TableId FROM INSERTED)
 END
 
+CREATE TRIGGER updateTable ON Bills FOR INSERT,UPDATE,DELETE AS
+BEGIN 
+DECLARE @count int
+	SELECT @count = ISNULL(COUNT(Bills.TableId),0) FROM Bills INNER JOIN TableSpace ON Bills.TableId = TableSpace.TableId WHERE Bills.OrderTimeEnd IS NULL GROUP BY TableSpace.TableId HAVING TableSpace.TableId = '1' 
+
+	IF @count>=4
+		UPDATE TableSpace SET Status=0 WHERE TableId = (SELECT TableId FROM INSERTED)
+	ELSE
+		UPDATE TableSpace SET Status=1 WHERE TableId = (SELECT TableId FROM INSERTED)
+END
 
 SELECT * FROM Bills WHERE PhoneNumber = '0123401234'
 
@@ -436,3 +446,86 @@ BEGIN
 	DELETE Items WHERE Items.BillId = @billId
 	DELETE Bills WHERE BillId = @billId
 END
+
+SELECT * FROM Customer
+
+SELECT * FROM Staff INNER JOIN  UserPermision ON UserPermision.UserName = Staff.UserName INNER JOIN Permision ON Permision.PermisionID = UserPermision.PermisionID INNER JOIN PermisionDetail ON PermisionDetail.PermisionID = Permision.PermisionID WHERE Staff.UserName = 'nobita'
+
+DROP FUNCTION checkPer
+
+
+CREATE FUNCTION checkPer(@per varchar(1), @userName varchar(10)) RETURNS BIT AS
+BEGIN
+	DECLARE @res BIT
+	DECLARE @id varchar(10)
+	SELECT @id = Staff.UserName FROM Staff INNER JOIN UserPermision ON Staff.UserName = UserPermision.UserName INNER JOIN Permision ON Permision.PermisionID = UserPermision.PermisionID INNER JOIN PermisionDetail ON PermisionDetail.PermisionID = Permision.PermisionID WHERE Staff.UserName = @userName AND PermisionDetail.ActionName = @per
+	
+	IF @id = @userName
+		SET @res = 1
+	ELSE
+		SET @res = 0
+
+	RETURN @res
+END
+-- Ví dụ
+print dbo.checkPer('C','prochicken007')
+
+DROP FUNCTION billCustom
+
+
+CREATE FUNCTION billCustom(@start VARCHAR(10), @end VARCHAR(10)) RETURNS INT AS
+BEGIN
+	DECLARE @startDate DATETIME
+	DECLARE @endDate DATETIME
+	DECLARE @res INT
+
+	SET @startDate = CONVERT(DATETIME,@start,103)
+	SET @endDate = CONVERT(DATETIME,@end,103)
+
+	SELECT @res = SUM(Bills.Total) FROM Bills WHERE Bills.OrderTimeStart>=@startDate AND Bills.OrderTimeStart<=@endDate
+	
+	RETURN @res
+END
+
+print dbo.billCustom('26/11/2020','27/11/2020')
+
+
+SELECT * FROM Bills
+
+-- 2611222430
+
+SELECT * FROM Bills INNER JOIN Items ON Items.BillId = Bills.BillId INNER JOIN ItemTopping ON ItemTopping.BillId = Items.BillId INNER JOIN Toppings ON Toppings.ToppingId = ItemTopping.ToppingId
+
+CREATE FUNCTION checkTable(@idTable varchar(10)) RETURNS TABLE AS
+RETURN (SELECT Customer.FullName FROM TableSpace INNER JOIN Bills ON Bills.TableId = TableSpace.TableId INNER JOIN Customer ON Customer.PhoneNumber = Bills.PhoneNumber WHERE Bills.OrderTimeEnd IS NULL AND TableSpace.TableId = @idTable
+)
+
+SELECT * FROM dbo.checkTable('1')
+
+CREATE PROC staffDay AS
+BEGIN
+	SELECT * FROM Bills INNER JOIN Staff ON Bills.UserName = Staff.UserName WHERE DAY(Bills.OrderTimeStart) = DAY(GETDATE()) AND MONTH(Bills.OrderTimeStart) = MONTH(GETDATE()) AND YEAR(Bills.OrderTimeStart) = YEAR(GETDATE())  
+END
+
+EXEC staffDay
+
+CREATE PROC teaResource @idTea VARCHAR(10) AS 
+BEGIN
+	SELECT Resources.ResourceName, Resources.ResourceId FROM Drinks INNER JOIN Drink_Resource ON Drinks.DrinkId = Drink_Resource.DrinkId INNER JOIN Resources ON Resources.ResourceId = Drink_Resource.ResourceId WHERE Drinks.DrinkId = @idTea
+END
+
+DECLARE @idTea VARCHAR(10)
+SET @idTea = '01'
+EXEC dbo.teaResource @idTea
+
+CREATE PROC combiTeaTopping AS
+BEGIN
+	SELECT Drinks.DrinkName,Toppings.ToppingName FROM Drinks INNER JOIN Items ON Items.DrinkId = Drinks.DrinkId INNER JOIN ItemTopping ON ItemTopping.DrinkId = Drinks.DrinkId  FULL OUTER JOIN Toppings ON ItemTopping.ToppingId = Toppings.ToppingId
+END
+
+EXEC dbo.combiTeaTopping
+
+
+
+
+
