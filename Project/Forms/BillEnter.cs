@@ -225,7 +225,9 @@ namespace Project.Forms
 
             db.SaveChanges();
 
-            MessageBox.Show("Done");
+            MessageBox.Show("Thanh toán thành công");
+            this.Close();
+
         }
 
         private void checkRawMoney_Click(object sender, EventArgs e)

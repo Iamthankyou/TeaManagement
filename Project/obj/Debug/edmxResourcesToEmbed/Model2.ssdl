@@ -159,6 +159,57 @@
     <Property Name="dateEnd" Type="datetime" />
     <Property Name="ratio" Type="int" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.View01_HoaDonBanTrongNgay' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View01_HoaDonBanTrongNgay">
+    <Key>
+      <PropertyRef Name="BillId" />
+      <PropertyRef Name="OrderTimeStart" />
+    </Key>
+    <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+    <Property Name="CodeVoucher" Type="nvarchar" MaxLength="10" />
+    <Property Name="Total" Type="int" />
+    <Property Name="Payments" Type="varchar" MaxLength="10" />
+    <Property Name="TableId" Type="varchar" MaxLength="10" />
+    <Property Name="OrderTimeStart" Type="datetime" Nullable="false" />
+    <Property Name="OrderTimeEnd" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tea01.dbo.View02_Top3NhanVien' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="View02_Top3NhanVien">
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="SoHoaDon" Type="int" />
+          <Property Name="Tong" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'tea01.dbo.View03_Top5KhacHang' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="View03_Top5KhacHang">
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tong" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.View04_ThongKeTongTienHangThang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View04_ThongKeTongTienHangThang">
+    <Key>
+      <PropertyRef Name="TongThuTheoThang" />
+    </Key>
+    <Property Name="TongThuTheoThang" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="1" Type="int" />
+    <Property Name="2" Type="int" />
+    <Property Name="3" Type="int" />
+    <Property Name="4" Type="int" />
+    <Property Name="5" Type="int" />
+    <Property Name="6" Type="int" />
+    <Property Name="7" Type="int" />
+    <Property Name="8" Type="int" />
+    <Property Name="9" Type="int" />
+    <Property Name="10" Type="int" />
+    <Property Name="11" Type="int" />
+    <Property Name="12" Type="int" />
+  </EntityType>
   <Association Name="FK__Bills__PhoneNumb__3F466844">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
     <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
@@ -355,6 +406,24 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="billCustom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="start" Type="varchar" Mode="In" />
+    <Parameter Name="end" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="checkPer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="bit">
+    <Parameter Name="per" Type="varchar" Mode="In" />
+    <Parameter Name="userName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="checkTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idTable" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="getAmountResourceDrink" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="idResource" Type="varchar" Mode="In" />
@@ -364,6 +433,7 @@
     <Parameter Name="idResource" Type="varchar" Mode="In" />
     <Parameter Name="idBill" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="proc01_ThongKe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -394,6 +464,10 @@
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="staffDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="teaResource" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idTea" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="tea01Model1StoreContainer">
     <EntitySet Name="Bills" EntityType="Self.Bills" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -412,6 +486,36 @@
     <EntitySet Name="Toppings" EntityType="Self.Toppings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserPermision" EntityType="Self.UserPermision" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View01_HoaDonBanTrongNgay" EntityType="Self.View01_HoaDonBanTrongNgay" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View01_HoaDonBanTrongNgay].[BillId] AS [BillId], 
+    [View01_HoaDonBanTrongNgay].[UserName] AS [UserName], 
+    [View01_HoaDonBanTrongNgay].[PhoneNumber] AS [PhoneNumber], 
+    [View01_HoaDonBanTrongNgay].[CodeVoucher] AS [CodeVoucher], 
+    [View01_HoaDonBanTrongNgay].[Total] AS [Total], 
+    [View01_HoaDonBanTrongNgay].[Payments] AS [Payments], 
+    [View01_HoaDonBanTrongNgay].[TableId] AS [TableId], 
+    [View01_HoaDonBanTrongNgay].[OrderTimeStart] AS [OrderTimeStart], 
+    [View01_HoaDonBanTrongNgay].[OrderTimeEnd] AS [OrderTimeEnd]
+    FROM [dbo].[View01_HoaDonBanTrongNgay] AS [View01_HoaDonBanTrongNgay]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View04_ThongKeTongTienHangThang" EntityType="Self.View04_ThongKeTongTienHangThang" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View04_ThongKeTongTienHangThang].[TongThuTheoThang] AS [TongThuTheoThang], 
+    [View04_ThongKeTongTienHangThang].[1] AS [1], 
+    [View04_ThongKeTongTienHangThang].[2] AS [2], 
+    [View04_ThongKeTongTienHangThang].[3] AS [3], 
+    [View04_ThongKeTongTienHangThang].[4] AS [4], 
+    [View04_ThongKeTongTienHangThang].[5] AS [5], 
+    [View04_ThongKeTongTienHangThang].[6] AS [6], 
+    [View04_ThongKeTongTienHangThang].[7] AS [7], 
+    [View04_ThongKeTongTienHangThang].[8] AS [8], 
+    [View04_ThongKeTongTienHangThang].[9] AS [9], 
+    [View04_ThongKeTongTienHangThang].[10] AS [10], 
+    [View04_ThongKeTongTienHangThang].[11] AS [11], 
+    [View04_ThongKeTongTienHangThang].[12] AS [12]
+    FROM [dbo].[View04_ThongKeTongTienHangThang] AS [View04_ThongKeTongTienHangThang]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__Bills__PhoneNumb__3F466844" Association="Self.FK__Bills__PhoneNumb__3F466844">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Bills" EntitySet="Bills" />

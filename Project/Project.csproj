@@ -259,6 +259,12 @@
     <Compile Include="Forms\SignUpStaff.Designer.cs">
       <DependentUpon>SignUpStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
+    </Compile>
     <Compile Include="g.cs" />
     <Compile Include="Item.cs">
       <DependentUpon>Model2.tt</DependentUpon>
@@ -302,6 +308,9 @@
     <Compile Include="PermisionDetail.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="proc01_ThongKe_Result.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="report\DsSales.Designer.cs">
@@ -321,10 +330,16 @@
     <Compile Include="Staff.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="staffDay_Result.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="TableSpace.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="teaResource_Result.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Topping.cs">
@@ -344,6 +359,12 @@
     </Compile>
     <Compile Include="Utils\DialogCustom.cs" />
     <Compile Include="Utils\labelCustom.cs" />
+    <Compile Include="View01_HoaDonBanTrongNgay.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View04_ThongKeTongTienHangThang.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Voucher.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -401,6 +422,9 @@
     <EmbeddedResource Include="Forms\SignUpStaff.resx">
       <DependentUpon>SignUpStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\View.resx">
+      <DependentUpon>View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -411,6 +435,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Utils\buttonBunifuCustom.resx">
+      <DependentUpon>buttonBunifuCustom.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

@@ -332,6 +332,16 @@
       <End Role="Topping" EntitySet="Toppings" />
       <End Role="ItemTopping" EntitySet="ItemToppings" />
     </AssociationSet>
+    <EntitySet Name="View01_HoaDonBanTrongNgay" EntityType="tea01Model1.View01_HoaDonBanTrongNgay" />
+    <EntitySet Name="View04_ThongKeTongTienHangThang" EntityType="tea01Model1.View04_ThongKeTongTienHangThang" />
+    <FunctionImport Name="checkTable" IsComposable="true" ReturnType="Collection(String)">
+      <Parameter Name="idTable" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="staffDay" ReturnType="Collection(tea01Model1.staffDay_Result)" />
+    <FunctionImport Name="teaResource" ReturnType="Collection(tea01Model1.teaResource_Result)">
+      <Parameter Name="idTea" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc01_ThongKe" ReturnType="Collection(tea01Model1.proc01_ThongKe_Result)" />
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -476,4 +486,68 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="View01_HoaDonBanTrongNgay">
+    <Key>
+      <PropertyRef Name="BillId" />
+      <PropertyRef Name="OrderTimeStart" />
+    </Key>
+    <Property Name="BillId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CodeVoucher" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Payments" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TableId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OrderTimeStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderTimeEnd" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="View04_ThongKeTongTienHangThang">
+    <Key>
+      <PropertyRef Name="TongThuTheoThang" />
+    </Key>
+    <Property Name="TongThuTheoThang" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="C1" Type="Int32" />
+    <Property Name="C2" Type="Int32" />
+    <Property Name="C3" Type="Int32" />
+    <Property Name="C4" Type="Int32" />
+    <Property Name="C5" Type="Int32" />
+    <Property Name="C6" Type="Int32" />
+    <Property Name="C7" Type="Int32" />
+    <Property Name="C8" Type="Int32" />
+    <Property Name="C9" Type="Int32" />
+    <Property Name="C10" Type="Int32" />
+    <Property Name="C11" Type="Int32" />
+    <Property Name="C12" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="staffDay_Result">
+    <Property Type="String" Name="BillId" Nullable="false" MaxLength="10" />
+    <Property Type="DateTime" Name="OrderTimeStart" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Payments" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="TableId" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Total" Nullable="true" />
+    <Property Type="DateTime" Name="OrderTimeEnd" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="CodeVoucher" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="UserName1" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="Age" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="DayOf" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="teaResource_Result">
+    <Property Type="String" Name="ResourceName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ResourceId" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="proc01_ThongKe_Result">
+    <Property Type="String" Name="DrinkID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DrinkName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SLBanDrink" Nullable="false" />
+    <Property Type="String" Name="ToppingId" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="ToppingName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="SLBanTopping" Nullable="false" />
+  </ComplexType>
 </Schema>

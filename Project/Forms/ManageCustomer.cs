@@ -21,6 +21,25 @@ namespace Project.Forms
         private void ManageCustomer_Load(object sender, EventArgs e)
         {
             updateGridView();
+            topCustomer();
+        }
+
+        private void topCustomer()
+        {
+            tea01Entities2 db = new tea01Entities2();
+            DateTime start = startDate.Value;
+            DateTime end = endDate.Value;
+
+            //var query = (from customer in db.Set<Customer>() join bill in db.Set<Bill>() on customer.PhoneNumber equals bill.PhoneNumber where bill.OrderTimeStart >= start && bill.OrderTimeStart <= end select new { customer.PhoneNumber, customer.FullName, bill.Total } into x group x by new { x.PhoneNumber, x.FullName, x.Total } into y select new { y.Key.FullName, Sum = y.Sum(u=>u.Total)}).OrderByDescending(z=>z.Sum) ;
+            var query = (from customer in db.Set<Customer>() join bill in db.Set<Bill>() on customer.PhoneNumber equals bill.PhoneNumber where bill.OrderTimeStart >= start && bill.OrderTimeStart <= end select new { customer.PhoneNumber, customer.FullName, bill.Total } into x group x by new { x.PhoneNumber, x.FullName} into y select new { y.Key.FullName, Sum = y.Sum(u => u.Total)}).OrderByDescending(z=>z.Sum);
+
+            gridViewTop.DataSource = query.ToList();
+            
+            if (gridViewTop.ColumnCount > 0)
+            {
+                gridView.Columns[0].HeaderText = "Tên khách";
+                gridView.Columns[1].HeaderText = "Tổng";
+            }
         }
 
         private void updateGridView()
@@ -54,6 +73,10 @@ namespace Project.Forms
 
                 lbLevelPoint.Text = customer.Level.ToString();
 
+                var sum = customer.Bills.Sum(u => u.Total);
+
+                lbSum.Text = sum.ToString() + "VNĐ";
+                
                 var bill = customer.Bills.OrderByDescending(u => u.OrderTimeStart).FirstOrDefault();
 
                 if (bill != null)
@@ -123,6 +146,23 @@ namespace Project.Forms
 
                 MessageBox.Show("Đã cập nhật vào cơ sở dữ liệu");
             }
+        }
+
+        private void bunifuButton11_Click(object sender, EventArgs e)
+        {
+
+            //MessageBox.Show(j.ActionName);
+            PrevHome home = new PrevHome();
+
+            this.Hide();
+            home.ShowDialog();
+            this.Close();
+                
+        }
+
+        private void bunifuButton13_Click(object sender, EventArgs e)
+        {
+            topCustomer();
         }
     }
 }

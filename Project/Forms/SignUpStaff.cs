@@ -185,18 +185,46 @@ namespace Project
 
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
-            PrevHome prevHome = new PrevHome();
-            this.Hide();
-            prevHome.ShowDialog();
-            this.Close();
+            if (SignIn.flag)
+            {
+                SignIn signIn = new SignIn();
+                this.Hide();
+                signIn.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                PrevHome prevHome = new PrevHome();
+                this.Hide();
+                prevHome.ShowDialog();
+                this.Close();
+            }
         }
 
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
-            ManageStaff manageStaff = new ManageStaff();
-            this.Hide();
-            manageStaff.ShowDialog();
-            this.Close();
+            tea01Entities2 db = new tea01Entities2();
+            Staff staff = db.Staffs.Find(SignIn.username);
+            Boolean flag = false;
+
+            foreach (var i in staff.Permisions)
+            {
+                    if (i.PermisionName == "Full")
+                    {
+                        //MessageBox.Show(j.ActionName);
+                        flag = true;
+
+                        ManageStaff manageStaff = new ManageStaff();
+                        this.Hide();
+                        manageStaff.ShowDialog();
+                        this.Close();
+                    }
+            }
+
+            if (!flag)
+            {
+                MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
+            }
         }
 
         private void txFullName_KeyPress(object sender, KeyPressEventArgs e)

@@ -15,6 +15,7 @@ namespace Project.Forms
     public partial class SignIn : DevExpress.XtraEditors.XtraForm
     {
         public static String username;
+        public static Boolean flag = false;
 
         public SignIn()
         {
@@ -149,6 +150,7 @@ namespace Project.Forms
 
         private void hyperlinkLabelControl1_Click(object sender, EventArgs e)
         {
+            flag = true;
             RegisterStaff registerStaff = new RegisterStaff();
             this.Hide();
             registerStaff.ShowDialog();

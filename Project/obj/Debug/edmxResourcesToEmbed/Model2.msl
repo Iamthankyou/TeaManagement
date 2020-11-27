@@ -196,5 +196,83 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="View01_HoaDonBanTrongNgay">
+      <EntityTypeMapping TypeName="tea01Model1.View01_HoaDonBanTrongNgay">
+        <MappingFragment StoreEntitySet="View01_HoaDonBanTrongNgay">
+          <ScalarProperty Name="OrderTimeEnd" ColumnName="OrderTimeEnd" />
+          <ScalarProperty Name="OrderTimeStart" ColumnName="OrderTimeStart" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="Payments" ColumnName="Payments" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="CodeVoucher" ColumnName="CodeVoucher" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="BillId" ColumnName="BillId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View04_ThongKeTongTienHangThang">
+      <EntityTypeMapping TypeName="tea01Model1.View04_ThongKeTongTienHangThang">
+        <MappingFragment StoreEntitySet="View04_ThongKeTongTienHangThang">
+          <ScalarProperty Name="C12" ColumnName="12" />
+          <ScalarProperty Name="C11" ColumnName="11" />
+          <ScalarProperty Name="C10" ColumnName="10" />
+          <ScalarProperty Name="C9" ColumnName="9" />
+          <ScalarProperty Name="C8" ColumnName="8" />
+          <ScalarProperty Name="C7" ColumnName="7" />
+          <ScalarProperty Name="C6" ColumnName="6" />
+          <ScalarProperty Name="C5" ColumnName="5" />
+          <ScalarProperty Name="C4" ColumnName="4" />
+          <ScalarProperty Name="C3" ColumnName="3" />
+          <ScalarProperty Name="C2" ColumnName="2" />
+          <ScalarProperty Name="C1" ColumnName="1" />
+          <ScalarProperty Name="TongThuTheoThang" ColumnName="TongThuTheoThang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="checkTable" FunctionName="tea01Model1.Store.checkTable" />
+    <FunctionImportMapping FunctionImportName="staffDay" FunctionName="tea01Model1.Store.staffDay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="tea01Model1.staffDay_Result">
+          <ScalarProperty Name="BillId" ColumnName="BillId" />
+          <ScalarProperty Name="OrderTimeStart" ColumnName="OrderTimeStart" />
+          <ScalarProperty Name="Payments" ColumnName="Payments" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="OrderTimeEnd" ColumnName="OrderTimeEnd" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CodeVoucher" ColumnName="CodeVoucher" />
+          <ScalarProperty Name="UserName1" ColumnName="UserName1" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="DayOf" ColumnName="DayOf" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="teaResource" FunctionName="tea01Model1.Store.teaResource">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="tea01Model1.teaResource_Result">
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc01_ThongKe" FunctionName="tea01Model1.Store.proc01_ThongKe">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="tea01Model1.proc01_ThongKe_Result">
+          <ScalarProperty Name="DrinkID" ColumnName="DrinkID" />
+          <ScalarProperty Name="DrinkName" ColumnName="DrinkName" />
+          <ScalarProperty Name="SLBanDrink" ColumnName="SLBanDrink" />
+          <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+          <ScalarProperty Name="ToppingName" ColumnName="ToppingName" />
+          <ScalarProperty Name="SLBanTopping" ColumnName="SLBanTopping" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -35,18 +35,59 @@ namespace Project.Forms
 
         private void bunifuButton14_Click(object sender, EventArgs e)
         {
-            ManageResource manageResource = new ManageResource();
-            this.Hide();
-            manageResource.ShowDialog();
-            this.Close();
+
+            tea01Entities2 db = new tea01Entities2();
+            Staff staff = db.Staffs.Find(SignIn.username);
+            Boolean flag = false;
+
+            foreach (var i in staff.Permisions)
+            {
+                    if (i.PermisionName == "Full" || i.PermisionName == "Admin")
+                    {
+                        //MessageBox.Show(i.PermisionName);
+                        flag = true;
+
+                        ManageResource manageResource = new ManageResource();
+                        this.Hide();
+                        manageResource.ShowDialog();
+                        this.Close();
+                    }
+            }
+
+            if (!flag)
+            {
+                MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
+            }
+
         }
 
         private void bunifuButton13_Click(object sender, EventArgs e)
         {
-            ManageBill manageBill = new ManageBill();
-            this.Hide();
-            manageBill.ShowDialog();
-            this.Close();
+            
+
+            tea01Entities2 db = new tea01Entities2();
+            Staff staff = db.Staffs.Find(SignIn.username);
+            Boolean flag = false;
+
+            foreach (var i in staff.Permisions)
+            {
+                if (i.PermisionName == "Full" || i.PermisionName == "Admin")
+                {
+                    //MessageBox.Show(i.PermisionName);
+                    flag = true;
+
+                    ManageBill manageBill = new ManageBill();
+                    this.Hide();
+                    manageBill.ShowDialog();
+                    this.Close();
+                }
+            }
+
+            if (!flag)
+            {
+                MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
+            }
+
         }
 
         private void bunifuButton12_Click(object sender, EventArgs e)
@@ -59,10 +100,32 @@ namespace Project.Forms
 
         private void bunifuButton8_Click(object sender, EventArgs e)
         {
-            ManageStaff manageStaff = new ManageStaff();
-            this.Hide();
-            manageStaff.ShowDialog();
-            this.Close();
+            tea01Entities2 db = new tea01Entities2();
+            Staff staff = db.Staffs.Find(SignIn.username);
+            Boolean flag = false;
+
+            foreach (var i in staff.Permisions)
+            {
+                foreach (var j in i.PermisionDetails)
+                {
+                    if (j.ActionName == "D")
+                    {
+                        //MessageBox.Show(j.ActionName);
+                        flag = true;
+
+                        ManageStaff manageStaff = new ManageStaff();
+                        this.Hide();
+                        manageStaff.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+
+            if (!flag)
+            {
+                MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
+            }
+
         }
 
         private void bunifuButton9_Click(object sender, EventArgs e)
@@ -75,10 +138,32 @@ namespace Project.Forms
 
         private void bunifuButton10_Click(object sender, EventArgs e)
         {
-            ShowAddDrink showAddDrink = new ShowAddDrink();
-            this.Hide();
-            showAddDrink.ShowDialog();
-            this.Close();
+
+            tea01Entities2 db = new tea01Entities2();
+            Staff staff = db.Staffs.Find(SignIn.username);
+            Boolean flag = false;
+
+            foreach (var i in staff.Permisions)
+            {
+                foreach (var j in i.PermisionDetails)
+                {
+                    if (j.ActionName == "C")
+                    {
+                        //MessageBox.Show(j.ActionName);
+                        flag = true;
+
+                        ShowAddDrink showAddDrink = new ShowAddDrink();
+                        this.Hide();
+                        showAddDrink.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+
+            if (!flag)
+            {
+                MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
+            }
         }
 
         private void bunifuButton2_Click(object sender, EventArgs e)
@@ -91,10 +176,32 @@ namespace Project.Forms
 
         private void bunifuButton4_Click(object sender, EventArgs e)
         {
-            AddTable addTable = new AddTable();
-            this.Hide();
-            addTable.ShowDialog();
-            this.Close();
+            
+            tea01Entities2 db = new tea01Entities2();
+            Staff staff = db.Staffs.Find(SignIn.username);
+            Boolean flag = false;
+
+            foreach (var i in staff.Permisions)
+            {
+                foreach (var j in i.PermisionDetails)
+                {
+                    if (j.ActionName == "V")
+                    {
+                        //MessageBox.Show(j.ActionName);
+                        flag = true; 
+                        AddTable addTable = new AddTable();
+                        this.Hide();
+                        addTable.ShowDialog();
+                        this.Close();
+
+                    }
+                }
+            }
+
+            if (!flag)
+            {
+                MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
+            }
         }
 
         private void bunifuButton3_Click(object sender, EventArgs e)
@@ -107,7 +214,7 @@ namespace Project.Forms
             {
                 foreach (var j in i.PermisionDetails)
                 {
-                    if (j.ActionName == "C")
+                    if (j.ActionName == "V")
                     {
                         //MessageBox.Show(j.ActionName);
                         flag = true;
@@ -135,10 +242,39 @@ namespace Project.Forms
 
         private void bunifuButton5_Click(object sender, EventArgs e)
         {
-            ManageCustomer manageCustomer = new ManageCustomer();
+            tea01Entities2 db = new tea01Entities2();
+            Staff staff = db.Staffs.Find(SignIn.username);
+            Boolean flag = false;
+
+            foreach (var i in staff.Permisions)
+            {
+                foreach (var j in i.PermisionDetails)
+                {
+                    if (j.ActionName == "V")
+                    {
+                        //MessageBox.Show(j.ActionName);
+                        flag = true;
+                        ManageCustomer manageCustomer = new ManageCustomer();
+                        this.Hide();
+                        manageCustomer.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+
+            if (!flag)
+            {
+                MessageBox.Show("Hãy phấn đấu và bạn sẽ có quyền vào đây");
+            }
+
+        }
+
+        private void bunifuButton7_Click(object sender, EventArgs e)
+        {
+            View view = new View();
             this.Hide();
-            manageCustomer.ShowDialog();
-            this.Close();
+            view.ShowDialog();
+
         }
     }
 }

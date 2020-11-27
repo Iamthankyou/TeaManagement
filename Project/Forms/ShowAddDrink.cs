@@ -131,10 +131,17 @@ namespace Project.Forms
 
         private void bunifuButton7_Click(object sender, EventArgs e)
         {
-
             PrevHome prevHome = new PrevHome();
             this.Hide();
             prevHome.ShowDialog();
+            this.Close();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            ManageDrinkType manageDrinkType = new ManageDrinkType();
+            this.Hide();
+            manageDrinkType.ShowDialog();
             this.Close();
         }
     }

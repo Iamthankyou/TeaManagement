@@ -164,6 +164,57 @@
           <Property Name="dateEnd" Type="datetime" />
           <Property Name="ratio" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.View01_HoaDonBanTrongNgay' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View01_HoaDonBanTrongNgay">
+          <Key>
+            <PropertyRef Name="BillId" />
+            <PropertyRef Name="OrderTimeStart" />
+          </Key>
+          <Property Name="BillId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+          <Property Name="CodeVoucher" Type="nvarchar" MaxLength="10" />
+          <Property Name="Total" Type="int" />
+          <Property Name="Payments" Type="varchar" MaxLength="10" />
+          <Property Name="TableId" Type="varchar" MaxLength="10" />
+          <Property Name="OrderTimeStart" Type="datetime" Nullable="false" />
+          <Property Name="OrderTimeEnd" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'tea01.dbo.View02_Top3NhanVien' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="View02_Top3NhanVien">
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="SoHoaDon" Type="int" />
+          <Property Name="Tong" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'tea01.dbo.View03_Top5KhacHang' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="View03_Top5KhacHang">
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tong" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tea01.dbo.View04_ThongKeTongTienHangThang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View04_ThongKeTongTienHangThang">
+          <Key>
+            <PropertyRef Name="TongThuTheoThang" />
+          </Key>
+          <Property Name="TongThuTheoThang" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="1" Type="int" />
+          <Property Name="2" Type="int" />
+          <Property Name="3" Type="int" />
+          <Property Name="4" Type="int" />
+          <Property Name="5" Type="int" />
+          <Property Name="6" Type="int" />
+          <Property Name="7" Type="int" />
+          <Property Name="8" Type="int" />
+          <Property Name="9" Type="int" />
+          <Property Name="10" Type="int" />
+          <Property Name="11" Type="int" />
+          <Property Name="12" Type="int" />
+        </EntityType>
         <Association Name="FK__Bills__PhoneNumb__3F466844">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
@@ -360,6 +411,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="billCustom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="start" Type="varchar" Mode="In" />
+          <Parameter Name="end" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="checkPer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="bit">
+          <Parameter Name="per" Type="varchar" Mode="In" />
+          <Parameter Name="userName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="checkTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTable" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="getAmountResourceDrink" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="idResource" Type="varchar" Mode="In" />
@@ -369,6 +438,7 @@
           <Parameter Name="idResource" Type="varchar" Mode="In" />
           <Parameter Name="idBill" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="proc01_ThongKe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -399,6 +469,10 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="staffDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="teaResource" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTea" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="tea01Model1StoreContainer">
           <EntitySet Name="Bills" EntityType="Self.Bills" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -417,6 +491,36 @@
           <EntitySet Name="Toppings" EntityType="Self.Toppings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserPermision" EntityType="Self.UserPermision" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View01_HoaDonBanTrongNgay" EntityType="Self.View01_HoaDonBanTrongNgay" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View01_HoaDonBanTrongNgay].[BillId] AS [BillId], 
+    [View01_HoaDonBanTrongNgay].[UserName] AS [UserName], 
+    [View01_HoaDonBanTrongNgay].[PhoneNumber] AS [PhoneNumber], 
+    [View01_HoaDonBanTrongNgay].[CodeVoucher] AS [CodeVoucher], 
+    [View01_HoaDonBanTrongNgay].[Total] AS [Total], 
+    [View01_HoaDonBanTrongNgay].[Payments] AS [Payments], 
+    [View01_HoaDonBanTrongNgay].[TableId] AS [TableId], 
+    [View01_HoaDonBanTrongNgay].[OrderTimeStart] AS [OrderTimeStart], 
+    [View01_HoaDonBanTrongNgay].[OrderTimeEnd] AS [OrderTimeEnd]
+    FROM [dbo].[View01_HoaDonBanTrongNgay] AS [View01_HoaDonBanTrongNgay]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View04_ThongKeTongTienHangThang" EntityType="Self.View04_ThongKeTongTienHangThang" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View04_ThongKeTongTienHangThang].[TongThuTheoThang] AS [TongThuTheoThang], 
+    [View04_ThongKeTongTienHangThang].[1] AS [1], 
+    [View04_ThongKeTongTienHangThang].[2] AS [2], 
+    [View04_ThongKeTongTienHangThang].[3] AS [3], 
+    [View04_ThongKeTongTienHangThang].[4] AS [4], 
+    [View04_ThongKeTongTienHangThang].[5] AS [5], 
+    [View04_ThongKeTongTienHangThang].[6] AS [6], 
+    [View04_ThongKeTongTienHangThang].[7] AS [7], 
+    [View04_ThongKeTongTienHangThang].[8] AS [8], 
+    [View04_ThongKeTongTienHangThang].[9] AS [9], 
+    [View04_ThongKeTongTienHangThang].[10] AS [10], 
+    [View04_ThongKeTongTienHangThang].[11] AS [11], 
+    [View04_ThongKeTongTienHangThang].[12] AS [12]
+    FROM [dbo].[View04_ThongKeTongTienHangThang] AS [View04_ThongKeTongTienHangThang]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__Bills__PhoneNumb__3F466844" Association="Self.FK__Bills__PhoneNumb__3F466844">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Bills" EntitySet="Bills" />
@@ -818,6 +922,16 @@
             <End Role="Topping" EntitySet="Toppings" />
             <End Role="ItemTopping" EntitySet="ItemToppings" />
           </AssociationSet>
+          <EntitySet Name="View01_HoaDonBanTrongNgay" EntityType="tea01Model1.View01_HoaDonBanTrongNgay" />
+          <EntitySet Name="View04_ThongKeTongTienHangThang" EntityType="tea01Model1.View04_ThongKeTongTienHangThang" />
+          <FunctionImport Name="checkTable" IsComposable="true" ReturnType="Collection(String)">
+          <Parameter Name="idTable" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="staffDay" ReturnType="Collection(tea01Model1.staffDay_Result)" />
+          <FunctionImport Name="teaResource" ReturnType="Collection(tea01Model1.teaResource_Result)">
+          <Parameter Name="idTea" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc01_ThongKe" ReturnType="Collection(tea01Model1.proc01_ThongKe_Result)" />
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -962,6 +1076,70 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="View01_HoaDonBanTrongNgay">
+          <Key>
+            <PropertyRef Name="BillId" />
+            <PropertyRef Name="OrderTimeStart" />
+          </Key>
+          <Property Name="BillId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CodeVoucher" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Total" Type="Int32" />
+          <Property Name="Payments" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TableId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OrderTimeStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderTimeEnd" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="View04_ThongKeTongTienHangThang">
+          <Key>
+            <PropertyRef Name="TongThuTheoThang" />
+          </Key>
+          <Property Name="TongThuTheoThang" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="C1" Type="Int32" />
+          <Property Name="C2" Type="Int32" />
+          <Property Name="C3" Type="Int32" />
+          <Property Name="C4" Type="Int32" />
+          <Property Name="C5" Type="Int32" />
+          <Property Name="C6" Type="Int32" />
+          <Property Name="C7" Type="Int32" />
+          <Property Name="C8" Type="Int32" />
+          <Property Name="C9" Type="Int32" />
+          <Property Name="C10" Type="Int32" />
+          <Property Name="C11" Type="Int32" />
+          <Property Name="C12" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="staffDay_Result">
+          <Property Type="String" Name="BillId" Nullable="false" MaxLength="10" />
+          <Property Type="DateTime" Name="OrderTimeStart" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Payments" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="TableId" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Total" Nullable="true" />
+          <Property Type="DateTime" Name="OrderTimeEnd" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CodeVoucher" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UserName1" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="Age" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Avatar" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="DayOf" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="teaResource_Result">
+          <Property Type="String" Name="ResourceName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ResourceId" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="proc01_ThongKe_Result">
+          <Property Type="String" Name="DrinkID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="DrinkName" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="SLBanDrink" Nullable="false" />
+          <Property Type="String" Name="ToppingId" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ToppingName" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="SLBanTopping" Nullable="false" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1163,6 +1341,84 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="View01_HoaDonBanTrongNgay">
+            <EntityTypeMapping TypeName="tea01Model1.View01_HoaDonBanTrongNgay">
+              <MappingFragment StoreEntitySet="View01_HoaDonBanTrongNgay">
+                <ScalarProperty Name="OrderTimeEnd" ColumnName="OrderTimeEnd" />
+                <ScalarProperty Name="OrderTimeStart" ColumnName="OrderTimeStart" />
+                <ScalarProperty Name="TableId" ColumnName="TableId" />
+                <ScalarProperty Name="Payments" ColumnName="Payments" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="CodeVoucher" ColumnName="CodeVoucher" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="BillId" ColumnName="BillId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View04_ThongKeTongTienHangThang">
+            <EntityTypeMapping TypeName="tea01Model1.View04_ThongKeTongTienHangThang">
+              <MappingFragment StoreEntitySet="View04_ThongKeTongTienHangThang">
+                <ScalarProperty Name="C12" ColumnName="12" />
+                <ScalarProperty Name="C11" ColumnName="11" />
+                <ScalarProperty Name="C10" ColumnName="10" />
+                <ScalarProperty Name="C9" ColumnName="9" />
+                <ScalarProperty Name="C8" ColumnName="8" />
+                <ScalarProperty Name="C7" ColumnName="7" />
+                <ScalarProperty Name="C6" ColumnName="6" />
+                <ScalarProperty Name="C5" ColumnName="5" />
+                <ScalarProperty Name="C4" ColumnName="4" />
+                <ScalarProperty Name="C3" ColumnName="3" />
+                <ScalarProperty Name="C2" ColumnName="2" />
+                <ScalarProperty Name="C1" ColumnName="1" />
+                <ScalarProperty Name="TongThuTheoThang" ColumnName="TongThuTheoThang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="checkTable" FunctionName="tea01Model1.Store.checkTable" />
+          <FunctionImportMapping FunctionImportName="staffDay" FunctionName="tea01Model1.Store.staffDay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tea01Model1.staffDay_Result">
+                <ScalarProperty Name="BillId" ColumnName="BillId" />
+                <ScalarProperty Name="OrderTimeStart" ColumnName="OrderTimeStart" />
+                <ScalarProperty Name="Payments" ColumnName="Payments" />
+                <ScalarProperty Name="TableId" ColumnName="TableId" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="OrderTimeEnd" ColumnName="OrderTimeEnd" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="CodeVoucher" ColumnName="CodeVoucher" />
+                <ScalarProperty Name="UserName1" ColumnName="UserName1" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="DayOf" ColumnName="DayOf" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teaResource" FunctionName="tea01Model1.Store.teaResource">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tea01Model1.teaResource_Result">
+                <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+                <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc01_ThongKe" FunctionName="tea01Model1.Store.proc01_ThongKe">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tea01Model1.proc01_ThongKe_Result">
+                <ScalarProperty Name="DrinkID" ColumnName="DrinkID" />
+                <ScalarProperty Name="DrinkName" ColumnName="DrinkName" />
+                <ScalarProperty Name="SLBanDrink" ColumnName="SLBanDrink" />
+                <ScalarProperty Name="ToppingId" ColumnName="ToppingId" />
+                <ScalarProperty Name="ToppingName" ColumnName="ToppingName" />
+                <ScalarProperty Name="SLBanTopping" ColumnName="SLBanTopping" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

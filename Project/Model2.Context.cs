@@ -43,6 +43,8 @@ namespace Project
         public virtual DbSet<Drink_Resource> Drink_Resource { get; set; }
         public virtual DbSet<Topping_Resource> Topping_Resource { get; set; }
         public virtual DbSet<ItemTopping> ItemToppings { get; set; }
+        public virtual DbSet<View01_HoaDonBanTrongNgay> View01_HoaDonBanTrongNgay { get; set; }
+        public virtual DbSet<View04_ThongKeTongTienHangThang> View04_ThongKeTongTienHangThang { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -145,6 +147,35 @@ namespace Project
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        [DbFunction("tea01Entities2", "checkTable")]
+        public virtual IQueryable<string> checkTable(string idTable)
+        {
+            var idTableParameter = idTable != null ?
+                new ObjectParameter("idTable", idTable) :
+                new ObjectParameter("idTable", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<string>("[tea01Entities2].[checkTable](@idTable)", idTableParameter);
+        }
+    
+        public virtual ObjectResult<staffDay_Result> staffDay()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<staffDay_Result>("staffDay");
+        }
+    
+        public virtual ObjectResult<teaResource_Result> teaResource(string idTea)
+        {
+            var idTeaParameter = idTea != null ?
+                new ObjectParameter("idTea", idTea) :
+                new ObjectParameter("idTea", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<teaResource_Result>("teaResource", idTeaParameter);
+        }
+    
+        public virtual ObjectResult<proc01_ThongKe_Result> proc01_ThongKe()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc01_ThongKe_Result>("proc01_ThongKe");
         }
     }
 }

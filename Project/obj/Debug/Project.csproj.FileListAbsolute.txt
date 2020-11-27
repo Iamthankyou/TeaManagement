@@ -602,3 +602,5 @@ D:\TeaManagement\Project\obj\Debug\Project.Forms.ManageBill.resources
 D:\TeaManagement\Project\obj\Debug\Project.Forms.ManageCustomer.resources
 D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
 D:\TeaManagement\Project\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.xml
+D:\TeaManagement\Project\obj\Debug\Project.Forms.View.resources
+D:\TeaManagement\Project\obj\Debug\Project.Utils.buttonBunifuCustom.resources
