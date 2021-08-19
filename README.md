@@ -37,7 +37,7 @@ Navigation bar: responsive style and navigation
 
 
 	
-
+![Visualization of the codebase](./diagram.svg)
 
 
 
